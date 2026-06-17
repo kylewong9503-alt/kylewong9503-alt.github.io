@@ -1,0 +1,2652 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/wangj/OneDrive/%E6%96%87%E6%A1%A3/PA/dbs_2025_peer_review.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBS China 2025 閳?Peer Performance Review</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --red:#e53935;
+  --red-light:#fff0f0;
+  --red-mid:rgba(229,57,53,0.1);
+  --bg:#f5f6f8;
+  --card:#fff;
+  --s2:#f8f9fb;
+  --s3:#f2f3f5;
+  --line:#e4e6ea;
+  --line2:#d0d4da;
+  --text:#1a1d23;
+  --text2:#4a5068;
+  --text3:#9aa0b0;
+  --green:#15803d;
+  --green-light:#f0faf4;
+  --amber:#b45309;
+  --shadow:0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,0.10);
+}
+@keyframes softRise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+@keyframes popIn { from { opacity:0; transform:translateY(12px) scale(.985); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes barGrowX { from { transform:scaleX(.08); } to { transform:scaleX(1); } }
+@keyframes barGrowY { from { transform:scaleY(.08); opacity:.65; } to { transform:scaleY(1); opacity:1; } }
+@keyframes pulseLine { 0%,100% { opacity:.62; transform:scaleX(.86); } 50% { opacity:1; transform:scaleX(1); } }
+@keyframes logoDrift { 0%,100% { transform:rotate(-7deg) translate3d(0,0,0); } 50% { transform:rotate(-7deg) translate3d(8px,-5px,0); } }
+@keyframes dbsLift { 0% { transform:translateY(0); } 45% { transform:translateY(-2px); } 100% { transform:translateY(0); } }
+@keyframes jumpBadge { from { opacity:0; transform:translateX(-6px) scale(.92); } to { opacity:1; transform:translateX(0) scale(1); } }
+body { background:var(--bg); font-family:Arial,Helvetica,sans-serif; color:var(--text); height:100vh; overflow:hidden; display:flex; flex-direction:column; }
+
+/* 閳光偓閳光偓 CHROME 閳光偓閳光偓 */
+#topbar { height:3px; background:linear-gradient(90deg,var(--red),#ff7777,var(--red)); flex-shrink:0; transform-origin:left center; animation:pulseLine 3.8s ease-in-out infinite; }
+#chrome {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:9px 28px; border-bottom:1px solid var(--line);
+  flex-shrink:0; background:var(--card); box-shadow:var(--shadow);
+}
+#slide-label { font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); }
+#nav-dots { display:flex; gap:6px; align-items:center; }
+.dot { height:5px; border-radius:3px; background:var(--line2); border:none; cursor:pointer; transition:width .3s,background .3s; }
+.dot.active { width:20px; background:var(--red); }
+.dot:not(.active) { width:5px; }
+
+/* 閳光偓閳光偓 STAGE 閳光偓閳光偓 */
+#stage { flex:1; overflow:hidden; position:relative; }
+.slide { position:absolute; inset:0; opacity:0; transform:translateX(22px); transition:opacity .38s ease,transform .38s ease; pointer-events:none; overflow:hidden; display:flex; flex-direction:column; }
+.slide.active { opacity:1; transform:translateX(0); pointer-events:all; }
+.slide.exit { opacity:0; transform:translateX(-22px); }
+.slide.active .s1-header,
+.slide.active .slide-hero,
+.slide.active .summary-hero { animation:softRise .55s cubic-bezier(.22,1,.36,1) both; }
+.slide.active .s1-left,
+.slide.active .statement-panel,
+.slide.active .summary-card { animation:softRise .58s cubic-bezier(.22,1,.36,1) both; }
+.slide.active .s1-left { animation-delay:.05s; }
+.slide.active .s1-right,
+.slide.active .s2-bridge,
+.slide.active .summary-grid { animation:softRise .64s cubic-bezier(.22,1,.36,1) both; animation-delay:.12s; }
+
+/* 閳光偓閳光偓 BOTTOM NAV 閳光偓閳光偓 */
+#bottom-nav { display:flex; align-items:center; justify-content:center; gap:10px; padding:9px 28px; border-top:1px solid var(--line); flex-shrink:0; background:var(--card); }
+.nav-btn { background:var(--s2); color:var(--text); border:1px solid var(--line2); border-radius:5px; padding:5px 16px; font-size:10px; font-weight:700; cursor:pointer; transition:all .2s; font-family:Arial,Helvetica,sans-serif; letter-spacing:.5px; }
+.nav-btn:hover:not(:disabled) { background:var(--red); border-color:var(--red); color:#fff; }
+.nav-btn:disabled { opacity:.3; cursor:default; }
+.slide-counter { font-size:9px; color:var(--text3); min-width:44px; text-align:center; letter-spacing:1px; }
+
+/* ═══════════════════════════════════════
+   COVER SLIDE
+═══════════════════════════════════════ */
+.cover-slide {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:#060303; height:100%;
+  position:relative; overflow:hidden;
+}
+.cover-glow {
+  position:absolute; pointer-events:none; border-radius:50%; filter:blur(120px); z-index:0;
+}
+.cover-glow.cg1 { width:500px; height:260px; top:-100px; right:-140px; background:rgba(229,57,53,.14); }
+.cover-glow.cg2 { width:340px; height:340px; bottom:-160px; left:-100px; background:rgba(180,40,35,.08); }
+
+.cover-content {
+  position:relative; z-index:10;
+  display:flex; flex-direction:column; align-items:center; gap:28px;
+  animation:softRise .8s cubic-bezier(.22,1,.36,1) both;
+  padding:0 60px;
+}
+
+/* Title */
+.cover-title {
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(36px, 4.8vw, 60px);
+  font-weight:400; line-height:1.1; letter-spacing:.02em;
+  color:#f0ecec; text-align:center; max-width:640px;
+}
+.cover-title em { font-style:italic; color:var(--red); font-weight:400; }
+/* Subtitle */
+.cover-sub {
+  font-size:clamp(11px, 1.1vw, 13px);
+  font-weight:400; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(255,255,255,.35);
+}
+/* Bottom fade bar */
+.cover-bar {
+  position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity:.5; z-index:10;
+}
+
+/* ═══════════════════════════════════════
+   SLIDE 1
+═══════════════════════════════════════ */
+/* Hero header */
+.s1-header {
+  padding:18px 28px 14px;
+  flex-shrink:0; background:var(--card);
+  border-bottom:1px solid var(--line);
+  display:flex; flex-direction:column; align-items:flex-start; gap:7px;
+}
+.s1-eyebrow {
+  position:relative;
+  display:inline-flex; align-items:flex-end; gap:14px;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(30px, 4.6vw, 48px); line-height:.98; letter-spacing:.03em; text-transform:none;
+  color:var(--text); font-weight:500; white-space:nowrap;
+}
+.s1-eyebrow::after {
+  content:"";
+  width:72px; height:3px; margin-bottom:8px;
+  background:linear-gradient(90deg,var(--red),rgba(229,57,53,.18));
+  border-radius:999px;
+}
+.s1-eyebrow .accent {
+  color:var(--red);
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.08em;
+}
+.s1-headline {
+  font-size:16px; font-weight:700; color:var(--text); line-height:1.25;
+}
+
+.s1-body { display:flex; flex:1; overflow:hidden; min-height:0; position:relative; }
+
+/* LEFT */
+.s1-left {
+  width:36%; border-right:1px solid var(--line);
+  display:flex; flex-direction:column;
+  background:var(--card);
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+  flex-shrink:0; overflow:hidden; z-index:2;
+}
+.s1-left.expanded { width:76%; box-shadow:4px 0 20px rgba(0,0,0,0.08); }
+
+.yr-row {
+  padding:8px 16px 7px; display:flex; align-items:center; gap:7px;
+  flex-shrink:0; border-bottom:1px solid var(--line);
+}
+.yr-label { font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--text3); }
+.yr-btn {
+  padding:3px 12px; font-size:10px; font-weight:700;
+  background:transparent; border:1.5px solid var(--line2); border-radius:4px;
+  color:var(--text2); cursor:pointer; transition:all .2s; font-family:Arial,Helvetica,sans-serif;
+}
+.yr-btn:hover { transform:translateY(-1px); box-shadow:0 6px 14px rgba(17,24,39,.08); }
+.yr-btn.active { background:var(--red); border-color:var(--red); color:#fff; box-shadow:0 6px 14px rgba(229,57,53,.18); }
+.expand-btn {
+  margin-left:auto; padding:3px 11px; font-size:8px; font-weight:700;
+  background:var(--s3); border:1px solid var(--line2); border-radius:4px;
+  color:var(--text3); cursor:pointer; transition:all .2s; font-family:Arial,Helvetica,sans-serif;
+  letter-spacing:.5px;
+}
+.expand-btn:hover { background:var(--red-light); border-color:var(--red); color:var(--red); }
+
+.charts-wrap { display:flex; flex:1; min-height:0; overflow:hidden; }
+.chart-col { flex:1; display:flex; flex-direction:column; padding:10px 14px 8px; min-height:0; overflow:hidden; }
+.chart-col+.chart-col { border-left:1px solid var(--line); }
+.chart-col-title { font-size:10px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--text); margin-bottom:1px; flex-shrink:0; }
+.chart-col-unit { font-size:8px; color:var(--text3); margin-bottom:8px; flex-shrink:0; }
+.rank-scroll { flex:1; overflow-y:auto; display:flex; flex-direction:column; gap:3px; }
+.rank-scroll::-webkit-scrollbar { width:2px; }
+.rank-scroll::-webkit-scrollbar-thumb { background:var(--line2); }
+
+/* rank rows 閳?larger when expanded */
+.rrow { display:flex; align-items:center; gap:5px; min-height:20px; }
+.rrow.dbs { position:relative; }
+.rrank { font-size:9px; color:var(--text3); width:18px; flex-shrink:0; text-align:right; font-weight:500; }
+.rbank { font-size:9px; width:38px; flex-shrink:0; overflow:hidden; white-space:nowrap; color:var(--text2); }
+.rrow.dbs .rrank { color:var(--red); font-weight:700; }
+.rrow.dbs .rbank { color:var(--text); font-weight:700; }
+.rbar-wrap { flex:1; height:16px; display:flex; align-items:center; }
+.rrow.dbs-base .rbar { box-shadow:0 0 0 1px rgba(229,57,53,.2) inset; }
+.rrow.dbs-improved { animation:dbsLift 1.2s ease .55s both; }
+.rrow.dbs-improved .rbar {
+  box-shadow:0 0 0 1px rgba(255,255,255,.35) inset, 0 0 0 5px rgba(229,57,53,.10);
+}
+.jump-badge {
+  flex:0 0 auto;
+  min-width:44px;
+  padding:2px 5px;
+  border-radius:999px;
+  background:#111827;
+  color:#fff;
+  font-size:7px;
+  font-weight:850;
+  line-height:1.1;
+  text-align:center;
+  box-shadow:0 6px 12px rgba(17,24,39,.16);
+  animation:jumpBadge .45s cubic-bezier(.22,1,.36,1) .72s both;
+}
+.jump-badge strong { color:#ff6b6b; font-size:8px; }
+.rbar {
+  height:100%; border-radius:3px;
+  display:flex; align-items:center; justify-content:flex-end;
+  padding-right:6px; transition:width .65s cubic-bezier(.22,1,.36,1); overflow:hidden;
+  transform-origin:left center;
+}
+.rval { font-size:9px; font-weight:700; white-space:nowrap; }
+
+/* expanded bigger rows */
+.s1-left.expanded .rrow { min-height:26px; }
+.s1-left.expanded .rrank { font-size:11px; width:22px; }
+.s1-left.expanded .rbank { font-size:11px; width:48px; }
+.s1-left.expanded .rbar { height:20px; }
+.s1-left.expanded .rval { font-size:11px; }
+
+/* Market Environment tag */
+.me-tag {
+  display:flex; align-items:center; gap:7px;
+  padding:6px 12px; margin:0 12px 8px;
+  border:1px solid var(--line); border-radius:6px;
+  background:var(--s2); cursor:pointer;
+  flex-shrink:0; transition:border-color .2s, box-shadow .2s;
+}
+.me-tag:hover { border-color:var(--red); box-shadow:0 2px 8px rgba(229,57,53,.06); }
+.me-tag-icon {
+  width:18px; height:18px; border-radius:50%;
+  background:var(--red); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:9px; font-weight:800; font-style:italic; flex-shrink:0;
+}
+.me-tag-label {
+  font-size:9px; font-weight:700; letter-spacing:.4px; color:var(--text2); flex:1; min-width:0;
+}
+.me-tag-chev { font-size:9px; color:var(--text3); }
+/* Center overlay */
+#me-overlay {
+  display:none; position:absolute; inset:0; z-index:100;
+  background:rgba(6,3,3,.78);
+  align-items:center; justify-content:center;
+}
+#me-overlay.show { display:flex; }
+.me-card {
+  background:var(--card); border-radius:16px;
+  border:1px solid var(--line); border-top:3px solid var(--red);
+  box-shadow:0 20px 60px rgba(0,0,0,.28);
+  padding:32px 44px 28px;
+  min-width:360px;
+  display:flex; flex-direction:column; gap:0;
+  animation:softRise .35s cubic-bezier(.22,1,.36,1) both;
+}
+.me-card-title {
+  font-size:8px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--red); font-weight:700; margin-bottom:22px; text-align:center;
+}
+.me-card-row {
+  display:flex; align-items:baseline; gap:14px; padding:14px 0;
+}
+.me-card-row+.me-card-row { border-top:1px solid var(--line); }
+.me-card-metric {
+  font-size:15px; font-weight:850; color:var(--text); min-width:110px;
+}
+.me-card-val {
+  font-size:32px; font-weight:850; color:var(--red); line-height:1; flex:1; text-align:left;
+}
+.me-card-lbl {
+  font-size:8px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text3);
+}
+.me-card-close {
+  margin-top:20px; align-self:flex-end;
+  padding:5px 16px; font-size:9px; font-weight:700;
+  border:1px solid var(--line2); border-radius:5px;
+  background:var(--s2); color:var(--text2); cursor:pointer;
+  font-family:Arial,Helvetica,sans-serif;
+  transition:all .2s;
+}
+.me-card-close:hover { background:var(--red); border-color:var(--red); color:#fff; }
+
+/* RIGHT */
+.s1-right {
+  flex:1; display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:minmax(90px,auto);
+  padding:12px 26px 16px 22px; gap:16px 14px; overflow-y:auto; overflow-x:hidden; min-height:0; align-content:start;
+  background:linear-gradient(135deg,#f7f8fb 0%,#eef1f5 100%);
+  transition:opacity .3s;
+}
+.right-hdr {
+  grid-column:1/-1;
+  min-height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:6px 10px 7px 12px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:4px solid var(--red);
+  border-radius:8px;
+  box-shadow:0 8px 18px rgba(17,24,39,.06);
+  color:var(--text);
+  flex-shrink:0; margin-bottom:0;
+  order:0;
+}
+.right-hdr-main {
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:#111827;
+}
+.right-hdr-sub {
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--text3);
+  white-space:nowrap;
+}
+.ach-group-label {
+  grid-column:1/-1;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:36px;
+  padding:10px 12px 6px;
+  margin-top:4px;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  font-weight:850;
+  color:#111827;
+  border-bottom:2px solid var(--line);
+  border-radius:4px 4px 0 0;
+}
+.ach-group-label::after {
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,rgba(17,24,39,.22),rgba(17,24,39,0));
+}
+.ach-group-label.level-one { order:1; color:var(--red); background:linear-gradient(90deg,var(--red-light),transparent); border-bottom-color:var(--red); }
+.ach-group-label.level-two { order:4; color:#111827; background:linear-gradient(90deg,#f0f0f5,transparent); border-bottom-color:#111827; }
+.ach-group-label.level-three { order:7; color:#4a5068; background:linear-gradient(90deg,#f5f5f8,transparent); border-bottom-color:#4a5068; }
+.ach-group-label.level-one::before,
+.ach-group-label.level-two::before,
+.ach-group-label.level-three::before {
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+/* 閳光偓閳光偓 Achievement card 閳光偓閳光偓 */
+.ach-card {
+  position:relative;
+  min-width:0;
+  background:linear-gradient(145deg,#f04444 0%,#df232d 62%,#b91c1c 100%);
+  border:1px solid rgba(127,29,29,.45);
+  border-radius:10px;
+  box-shadow:0 12px 24px rgba(229,57,53,.16), inset 0 1px 0 rgba(255,255,255,.22);
+  display:flex; align-items:stretch;
+  min-height:0; cursor:pointer;
+  transition:transform .2s, background .2s, border-color .2s, box-shadow .2s;
+  overflow:hidden; flex-direction:column;
+}
+.ach-card.level-one { order:2; }
+.ach-card.level-two { order:5; }
+.ach-card.level-three { order:8; }
+.ach-card.ghosted { display:none; }
+.ach-card::before {
+  content:attr(data-no);
+  position:absolute; top:10px; left:10px;
+  min-width:24px; height:18px; padding:0 7px;
+  border-radius:999px; background:#111827; color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:9px; font-weight:800; letter-spacing:.8px;
+  box-shadow:0 5px 12px rgba(0,0,0,.18);
+}
+.ach-card::after {
+  content:"";
+  position:absolute; inset:auto -18px -32px auto;
+  width:92px; height:92px; border-radius:50%;
+  background:rgba(255,255,255,.13);
+}
+.ach-card:hover { transform:translateY(-4px); border-color:#7f1d1d; box-shadow:0 18px 30px rgba(0,0,0,.18); }
+.ach-card.open {
+  grid-column:span 1;
+  min-height:240px;
+  margin:0;
+  background:var(--card);
+  border-color:#111827;
+  box-shadow:0 0 0 2px rgba(17,24,39,0.08), var(--shadow-md);
+  overflow:hidden;
+  z-index:1;
+}
+.ach-card.open:hover { transform:none; }
+.slide.active .ach-card { animation:popIn .5s cubic-bezier(.22,1,.36,1) both; }
+.slide.active .ach-card:nth-of-type(2){animation-delay:.10s}
+.slide.active .ach-card:nth-of-type(3){animation-delay:.16s}
+.slide.active .ach-card:nth-of-type(4){animation-delay:.22s}
+.slide.active .ach-card:nth-of-type(5){animation-delay:.28s}
+.slide.active .ach-card:nth-of-type(6){animation-delay:.34s}
+.slide.active .ach-card:nth-of-type(7){animation-delay:.40s}
+
+/* Card top row: always visible */
+.card-top {
+  display:flex; align-items:stretch; flex:1; min-height:0; position:relative; z-index:1;
+}
+
+/* Left number section */
+.card-num {
+  width:100%; border-right:0;
+  display:flex; align-items:center; justify-content:center;
+  padding:28px 12px 14px; flex-shrink:0; transition:background .2s;
+  min-height:0;
+}
+.ach-card.open .card-top { flex-direction:column; }
+.ach-card.open .card-num {
+  width:100%;
+  min-height:82px;
+  background:#111827;
+  border-right:0;
+  border-bottom:1px solid #27272f;
+  padding:22px 16px 12px;
+}
+.num-wrap { display:flex; flex-direction:column; align-items:center; }
+.big-num { font-size:clamp(23px,2.4vw,34px); font-weight:800; color:#fff; line-height:1; letter-spacing:0; }
+.big-suffix { font-size:11px; font-weight:400; color:rgba(255,255,255,.82); margin-left:2px; }
+.num-label { font-size:8px; letter-spacing:1.8px; text-transform:uppercase; color:rgba(255,255,255,.78); margin-top:10px; display:block; text-align:center; }
+
+/* Right info section: hidden until open */
+.card-info {
+  flex:1; padding:14px 14px; display:none; flex-direction:column;
+  justify-content:center; position:relative; min-height:0; background:#fff;
+  overflow:hidden;
+}
+.ach-card.open .card-info { display:flex; padding:14px 14px 16px; overflow:hidden; justify-content:flex-start; min-height:auto; flex-shrink:0; }
+/* collapsed: hide all info text */
+.card-info-name { font-size:16px; font-weight:850; color:var(--text); margin-bottom:14px; display:none; }
+.card-info-row {
+  display:none;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.info-item {
+  min-width:0;
+  min-height:58px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:8px;
+  padding:8px 9px;
+  background:#f6f7f9;
+  border:1px solid #e4e6ea;
+  border-radius:7px;
+}
+.info-label {
+  align-self:flex-start;
+  font-size:7px;
+  color:#fff;
+  background:#111827;
+  border-radius:4px;
+  padding:3px 6px;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+  line-height:1;
+  white-space:nowrap;
+}
+.info-value {
+  color:var(--text);
+  font-size:14px;
+  font-weight:850;
+  line-height:1.05;
+}
+.info-value.red { color:var(--red); }
+.info-value.green { color:var(--red); }
+.info-value.neutral { color:var(--text); }
+.rank-row {
+  display:none;
+  grid-column:1/-1;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.rank-cell {
+  min-height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:7px 9px;
+  background:#111827;
+  border-radius:7px;
+  color:#fff;
+}
+.rank-cell span:first-child {
+  font-size:7px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#cbd5e1;
+}
+.rank-cell b {
+  font-size:12px;
+  color:#fff;
+}
+.rank-cell.best b,
+.rank-cell.focus b {
+  color:#ff6b6b;
+}
+.rank-badge {
+  display:none;
+  font-size:9px; font-weight:700; padding:2px 8px; border-radius:20px;
+  background:#0f172a; color:#fff; align-self:flex-start; margin-bottom:4px;
+}
+.peer-icon {
+  width:24px; height:24px; border:1px solid #111827; border-radius:5px;
+  display:none; align-items:center; justify-content:center;
+  font-size:12px; color:#fff; cursor:pointer; transition:all .2s;
+  background:#111827; position:absolute; bottom:7px; right:7px;
+}
+.peer-icon:hover { border-color:var(--red); color:#fff; background:var(--red); }
+.card-chevron { position:absolute; bottom:8px; right:34px; font-size:10px; color:var(--text3); transition:transform .2s; }
+
+/* open state: reveal everything */
+.ach-card.open .card-info-name { display:block; }
+.ach-card.open .card-info-row { display:grid; }
+.ach-card.open .rank-row { display:grid; }
+.ach-card.open .info-item { min-height:54px; padding:8px 9px; }
+.ach-card.open .info-value { font-size:14px; }
+.ach-card.open .rank-cell { min-height:34px; padding:7px 9px; }
+.ach-card.open .rank-badge { display:none; }
+.ach-card.open .peer-icon { display:none; }
+.ach-card.open .card-chevron { transform:rotate(180deg); color:var(--red); }
+
+/* collapsed: show number only */
+.card-chevron-only { display:none; }
+.ach-card.open .card-chevron-only { display:none; }
+
+/* Expanded detail table */
+.card-expand { display:none; }
+.ach-card.open .card-expand { display:none; }
+.dtbl { width:100%; border-collapse:collapse; }
+.dtbl th { font-size:8px; letter-spacing:1.5px; text-transform:uppercase; color:#d1d5db; padding:6px 10px; text-align:left; border-bottom:1px solid #111827; font-weight:400; background:#111827; }
+.dtbl th.dh { color:#fff; }
+.dtbl td { font-size:11px; padding:5px 10px; border-bottom:1px solid var(--line); color:var(--text2); }
+.dtbl td.dv { color:var(--green); font-weight:700; }
+.dtbl td.neg { color:var(--red); }
+.dtbl td.rk { font-weight:700; color:var(--text); font-size:12px; }
+.dtbl td.rk1 { color:var(--red); }
+.dtbl td.rk2 { color:var(--amber); }
+.dtbl tr:last-child td { border-bottom:none; }
+.dtbl tr:hover td { background:rgba(229,57,53,.02); }
+
+/* 閳光偓閳光偓 MODAL 閳光偓閳光偓 */
+#peer-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9999; align-items:center; justify-content:center; }
+#peer-modal.show { display:flex; }
+.modal-box { background:var(--card); border:1px solid var(--line); border-top:3px solid var(--red); border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,.15); width:540px; max-width:94vw; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
+.modal-box.wide { width:1080px; max-height:82vh; }
+.modal-hdr { display:flex; align-items:center; justify-content:space-between; padding:11px 18px; border-bottom:1px solid var(--line); flex-shrink:0; background:var(--s2); }
+.modal-title { font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--red); font-weight:700; }
+.modal-close { background:none; border:none; color:var(--text3); font-size:16px; cursor:pointer; font-family:Arial; padding:2px 6px; border-radius:3px; }
+.modal-close:hover { background:var(--red-light); color:var(--red); }
+.modal-body { overflow-y:auto; padding:0; }
+.modal-body.wide { overflow:auto; }
+.mtbl { width:100%; border-collapse:collapse; }
+.mtbl th { font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); padding:7px 12px; text-align:left; border-bottom:1px solid var(--line); font-weight:400; background:var(--s3); position:sticky; top:0; }
+.mtbl td { font-size:11px; padding:6px 12px; border-bottom:1px solid var(--line); color:var(--text2); }
+.mtbl td.dbs-n { color:var(--red); font-weight:700; }
+.mtbl td.hi { color:var(--green); font-weight:700; }
+.mtbl td.lo { color:var(--red); }
+.mtbl tr:hover td { background:var(--s2); }
+.fs-data td.detail-link {
+  color:#334155;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  cursor:pointer;
+  font-weight:750;
+}
+.fs-data td.detail-link:hover { color:var(--red); }
+
+/* 閳烘劏鏅查埡鎰ㄦ櫜 SLIDES 2閳? 閳烘劏鏅查埡鎰ㄦ櫜 */
+.slide-inner { padding:28px 44px; flex:1; overflow-y:auto; background:var(--bg); }
+.slide-hero {
+  text-align:left; margin-bottom:24px;
+}
+.slide-hero-title {
+  display:inline-flex; align-items:flex-end; gap:16px; justify-content:center;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:clamp(34px, 5vw, 52px); line-height:.98; letter-spacing:.03em;
+  color:var(--text); font-weight:500; white-space:nowrap;
+}
+.slide-hero-title::after {
+  content:"";
+  width:72px; height:3px; margin-bottom:8px;
+  background:linear-gradient(90deg,var(--red),rgba(229,57,53,.18));
+  border-radius:999px;
+}
+.slide-hero-title .accent {
+  color:var(--red);
+  font-style:italic;
+  font-weight:400;
+  letter-spacing:.08em;
+}
+.slide-hero-subtitle {
+  margin-top:8px;
+  font-size:18px;
+  font-weight:700;
+  color:var(--text);
+  line-height:1.3;
+}
+.slide-hero-note {
+  margin-top:10px;
+  font-size:14px;
+  color:var(--text2);
+  line-height:1.65;
+}
+.eyebrow { font-size:7px; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:4px; }
+.headline { font-size:22px; font-weight:700; color:var(--text); line-height:1.3; margin-bottom:8px; }
+.subhead { font-size:14px; color:var(--text2); line-height:1.7; margin-bottom:22px; }
+.tbl-card { background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; box-shadow:var(--shadow); }
+.tbl { width:100%; border-collapse:collapse; }
+.tbl thead th { font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--text3); padding:10px 14px; text-align:left; font-weight:400; background:var(--s3); border-bottom:1px solid var(--line); }
+.tbl thead th.col-dbs { color:var(--red); }
+.tbl tbody tr { border-top:1px solid var(--line); opacity:0; transform:translateX(-8px); transition:opacity .4s,transform .4s; }
+.tbl tbody tr:hover { background:var(--s2); }
+.slide.active .tbl tbody tr{opacity:1;transform:translateX(0)}
+.slide.active .tbl tbody tr:nth-child(1){transition-delay:.2s}
+.slide.active .tbl tbody tr:nth-child(2){transition-delay:.3s}
+.slide.active .tbl tbody tr:nth-child(3){transition-delay:.4s}
+.slide.active .tbl tbody tr:nth-child(4){transition-delay:.5s}
+.slide.active .tbl tbody tr:nth-child(5){transition-delay:.6s}
+.tbl td { padding:10px 14px; font-size:12px; }
+.tbl td.metric { color:var(--text2); font-size:10px; width:155px; }
+.tbl td.dv { color:var(--green); font-weight:700; }
+.tbl td.neg { color:var(--red); }
+.tbl td.neut { color:var(--text3); }
+.bar-row { display:flex; align-items:center; gap:8px; }
+.bar-val { font-size:11px; font-weight:700; min-width:44px; text-align:right; }
+.bar-track { flex:1; height:6px; background:var(--s3); border-radius:3px; overflow:hidden; }
+.bar-fill { height:100%; border-radius:3px; width:0; transition:width .9s cubic-bezier(.22,1,.36,1); }
+.callout { margin-top:14px; padding:10px 16px; background:var(--red-light); border-left:3px solid var(--red); border-radius:0 6px 6px 0; font-size:11px; color:var(--text2); line-height:1.65; opacity:0; transition:opacity .6s ease .9s; }
+.slide.active .callout { opacity:1; }
+.scorecards { display:flex; gap:10px; margin-top:14px; }
+.scorecard { flex:1; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px; box-shadow:var(--shadow); opacity:0; transform:translateY(8px); transition:opacity .5s,transform .5s; }
+.slide.active .scorecard{opacity:1;transform:translateY(0)}
+.slide.active .scorecard:nth-child(1){transition-delay:.75s}
+.slide.active .scorecard:nth-child(2){transition-delay:.9s}
+.slide.active .scorecard:nth-child(3){transition-delay:1.05s}
+.sc-label{font-size:7px;letter-spacing:2px;text-transform:uppercase;color:var(--text3)}
+.sc-value{font-size:18px;font-weight:700;margin:3px 0}
+.sc-note{font-size:9px;color:var(--text3)}
+.s2-layout { display:grid; grid-template-columns:1fr 1.78fr; gap:28px; min-height:0; position:relative; }
+#slide-2 .slide-inner, #slide-3 .slide-inner {
+  position:relative;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(229,57,53,.08), transparent 28%),
+    linear-gradient(135deg,#f7f8fb 0%,#f1f3f7 100%);
+}
+#slide-2 .slide-inner::before, #slide-3 .slide-inner::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background-size:180px 180px;
+  background-repeat:repeat;
+  opacity:.03;
+  pointer-events:none;
+  transform:rotate(-7deg);
+  transform-origin:center;
+  filter:saturate(.9);
+}
+.statement-panel {
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(17,24,39,.10);
+  overflow:hidden;
+  position:relative;
+  z-index:2;
+}
+@media (max-width: 900px) {
+  .s2-layout { grid-template-columns:1fr; }
+}
+.statement-title {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:15px 20px;
+  background:#111827;
+  color:#fff;
+}
+.statement-title b { font-size:14px; letter-spacing:.8px; text-transform:uppercase; }
+.statement-title span { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#cbd5e1; }
+.statement-body { padding:14px; display:flex; flex-direction:column; gap:10px; }
+.fs-line {
+  border:1px solid #e1e4ea;
+  border-radius:8px;
+  background:#fff;
+  overflow:hidden;
+  box-shadow:0 5px 14px rgba(17,24,39,.04);
+}
+.fs-line.static { padding:16px 18px; display:flex; align-items:center; justify-content:space-between; }
+.fs-trigger {
+  width:100%;
+  border:0;
+  background:linear-gradient(90deg,#fff 0%,#fff 72%,#fff0f0 100%);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 16px;
+  font-family:Arial,Helvetica,sans-serif;
+  cursor:pointer;
+}
+.fs-name { font-size:14px; font-weight:800; letter-spacing:.2px; }
+.fs-side { font-size:8px; letter-spacing:1.8px; text-transform:uppercase; color:var(--text3); }
+.fs-meta {
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0;
+}
+.fs-keyword {
+  font-family:Georgia,serif;
+  font-style:italic;
+  font-size:15px;
+  letter-spacing:.4px;
+  color:var(--red);
+  text-transform:lowercase;
+}
+.fs-index {
+  min-width:28px;
+  height:28px;
+  border-radius:50%;
+  background:var(--red);
+  color:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:900;
+  box-shadow:0 6px 14px rgba(229,57,53,.22);
+}
+.fs-value { font-size:13px; font-weight:850; color:var(--red); }
+.fs-chevron { color:var(--text3); font-size:14px; transition:transform .2s; }
+.fs-line.open .fs-chevron { transform:rotate(180deg); color:var(--red); }
+.fs-detail {
+  display:none;
+  border-top:1px solid var(--line);
+  background:linear-gradient(135deg,#f8f9fb 0%,#f1f3f6 100%);
+  padding:20px;
+  gap:14px;
+  overflow-x:auto;
+}
+.fs-detail-grid { display:grid; gap:14px; }
+.fs-dbs-line { font-size:13px; line-height:1.55; color:var(--text2); background:#fff; border-left:4px solid var(--red); border-radius:7px; padding:12px 14px; }
+.fs-dbs-line b { color:var(--red); font-size:12px; letter-spacing:1.5px; text-transform:uppercase; margin-right:8px; }
+.fs-peer-note {
+  background:#111827;
+  border:1px solid #111827;
+  border-radius:7px;
+  color:#fff;
+  padding:12px 14px;
+}
+.fs-peer-note b {
+  display:block;
+  font-size:10px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:#cbd5e1;
+  margin-bottom:6px;
+}
+.fs-peer-note span {
+  display:block;
+  font-size:13px;
+  line-height:1.55;
+}
+.fs-mini {
+  min-height:68px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:7px;
+  padding:9px;
+}
+.fs-mini.dark {
+  background:#111827;
+  border-color:#111827;
+  color:#fff;
+}
+.fs-mini-title {
+  font-size:7px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:var(--text3);
+  margin-bottom:6px;
+}
+.fs-mini.dark .fs-mini-title { color:#cbd5e1; }
+.fs-mini-text {
+  font-size:11px;
+  line-height:1.45;
+  color:var(--text2);
+}
+.fs-mini.dark .fs-mini-text { color:#fff; }
+.fs-mini-text strong { color:var(--red); font-size:13px; }
+.fs-data {
+  width:100%;
+  min-width:620px;
+  border-collapse:collapse;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:7px;
+  overflow:hidden;
+}
+.fs-data th { background:#111827; color:#fff; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; text-align:left; padding:10px 11px; }
+.fs-data td {
+  font-size:12px;
+  color:var(--text2);
+  padding:9px 10px;
+  border-top:1px solid var(--line);
+}
+.fs-data tr.sub-row td:first-child {
+  position:relative;
+  padding-left:32px;
+  color:#4f5f7c;
+}
+.fs-data tr.sub-row td:first-child::before {
+  content:"";
+  position:absolute;
+  left:14px;
+  top:50%;
+  width:10px;
+  height:1px;
+  background:#8b95a8;
+}
+.fs-data tr.sub-row.deep td:first-child {
+  padding-left:46px;
+}
+.fs-data tr.sub-row.deep td:first-child::before {
+  left:26px;
+}
+.fs-data td.dbs { color:var(--red); font-weight:800; }
+.fs-data .boxed {
+  display:inline-block;
+  border:0;
+  border-radius:0;
+  padding:0;
+  line-height:1.15;
+  background:transparent;
+  color:inherit;
+  font-weight:850;
+  font-size:inherit;
+}
+.fs-data td.dbs .boxed,
+.fs-data td:nth-child(3) .boxed,
+.fs-data td:nth-child(4) .boxed {
+  border:1.5px solid #111827;
+  border-radius:3px;
+  padding:1px 5px;
+  background:#fff;
+}
+.fs-chart-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(280px,1fr));
+  gap:12px;
+}
+.fs-chart-card {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:12px;
+  min-width:0;
+}
+.fs-chart-title {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.fs-chart-title b {
+  font-size:11px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:#111827;
+}
+.fs-chart-title span {
+  font-size:10px;
+  color:var(--text3);
+  letter-spacing:.8px;
+}
+.fs-chart-rows {
+  display:grid;
+  gap:7px;
+}
+.fs-chart-row {
+  display:grid;
+  grid-template-columns:46px minmax(110px,1fr) 82px;
+  gap:8px;
+  align-items:center;
+}
+.fs-chart-bank {
+  font-size:11px;
+  font-weight:800;
+  color:var(--text2);
+}
+.fs-chart-row.dbs .fs-chart-bank {
+  color:var(--red);
+}
+.fs-chart-track {
+  height:19px;
+  border-radius:999px;
+  background:#f0f2f5;
+  overflow:hidden;
+  position:relative;
+}
+.fs-chart-bar {
+  display:block;
+  height:100%;
+  min-width:8px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#111827,#374151);
+  transform-origin:left center;
+}
+.fs-chart-row.dbs .fs-chart-bar {
+  background:linear-gradient(90deg,#ef4444,#b91c1c);
+}
+.fs-chart-value {
+  font-size:9px;
+  font-weight:800;
+  color:var(--text2);
+  white-space:nowrap;
+}
+.fs-chart-row.dbs .fs-chart-value {
+  color:var(--red);
+}
+.fs-chart-chip {
+  display:inline-block;
+  margin-left:3px;
+  border:1.5px solid #111827;
+  border-radius:4px;
+  padding:1px 4px;
+  line-height:1.1;
+  background:#fff;
+  color:inherit;
+}
+.fs-expense-visuals {
+  width:100%;
+  min-width:920px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(360px,1fr));
+  gap:14px;
+}
+.fs-vertical-card {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:13px 14px 12px;
+  min-width:0;
+}
+.fs-vertical-plot {
+  height:240px;
+  display:grid;
+  grid-template-columns:repeat(8,minmax(54px,1fr));
+  gap:10px;
+  align-items:end;
+  padding:14px 4px 0;
+  border-top:1px solid var(--line);
+}
+.fs-vertical-item {
+  height:100%;
+  display:grid;
+  grid-template-rows:1fr auto;
+  gap:8px;
+  min-width:0;
+}
+.fs-vertical-barwrap {
+  height:170px;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  border-bottom:1px solid #d9dee6;
+}
+.fs-vertical-bar {
+  width:34px;
+  min-height:14px;
+  border-radius:8px 8px 0 0;
+  background:linear-gradient(180deg,#111827,#374151);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:6px;
+  color:#fff;
+  font-size:9px;
+  font-weight:850;
+  text-align:center;
+  transform-origin:bottom center;
+}
+.fs-vertical-item.dbs .fs-vertical-bar {
+  background:linear-gradient(180deg,#ef4444,#b91c1c);
+}
+.fs-vertical-caption {
+  text-align:center;
+  min-width:0;
+}
+.fs-vertical-bank {
+  font-size:10px;
+  font-weight:850;
+  color:var(--text2);
+}
+.fs-vertical-item.dbs .fs-vertical-bank,
+.fs-vertical-item.dbs .fs-vertical-change {
+  color:var(--red);
+}
+.fs-vertical-change {
+  display:inline-block;
+  margin-top:4px;
+  font-size:9px;
+  font-weight:850;
+  color:var(--text2);
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:transparent;
+  white-space:nowrap;
+}
+.fs-vertical-item.dbs .fs-vertical-change,
+.fs-vertical-item:nth-child(2) .fs-vertical-change,
+.fs-vertical-item:nth-child(3) .fs-vertical-change {
+  border:1.5px solid #111827;
+  border-radius:4px;
+  padding:1px 5px;
+  background:#fff;
+}
+.fs-expense-bottom {
+  grid-column:1/-1;
+  width:100%;
+  min-width:920px;
+  margin-top:14px;
+}
+.fs-expense-bottom .fs-chart-row {
+  grid-template-columns:58px minmax(280px,1fr) 130px;
+}
+.fs-column-card {
+  min-width:920px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:13px 14px 12px;
+}
+.fs-data + .fs-column-card,
+.fs-data + .fs-pie-card {
+  margin-top:16px;
+}
+.fs-data + .fs-column-card::before,
+.fs-data + .fs-pie-card::before {
+  content:"";
+  display:block;
+  height:1px;
+  background:var(--line);
+  margin:-4px 0 14px;
+}
+.fs-column-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:12px;
+}
+.fs-column-title {
+  font-size:11px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:#111827;
+  font-weight:850;
+}
+.fs-column-legend {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:9px;
+  color:var(--text3);
+}
+.fs-column-legend span::before {
+  content:"";
+  display:inline-block;
+  width:9px;
+  height:9px;
+  border-radius:2px;
+  margin-right:5px;
+  background:#cbd5e1;
+}
+.fs-column-legend span:last-child::before {
+  background:var(--red);
+}
+.fs-column-plot {
+  height:260px;
+  display:grid;
+  grid-template-columns:repeat(8,minmax(86px,1fr));
+  gap:12px;
+  align-items:end;
+  padding:12px 4px 0;
+  border-top:1px solid var(--line);
+}
+.fs-col-group {
+  height:100%;
+  display:grid;
+  grid-template-rows:1fr auto;
+  gap:8px;
+  min-width:0;
+}
+.fs-col-bars {
+  height:190px;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  gap:8px;
+  border-bottom:1px solid #d9dee6;
+}
+.fs-col {
+  width:30px;
+  min-height:6px;
+  border-radius:5px 5px 0 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  color:#111827;
+  font-size:10px;
+  font-weight:850;
+  padding-top:4px;
+  transform-origin:bottom center;
+}
+.fs-col.prev {
+  background:#cbd5e1;
+}
+.fs-col.now {
+  background:linear-gradient(180deg,#ef4444,#b91c1c);
+  color:#fff;
+}
+.fs-col.na {
+  background:repeating-linear-gradient(45deg,#e5e7eb 0,#e5e7eb 4px,#f8fafc 4px,#f8fafc 8px);
+  color:var(--text3);
+}
+.fs-col-caption {
+  text-align:center;
+  min-width:0;
+}
+.fs-col-bank {
+  font-size:11px;
+  font-weight:850;
+  color:var(--text2);
+}
+.fs-col-group.dbs .fs-col-bank,
+.fs-col-group.dbs .fs-col-change {
+  color:var(--red);
+}
+.fs-col-change {
+  display:inline-block;
+  margin-top:4px;
+  font-size:10px;
+  font-weight:850;
+  color:var(--text2);
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:transparent;
+}
+.fs-col-group.dbs .fs-col-change,
+.fs-column-plot .fs-col-group:nth-child(2) .fs-col-change,
+.fs-column-plot .fs-col-group:nth-child(3) .fs-col-change {
+  border:1.5px solid #111827;
+  border-radius:4px;
+  padding:1px 5px;
+  background:#fff;
+}
+.fs-pie-card {
+  min-width:920px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:9px;
+  box-shadow:var(--shadow);
+  padding:13px 14px 14px;
+}
+.fs-pie-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:12px;
+}
+.fs-pie-title {
+  font-size:9px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:#111827;
+  font-weight:850;
+}
+.fs-pie-note {
+  font-size:8px;
+  color:var(--text3);
+  letter-spacing:.6px;
+}
+.fs-pie-grid {
+  display:grid;
+  grid-template-columns:repeat(8,minmax(86px,1fr));
+  gap:12px;
+  border-top:1px solid var(--line);
+  padding-top:14px;
+}
+.fs-pie-item {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+  min-width:0;
+}
+.fs-pie {
+  --pct:0;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:conic-gradient(#111827 calc(var(--pct) * 1%), #e8ebf0 0);
+  display:grid;
+  place-items:center;
+  box-shadow:inset 0 0 0 1px rgba(17,24,39,.08);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.fs-pie-item:hover .fs-pie {
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:inset 0 0 0 1px rgba(17,24,39,.08), 0 10px 20px rgba(17,24,39,.10);
+}
+.fs-pie::after {
+  content:"";
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+}
+.fs-pie-item.dbs .fs-pie {
+  background:conic-gradient(var(--red) calc(var(--pct) * 1%), #f3dada 0);
+}
+.fs-pie.na {
+  background:repeating-conic-gradient(#d1d5db 0 10deg,#f8fafc 10deg 20deg);
+}
+.fs-pie-bank {
+  font-size:10px;
+  font-weight:850;
+  color:var(--text2);
+}
+.fs-pie-item.dbs .fs-pie-bank,
+.fs-pie-item.dbs .fs-pie-ratio {
+  color:var(--red);
+}
+.fs-pie-ratio {
+  font-size:12px;
+  font-weight:850;
+  color:#111827;
+}
+.fs-pie-base {
+  font-size:8px;
+  line-height:1.25;
+  color:var(--text3);
+  text-align:center;
+}
+#fs-overlay {
+  display:none;
+  position:fixed;
+  inset:62px 28px 18px;
+  z-index:9998;
+  background:rgba(245,246,248,.94);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 24px 70px rgba(17,24,39,.22);
+  padding:18px;
+}
+#fs-overlay.show {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.fs-overlay-head {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  flex-shrink:0;
+}
+.fs-overlay-title {
+  font-size:22px;
+  font-weight:850;
+  color:var(--text);
+}
+.fs-overlay-close {
+  width:34px;
+  height:34px;
+  border:1px solid #111827;
+  border-radius:7px;
+  background:#111827;
+  color:#fff;
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+}
+.fs-overlay-body {
+  min-height:0;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:18px;
+}
+#fs-overlay .fs-detail-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  width:100%;
+  min-width:980px;
+  flex:0 0 auto;
+}
+#fs-overlay .fs-dbs-line,
+#fs-overlay .fs-peer-note {
+  min-height:116px;
+  padding:18px 20px;
+  font-size:19px;
+  line-height:1.45;
+  border-radius:10px;
+}
+#fs-overlay .fs-dbs-line b,
+#fs-overlay .fs-peer-note b {
+  display:block;
+  margin:0 0 10px;
+  font-size:12px;
+  letter-spacing:2px;
+}
+#fs-overlay .fs-peer-note span {
+  font-size:19px;
+  line-height:1.45;
+}
+#fs-overlay .fs-data {
+  min-width:1120px;
+  width:100%;
+  box-sizing:border-box;
+  flex:0 0 auto;
+  box-shadow:var(--shadow);
+  margin-bottom:4px;
+  position:relative;
+  z-index:1;
+}
+#fs-overlay .fs-data th { background:#111827; color:#fff; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; text-align:left; padding:12px 14px; }
+#fs-overlay .fs-data td {
+  font-size:15px;
+  padding:14px 16px;
+  line-height:1.25;
+  min-width:120px;
+}
+#fs-overlay .fs-data th:first-child,
+#fs-overlay .fs-data td:first-child {
+  min-width:180px;
+}
+#fs-overlay .fs-data tr.sub-row td:first-child {
+  padding-left:60px;
+}
+#fs-overlay .fs-data tr.sub-row td:first-child::before {
+  left:32px;
+  width:16px;
+  height:2px;
+  background:#8b95a8;
+}
+#fs-overlay .fs-data tr.sub-row.deep td:first-child {
+  padding-left:86px;
+}
+#fs-overlay .fs-data tr.sub-row.deep td:first-child::before {
+  left:58px;
+}
+#fs-overlay .fs-data .boxed {
+  font-size:14px;
+  border:0;
+  background:transparent;
+  border-radius:0;
+  padding:0;
+}
+#fs-overlay .fs-data td.dbs .boxed,
+#fs-overlay .fs-data td:nth-child(3) .boxed,
+#fs-overlay .fs-data td:nth-child(4) .boxed {
+  padding:2px 7px;
+  border-radius:5px;
+  border:1.5px solid #111827;
+  background:#fff;
+}
+#fs-overlay .fs-data .yoy-value {
+  font-size:13.5px;
+  font-style:italic;
+  font-weight:750;
+}
+#fs-overlay .fs-data .boxed.yoy-value {
+  font-size:12.5px;
+  font-style:italic;
+}
+#fs-overlay .fs-chart-grid {
+  grid-template-columns:repeat(3,minmax(320px,1fr));
+  min-width:1060px;
+  width:100%;
+  box-sizing:border-box;
+  flex:0 0 auto;
+  margin-top:8px;
+}
+#fs-overlay .fs-chart-card {
+  padding:16px;
+}
+#fs-overlay .fs-chart-row {
+  grid-template-columns:54px minmax(160px,1fr) 104px;
+  gap:10px;
+}
+#fs-overlay .fs-chart-bank,
+#fs-overlay .fs-chart-value {
+  font-size:12px;
+}
+#fs-overlay .fs-chart-track {
+  height:24px;
+}
+#fs-overlay .fs-column-card {
+  min-width:1120px;
+  width:100%;
+  box-sizing:border-box;
+  flex:0 0 auto;
+  margin-top:8px;
+  position:relative;
+  z-index:2;
+  clear:both;
+}
+#fs-overlay .fs-pie-card {
+  min-width:1060px;
+  width:100%;
+  box-sizing:border-box;
+  flex:0 0 auto;
+  margin-top:8px;
+  position:relative;
+  z-index:2;
+  clear:both;
+}
+#fs-overlay .fs-data + .fs-chart-grid,
+#fs-overlay .fs-chart-grid + .fs-column-card,
+#fs-overlay .fs-chart-grid + .fs-pie-card,
+#fs-overlay .fs-column-card + .fs-column-card,
+#fs-overlay .fs-column-card + .fs-pie-card,
+#fs-overlay .fs-pie-card + .fs-column-card,
+#fs-overlay .fs-pie-card + .fs-pie-card {
+  margin-top:22px;
+}
+#fs-overlay .fs-pie {
+  width:86px;
+  height:86px;
+}
+#fs-overlay .fs-pie::after {
+  width:50px;
+  height:50px;
+}
+#fs-overlay .fs-column-plot {
+  height:330px;
+  grid-template-columns:repeat(8,minmax(92px,1fr));
+  gap:0;
+  padding:20px 4px 0 170px;
+}
+#fs-overlay .fs-col-bars {
+  height:250px;
+  gap:12px;
+}
+#fs-overlay .fs-col {
+  width:42px;
+  font-size:12px;
+  padding-top:7px;
+}
+#fs-overlay .fs-col-bank {
+  font-size:12px;
+}
+#fs-overlay .fs-col-change {
+  font-size:11px;
+  padding:0;
+}
+#fs-overlay .fs-col-group.dbs .fs-col-change,
+#fs-overlay .fs-column-plot .fs-col-group:nth-child(2) .fs-col-change,
+#fs-overlay .fs-column-plot .fs-col-group:nth-child(3) .fs-col-change {
+  padding:2px 7px;
+}
+#fs-overlay .fs-column-title {
+  font-size:13px;
+  letter-spacing:1.8px;
+}
+#fs-overlay .fs-column-legend {
+  font-size:11px;
+}
+#fs-overlay .fs-vertical-plot {
+  height:300px;
+  grid-template-columns:repeat(8,minmax(66px,1fr));
+  gap:12px;
+}
+#fs-overlay .fs-vertical-barwrap {
+  height:220px;
+}
+#fs-overlay .fs-vertical-bar {
+  width:42px;
+  font-size:11px;
+  padding-top:7px;
+}
+#fs-overlay .fs-vertical-bank {
+  font-size:12px;
+}
+#fs-overlay .fs-vertical-change {
+  font-size:10.5px;
+  padding:0;
+}
+#fs-overlay .fs-vertical-item.dbs .fs-vertical-change,
+#fs-overlay .fs-vertical-item:nth-child(2) .fs-vertical-change,
+#fs-overlay .fs-vertical-item:nth-child(3) .fs-vertical-change {
+  padding:2px 6px;
+}
+.statement-split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.substatement {
+  border:1px dashed var(--line2);
+  border-radius:9px;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.substatement h3 {
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--text3);
+  margin:0;
+}
+.bs-category {
+  margin-top:6px;
+  padding:10px 4px 2px;
+  border-top:1px dashed var(--line2);
+}
+.bs-category-label {
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--text3);
+  font-weight:800;
+  margin-bottom:8px;
+}
+.bs-category-name {
+  font-size:13px;
+  font-weight:850;
+  color:var(--text);
+  line-height:1.25;
+  padding-left:10px;
+  border-left:3px solid var(--red);
+}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:24px}
+.summary-grid>div{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 12px 26px rgba(17,24,39,.07);
+  padding:26px 28px 22px;
+}
+.col-title{font-size:16px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:22px;line-height:1.25;font-weight:850}
+.col-title.red{color:var(--red)}
+.bi{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start;opacity:0;transform:translateX(-7px);transition:opacity .4s,transform .4s}
+.bi.right{transform:translateX(7px)}
+.slide.active .bi{opacity:1;transform:translateX(0)}
+.bdot{width:9px;height:9px;border-radius:50%;background:var(--line2);margin-top:9px;flex-shrink:0}
+.btxt{font-size:16px;color:var(--text2);line-height:1.6}
+.closing{margin-top:22px;padding:16px 22px;background:var(--red-light);border:1px solid rgba(229,57,53,.2);border-radius:9px;font-size:14px;font-weight:700;color:var(--text);line-height:1.7;opacity:0;transition:opacity .7s ease 1s}
+.slide.active .closing{opacity:1}
+.closing em{color:var(--red);font-style:normal}
+</style>
+</head>
+<body>
+<div id="topbar"></div>
+<div id="chrome">
+  <div id="slide-label">DBS China 鈥?2025 Peer Performance Review</div>
+  <div id="nav-dots">
+    <button class="dot active" onclick="goTo(0)"></button>
+    <button class="dot" onclick="goTo(1)"></button>
+    <button class="dot" onclick="goTo(2)"></button>
+    <button class="dot" onclick="goTo(3)"></button>
+  </div>
+</div>
+
+<div id="stage">
+
+<!-- ═══════════════════════════════════════ COVER ═══════════════════════════════════════ -->
+<div class="slide active cover-slide" id="slide-0">
+  <div class="cover-glow cg1"></div>
+  <div class="cover-glow cg2"></div>
+  <div class="cover-content">
+    <div class="cover-title">DBS <em>2025</em><br>Peer Performance Analysis</div>
+    <div class="cover-sub">China Bank Legal Entity</div>
+  </div>
+  <div class="cover-bar"></div>
+</div>
+
+<!-- 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 SLIDE 1 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 -->
+<div class="slide" id="slide-1">
+  <div class="s1-header">
+    <div class="s1-eyebrow">Where <span class="accent">we are</span></div>
+    <div class="s1-headline">DBS market position &amp; profitability ranking</div>
+  </div>
+  <div class="s1-body">
+
+    <!-- LEFT -->
+    <div class="s1-left" id="s1-left">
+      <div class="yr-row">
+        <span class="yr-label">Metric</span>
+        <button class="yr-btn active" id="btnAsset" onclick="setMetric(&#39;asset&#39;)">Total Asset</button>
+        <button class="yr-btn" id="btnNpat" onclick="setMetric(&#39;npat&#39;)">NPAT</button>
+        <button class="expand-btn" id="expand-btn" onclick="toggleExpand()">Expand &rarr;</button>
+      </div>
+      <div class="charts-wrap">
+        <div class="chart-col">
+          <div class="chart-col-title" id="chart-title-2024">2024 Total Asset</div>
+          <div class="chart-col-unit" id="chart-unit-2024">Unit: RMB' Bn</div>
+          <div class="rank-scroll" id="chart-2024"><div class="rrow"><span class="rrank">#1</span><span class="rbank">HSBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 92%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">653.9</span></div></div></div><div class="rrow"><span class="rrank">#2</span><span class="rbank">SCB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 43%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">304.2</span></div></div></div><div class="rrow"><span class="rrank">#3</span><span class="rbank">BEA</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 28%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">197.2</span></div></div></div><div class="rrow"><span class="rrank">#4</span><span class="rbank">Citi</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 25%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">176.1</span></div></div></div><div class="rrow dbs dbs-base"><span class="rrank">#5</span><span class="rbank">DBS</span><div class="rbar-wrap"><div class="rbar" style="background: var(--red); width: 24%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#fff">171.7</span></div></div></div><div class="rrow"><span class="rrank">#6</span><span class="rbank">MUFG</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 22%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">156.4</span></div></div></div><div class="rrow"><span class="rrank">#7</span><span class="rbank">SMBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 21%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">152.2</span></div></div></div><div class="rrow"><span class="rrank">#8</span><span class="rbank">NCB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 21%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">147</span></div></div></div><div class="rrow"><span class="rrank">#9</span><span class="rbank">Fubon</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 20%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">140.8</span></div></div></div><div class="rrow"><span class="rrank">#10</span><span class="rbank">Mizuho</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 19%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">136.6</span></div></div></div><div class="rrow"><span class="rrank">#11</span><span class="rbank">CMBCN</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 15%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">107.9</span></div></div></div><div class="rrow"><span class="rrank">#12</span><span class="rbank">HACN</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 13%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">93.7</span></div></div></div><div class="rrow"><span class="rrank">#13</span><span class="rbank">OCBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 13%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">92.6</span></div></div></div><div class="rrow"><span class="rrank">#14</span><span class="rbank">UOB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 13%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">89.2</span></div></div></div><div class="rrow"><span class="rrank">#15</span><span class="rbank">DB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 12%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">82</span></div></div></div><div class="rrow"><span class="rrank">#16</span><span class="rbank">JPM</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 10%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">73.3</span></div></div></div><div class="rrow"><span class="rrank">#17</span><span class="rbank">BNP</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 10%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">71.2</span></div></div></div></div>
+        </div>
+        <div class="chart-col">
+          <div class="chart-col-title" id="chart-title-2025">2025 Total Asset</div>
+          <div class="chart-col-unit" id="chart-unit-2025">Unit: RMB' Bn</div>
+          <div class="rank-scroll" id="chart-2025"><div class="rrow"><span class="rrank">#1</span><span class="rbank">HSBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 92%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">677.4</span></div></div></div><div class="rrow"><span class="rrank">#2</span><span class="rbank">SCB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 49%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">359.3</span></div></div></div><div class="rrow"><span class="rrank">#3</span><span class="rbank">BEA</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 29%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">210.1</span></div></div></div><div class="rrow dbs dbs-improved"><span class="rrank">#4</span><span class="rbank">DBS</span><div class="rbar-wrap"><div class="rbar" style="background: var(--red); width: 26%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#fff">189.2</span></div></div><span class="jump-badge"><strong>+1</strong> rank</span></div><div class="rrow"><span class="rrank">#5</span><span class="rbank">Citi</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 26%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">188.8</span></div></div></div><div class="rrow"><span class="rrank">#6</span><span class="rbank">MUFG</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 21%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">158.1</span></div></div></div><div class="rrow"><span class="rrank">#7</span><span class="rbank">Fubon</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 21%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">156.3</span></div></div></div><div class="rrow"><span class="rrank">#8</span><span class="rbank">NCB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 21%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">154.5</span></div></div></div><div class="rrow"><span class="rrank">#9</span><span class="rbank">SMBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 20%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">150.4</span></div></div></div><div class="rrow"><span class="rrank">#10</span><span class="rbank">Mizuho</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 18%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">134.5</span></div></div></div><div class="rrow"><span class="rrank">#11</span><span class="rbank">CMBCN</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 15%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">109.1</span></div></div></div><div class="rrow"><span class="rrank">#12</span><span class="rbank">OCBC</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 14%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">100.6</span></div></div></div><div class="rrow"><span class="rrank">#13</span><span class="rbank">HACN</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 11%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">83.4</span></div></div></div><div class="rrow"><span class="rrank">#14</span><span class="rbank">UOB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 11%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">79.7</span></div></div></div><div class="rrow"><span class="rrank">#15</span><span class="rbank">JPM</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 10%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">72.6</span></div></div></div><div class="rrow"><span class="rrank">#16</span><span class="rbank">DB</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 10%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">71.8</span></div></div></div><div class="rrow"><span class="rrank">#17</span><span class="rbank">BNP</span><div class="rbar-wrap"><div class="rbar" style="background: rgb(232, 234, 237); width: 8%; transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);"><span class="rval" style="color:#9aa0b0">61.6</span></div></div></div></div>
+        </div>
+      </div>
+      <!-- Market environment tag -->
+      <div class="me-tag" id="me-tag" onclick="toggleME()">
+        <span class="me-tag-icon">i</span>
+        <span class="me-tag-label">2025 Market Environment for Foreign Banks</span>
+        <span class="me-tag-chev">&#8964;</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: 7 cards -->
+    <div class="s1-right" id="s1-right">
+      <div class="right-hdr">
+        <span class="right-hdr-main">2025 Key Achievements</span>
+        <span class="right-hdr-sub"></span>
+      </div>
+      <div class="ach-group-label level-one">Level 1: Profit &amp; ROE</div>
+      <div class="ach-group-label level-two">Level 2: Income &amp; CIR</div>
+      <div class="ach-group-label level-three">Level 3: Drivers to Income</div>
+
+      <!-- helper macro: each card is built manually for clarity -->
+
+      <!-- 03 Total Income -->
+      <div class="ach-card level-two" data-no="03" id="ach-0" onclick="toggleAch(0)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">+12%<span class="big-suffix"> YoY</span></div>
+              <div class="num-label">Total Income</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #2 YoY</div>
+            <div class="card-info-name">Total Income</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">4,076 Mn</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">+12%</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#4</b></div>
+                <div class="rank-cell focus"><span>YoY rank</span><b>#2</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;income&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Metric</th><th class="dh">DBS Value</th><th class="dh">YoY</th><th class="dh">Rank</th></tr></thead>
+            <tbody>
+              <tr><td>Total Income</td><td class="dv">4,076 Mn</td><td class="dv">+12%</td><td class="rk rk2">#2</td></tr>
+              <tr><td>NII</td><td class="dv">2,169 Mn</td><td class="dv">+10%</td><td class="rk">#4</td></tr>
+              <tr><td>Non-NII</td><td class="dv">1,907 Mn</td><td class="dv">+15%</td><td class="rk">#2</td></tr>
+              <tr><td>vs HSBC / SCB</td><td colspan="3" class="neg">HSBC &nbsp;-3% &nbsp;&nbsp;璺?nbsp;&nbsp; SCB &nbsp;-23%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 01 NPAT -->
+      <div class="ach-card level-one" data-no="01" id="ach-1" onclick="toggleAch(1)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">+185%<span class="big-suffix"> YoY</span></div>
+              <div class="num-label">NPAT</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #1 YoY</div>
+            <div class="card-info-name">NPAT</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">1,005 Mn</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">+185%</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#3</b></div>
+                <div class="rank-cell best"><span>YoY rank</span><b>#1</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;npat&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Metric</th><th class="dh">DBS Value</th><th class="dh">YoY</th><th class="dh">Rank</th></tr></thead>
+            <tbody>
+              <tr><td>NPAT</td><td class="dv">1,005 Mn</td><td class="dv">+185%</td><td class="rk rk1">#1</td></tr>
+              <tr><td>vs HSBC / SCB</td><td colspan="3" class="neg">HSBC &nbsp;-16% &nbsp;&nbsp;璺?nbsp;&nbsp; SCB &nbsp;-26%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 02 ROE -->
+      <div class="ach-card level-one" data-no="02" id="ach-2" onclick="toggleAch(2)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">+427<span class="big-suffix"> bps</span></div>
+              <div class="num-label">ROE</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #1 YoY</div>
+            <div class="card-info-name">ROE</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">6.75%</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">+427 bps</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#2</b></div>
+                <div class="rank-cell best"><span>YoY rank</span><b>#1</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;roe&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Bank</th><th class="dh">ROE 2025</th><th class="dh">YoY</th><th class="dh">Direction</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--red);font-weight:700">DBS</td><td class="dv">6.75%</td><td class="dv">+427 bps</td><td class="rk rk1">&rarr; Best</td></tr>
+              <tr><td>HSBC</td><td>10.14%</td><td class="neg">-259 bps</td><td class="neg">&rarr;</td></tr>
+              <tr><td>SCB</td><td>5.13%</td><td class="neg">-204 bps</td><td class="neg">&rarr;</td></tr>
+              <tr><td>OCBC</td><td>5.19%</td><td class="neg">-72 bps</td><td class="neg">&rarr;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 04 CIR -->
+      <div class="ach-card level-two" data-no="04" id="ach-3" onclick="toggleAch(3)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">-475<span class="big-suffix"> bps</span></div>
+              <div class="num-label">CIR</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #2 YoY</div>
+            <div class="card-info-name">CIR</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">58.48%</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">-475 bps</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#4</b></div>
+                <div class="rank-cell focus"><span>YoY rank</span><b>#2</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;cir&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Bank</th><th class="dh">CIR 2025</th><th class="dh">YoY</th><th class="dh">Direction</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--red);font-weight:700">DBS</td><td class="dv">58.48%</td><td class="dv">-475 bps</td><td class="rk rk1">&rarr; Best</td></tr>
+              <tr><td>HSBC</td><td>55.47%</td><td class="neg">+362 bps</td><td class="neg">&rarr;</td></tr>
+              <tr><td>SCB</td><td class="neg">75.33%</td><td class="neg">+1,921 bps</td><td class="neg">鈫戔啈</td></tr>
+              <tr><td>OCBC</td><td>54.72%</td><td class="neg">+848 bps</td><td class="neg">&rarr;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 05 Non-NII -->
+      <div class="ach-card level-three" data-no="05" id="ach-4" onclick="toggleAch(4)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">+15%<span class="big-suffix"> YoY</span></div>
+              <div class="num-label">Non-NII</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #2 YoY</div>
+            <div class="card-info-name">Non-NII</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">1,907 Mn</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">+15%</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#2</b></div>
+                <div class="rank-cell focus"><span>YoY rank</span><b>#2</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;nonnii&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Metric</th><th class="dh">DBS Value</th><th class="dh">YoY</th><th class="dh">Rank</th></tr></thead>
+            <tbody>
+              <tr><td>Non-NII</td><td class="dv">1,907 Mn</td><td class="dv">+15%</td><td class="rk rk2">#2</td></tr>
+              <tr><td>Net fee and commission</td><td class="dv">331 Mn</td><td class="dv">+24%</td><td>&mdash;</td></tr>
+              <tr><td>Trading-related income</td><td class="dv">1,571 Mn</td><td class="dv">+17%</td><td>&mdash;</td></tr>
+              <tr><td>Non-NII share</td><td class="dv">47%</td><td class="dv">+6 pct</td><td>&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 06 Customer Loan -->
+      <div class="ach-card level-three" data-no="06" id="ach-5" onclick="toggleAch(5)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">+12%<span class="big-suffix"> YoY</span></div>
+              <div class="num-label">Customer Loan</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #2 YoY</div>
+            <div class="card-info-name">Customer Loan</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">59,805 Mn</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">+12%</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#5</b></div>
+                <div class="rank-cell focus"><span>YoY rank</span><b>#2</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;loan&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Metric</th><th class="dh">DBS Value</th><th class="dh">YoY</th><th class="dh">Rank</th></tr></thead>
+            <tbody>
+              <tr><td>Customer Loan</td><td class="dv">59,805 Mn</td><td class="dv">+12%</td><td class="rk rk2">#2</td></tr>
+              <tr><td>Corporate Loan</td><td class="dv">49,811 Mn</td><td class="dv">+7%</td><td>&mdash;</td></tr>
+              <tr><td>Consumer Finance</td><td class="dv">9,112 Mn</td><td class="dv">+55%</td><td>&mdash;</td></tr>
+              <tr><td>vs HSBC / SCB</td><td colspan="3" class="neg">HSBC &nbsp;-13% &nbsp;&nbsp;璺?nbsp;&nbsp; SCB &nbsp;-14%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 07 NIM -->
+      <div class="ach-card level-three" data-no="07" id="ach-6" onclick="toggleAch(6)">
+        <div class="card-top">
+          <div class="card-num">
+            <div class="num-wrap">
+              <div class="big-num">-6<span class="big-suffix"> bps</span></div>
+              <div class="num-label">NIM</div>
+            </div>
+          </div>
+          <div class="card-info">
+            <div class="rank-badge">Rank #2 YoY</div>
+            <div class="card-info-name">NIM</div>
+            <div class="card-info-row">
+              <div class="info-item"><span class="info-label">Absolute amount</span><span class="info-value">1.51%</span></div>
+              <div class="info-item"><span class="info-label">YoY</span><span class="info-value green">-6 bps</span></div>
+              <div class="rank-row">
+                <div class="rank-cell"><span>Amount rank in peer group</span><b>#3</b></div>
+                <div class="rank-cell focus"><span>YoY rank</span><b>#2</b></div>
+              </div>
+            </div>
+            <div class="card-chevron-only">&#8964;</div>
+            <div class="card-chevron">&#8964;</div>
+            <div class="peer-icon" onclick="event.stopPropagation();openModal(&#39;nim&#39;)" title="Peer data">&#8857;</div>
+          </div>
+        </div>
+        <div class="card-expand">
+          <table class="dtbl">
+            <thead><tr><th class="dh">Bank</th><th class="dh">NIM 2025</th><th class="dh">YoY (bps)</th><th class="dh">Rank</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--red);font-weight:700">DBS</td><td class="dv">1.51%</td><td class="dv">-6 bps</td><td class="rk rk2">#2 best</td></tr>
+              <tr><td>HSBC</td><td>1.59%</td><td class="neg">-14 bps</td><td>#3</td></tr>
+              <tr><td>SCB</td><td class="neg">1.21%</td><td class="neg">-50 bps</td><td>&mdash;</td></tr>
+              <tr><td>OCBC</td><td>1.37%</td><td class="neg">-51 bps</td><td>&mdash;</td></tr>
+              <tr><td>UOB</td><td>1.15%</td><td class="neg">-41 bps</td><td>&mdash;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- s1-right -->
+  </div><!-- s1-body -->
+
+  <!-- Market Environment Overlay -->
+  <div id="me-overlay" onclick="if(event.target===this)toggleME()">
+    <div class="me-card">
+      <div class="me-card-title">2025 Market Environment &mdash; Foreign Banks</div>
+      <div class="me-card-row">
+        <span class="me-card-metric">NIM</span>
+        <span class="me-card-val">&minus;10 bps</span>
+        <span class="me-card-lbl">YoY</span>
+      </div>
+      <div class="me-card-row">
+        <span class="me-card-metric">Gross Loan</span>
+        <span class="me-card-val">&minus;4%</span>
+        <span class="me-card-lbl">YoY</span>
+      </div>
+      <div class="me-card-row">
+        <span class="me-card-metric">NPAT</span>
+        <span class="me-card-val">&minus;20%</span>
+        <span class="me-card-lbl">YoY</span>
+      </div>
+      <button class="me-card-close" onclick="toggleME()">Close</button>
+    </div>
+  </div>
+
+</div><!-- slide-1 -->
+
+<!-- SLIDE 2 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 -->
+<div class="slide" id="slide-2">
+  <div class="slide-inner">
+    <div class="slide-hero">
+      <div class="slide-hero-title">How did <span class="accent">we get here</span></div>
+      <div class="slide-hero-subtitle">DBS's financial performance in 2025</div>
+    </div>
+    <div class="s2-layout">
+      <section class="statement-panel">
+        <div class="statement-title"><b>Income Statement</b><span>simplified</span></div>
+        <div class="statement-body">
+          <div class="fs-line">
+            <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+              <span class="fs-name">NII</span><span class="fs-meta"><span class="fs-keyword">resilience</span><span class="fs-chevron">&#8964;</span><span class="fs-index">1</span></span>
+            </button>
+            <div class="fs-detail">
+              <div class="fs-detail-grid">
+                <div class="fs-dbs-line"><b>DBS performance</b>DBS delivered decent income growth (+12% YoY) as compared to a revenue downturn among majority of peers, driven by double-digit growth in both NII and Non-NII.</div>
+                <div class="fs-peer-note"><b>Peers' performance</b><span>NII of HSBC and SCB decreased with more significant impact from loan interest income.</span></div>
+              </div>
+              <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                <tr><td>NII</td><td class="dbs">2,169 / <span class="boxed">+10%</span></td><td>8,033 / <span class="boxed">-2%</span></td><td>2,554 / <span class="boxed">-18%</span></td><td>3,203 / -9%</td><td>1,120 / -4%</td><td>1,454 / +62%</td><td>1,108 / <span class="boxed">-10%</span></td><td>787 / -29%</td></tr>
+                <tr class="sub-row"><td>Interest income - loan</td><td class="dbs">2,191 / <span class="boxed">-3%</span></td><td>6,216 / -18%</td><td>3,554 / -21%</td><td>5,125 / -13%</td><td>1,529 / -22%</td><td>3,237 / +10%</td><td>981 / -19%</td><td>1,271 / -20%</td></tr>
+                <tr class="sub-row"><td>Interest expense - deposits</td><td class="dbs">(1,391) / <span class="boxed">-23%</span></td><td>(4,775) / -10%</td><td>(3,394) / -6%</td><td>(2,708) / -6%</td><td>(949) / -28%</td><td>(2,532) / -13%</td><td>(590) / -8%</td><td>(685) / +11%</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="fs-line">
+            <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+              <span class="fs-name">Non-NII</span><span class="fs-meta"><span class="fs-keyword">transformation</span><span class="fs-chevron">&#8964;</span><span class="fs-index">2</span></span>
+            </button>
+            <div class="fs-detail">
+              <div class="fs-detail-grid">
+                <div class="fs-dbs-line"><b>DBS performance</b>DBS delivered decent income growth (+12% YoY), with Non-NII up 15% YoY to RMB 1,907 Mn and Non-NII contribution increasing to 47% of total income.</div>
+                <div class="fs-peer-note"><b>Peers' performance</b><span>Wealth management has become a key growth driver and differentiator for foreign banks, thereby increasing the contribution of Non-NII to total revenue.</span></div>
+              </div>
+              <div class="fs-column-card">
+                <div class="fs-column-head">
+                  <div class="fs-column-title">% of Non-NII in total income</div>
+                  <div class="fs-column-legend"><span>2021</span><span>2025</span></div>
+                </div>
+                <div class="fs-column-plot">
+                  <div class="fs-col-group dbs">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:62%">41%</div><div class="fs-col now" style="height:71%">47%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">DBS</div><div class="fs-col-change">+6%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:59%">39%</div><div class="fs-col now" style="height:76%">50%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">HSBC</div><div class="fs-col-change">+12%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:67%">44%</div><div class="fs-col now" style="height:100%">66%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">SCB</div><div class="fs-col-change">+23%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:27%">18%</div><div class="fs-col now" style="height:47%">31%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">BEA</div><div class="fs-col-change">+14%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:38%">25%</div><div class="fs-col now" style="height:42%">28%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">HACN</div><div class="fs-col-change">+3%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col na" style="height:18%">n.m.</div><div class="fs-col now" style="height:65%">43%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">Fubon</div><div class="fs-col-change">n.m.</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:59%">39%</div><div class="fs-col now" style="height:61%">40%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">OCBC</div><div class="fs-col-change">+1%</div></div>
+                  </div>
+                  <div class="fs-col-group">
+                    <div class="fs-col-bars"><div class="fs-col prev" style="height:45%">30%</div><div class="fs-col now" style="height:74%">49%</div></div>
+                    <div class="fs-col-caption"><div class="fs-col-bank">UOB</div><div class="fs-col-change">+18%</div></div>
+                  </div>
+                </div>
+              </div>
+              <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                <tr><td>Non-NII</td><td class="dbs">1,907 / <span class="boxed">+15%</span></td><td>8,191 / -5%</td><td>4,996 / -25%</td><td>1,471 / +25%</td><td>445 / -23%</td><td>1,111 / +1%</td><td>747 / <span class="boxed">-21%</span></td><td>749 / +7%</td></tr>
+                <tr class="sub-row"><td>Net fee and commission</td><td class="dbs">331 / <span class="boxed">+24%</span></td><td>3,271 / <span class="boxed">+20%</span></td><td>2,379 / <span class="boxed">+19%</span></td><td>551 / +18%</td><td>162 / +13%</td><td>133 / -9%</td><td>216 / <span class="boxed">+32%</span></td><td>80 / -48%</td></tr>
+                <tr class="sub-row"><td>Trading-related income</td><td class="dbs">1,571 / <span class="boxed">+17%</span></td><td>4,306 / -19%</td><td>2,597 / -43%</td><td>736 / +15%</td><td>286 / -34%</td><td>977 / +2%</td><td>444 / +1%</td><td>658 / +22%</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="fs-line">
+            <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+              <span class="fs-name">Expense</span><span class="fs-meta"><span class="fs-keyword">efficiency</span><span class="fs-chevron">&#8964;</span><span class="fs-index">6</span></span>
+            </button>
+            <div class="fs-detail">
+              <div class="fs-detail-grid">
+                <div class="fs-dbs-line"><b>DBS performance</b>DBS improved efficiency with CIR down 5 pct YoY to 58%, supported by tightly managed expenses and mild headcount reduction.</div>
+                <div class="fs-peer-note"><b>Peers' performance</b><span>All banks are tightly managing headcount; HSBC and SCB still carry much larger cost bases, while SCB's CIR deteriorated sharply.</span></div>
+              </div>
+              <div class="fs-expense-visuals">
+                <div class="fs-vertical-card">
+                  <div class="fs-chart-title"><b>CIR</b><span>2025 / YoY change</span></div>
+                  <div class="fs-vertical-plot">
+                    <div class="fs-vertical-item dbs"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:69%">58%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">DBS</div><span class="fs-vertical-change">-475 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:65%">55%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">HSBC</div><span class="fs-vertical-change">+362 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:89%">75%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">SCB</div><span class="fs-vertical-change">+1,921 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:71%">60%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">BEA</div><span class="fs-vertical-change">-274 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:92%">77%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">HACN</div><span class="fs-vertical-change">+265 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:54%">45%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">Fubon</div><span class="fs-vertical-change">-978 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:65%">55%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">OCBC</div><span class="fs-vertical-change">+848 bps</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:100%">84%</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">UOB</div><span class="fs-vertical-change">+1,661 bps</span></div></div>
+                  </div>
+                </div>
+                <div class="fs-vertical-card">
+                  <div class="fs-chart-title"><b>Permanent HC</b><span>Number / YoY</span></div>
+                  <div class="fs-vertical-plot">
+                    <div class="fs-vertical-item dbs"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:28%">1,824</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">DBS</div><span class="fs-vertical-change">-3%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:100%">6,412</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">HSBC</div><span class="fs-vertical-change">-1%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:57%">3,682</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">SCB</div><span class="fs-vertical-change">-2%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:41%">2,634</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">BEA</div><span class="fs-vertical-change">-4%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:16%">1,035</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">HACN</div><span class="fs-vertical-change">-19%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:17%">1,061</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">Fubon</div><span class="fs-vertical-change">-9%</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:15%">993</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">OCBC</div><span class="fs-vertical-change">n/a</span></div></div>
+                    <div class="fs-vertical-item"><div class="fs-vertical-barwrap"><div class="fs-vertical-bar" style="height:13%">809</div></div><div class="fs-vertical-caption"><div class="fs-vertical-bank">UOB</div><span class="fs-vertical-change">-14%</span></div></div>
+                  </div>
+                </div>
+                <table class="fs-data fs-expense-bottom"><thead><tr><th>Expenses<br>(RMB Mn, pct.)</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                  <tr><td>Expenses</td><td class="dbs">2,384 / +4%</td><td>8,999 / +4%</td><td>5,687 / +4%</td><td>2,809 / -5%</td><td>1,206 / -7%</td><td>1,159 / +5%</td><td>1,015 / <span class="boxed">+1%</span></td><td>1,287 / +6%</td></tr>
+                  <tr class="sub-row"><td>Staff-related</td><td class="dbs">1,690 / +3%</td><td>4,598 / +8%</td><td>3,029 / +6%</td><td>1,527 / -2%</td><td>725 / -7%</td><td>608 / +4%</td><td>715 / -2%</td><td>824 / +5%</td></tr>
+                  <tr class="sub-row"><td>Non-staff related</td><td class="dbs">694 / +7%</td><td>4,401 / -1%</td><td>2,658 / +2%</td><td>1,282 / -7%</td><td>481 / -8%</td><td>552 / +7%</td><td>300 / +9%</td><td>463 / +8%</td></tr>
+                </tbody></table>
+              </div>
+            </div>
+          </div>
+          <div class="fs-line">
+            <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+              <span class="fs-name">Provision</span><span class="fs-chevron">&#8964;</span>
+            </button>
+            <div class="fs-detail">
+              <div class="fs-detail-grid">
+                <div class="fs-dbs-line"><b>DBS performance</b>DBS demonstrated a stable performance in both NPL and provision expense.</div>
+                <div class="fs-peer-note"><b>Peers' performance</b><span>Peers have substantially resolved its non-performing loans over the last two years, making provision coverage ratios at adequate levels.</span></div>
+              </div>
+              <table class="fs-data"><thead><tr><th>Risk indicators</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                <tr><td>NPL ratio</td><td class="dbs">0.70% / -0.30 pct</td><td>0.41% / 0.05 pct</td><td>0.74% / -0.24 pct</td><td>1.35% / 0.01 pct</td><td>1.72% / -0.10 pct</td><td>0.74% / -0.05 pct</td><td>0.35% / -0.12 pct</td><td>1.30% / -0.13 pct</td></tr>
+                <tr><td>Provision Coverage Ratio</td><td class="dbs">286% / 73 pct</td><td>372% / -51 pct</td><td>204% / -127 pct</td><td>134% / 0 pct</td><td>250% / 27 pct</td><td>209% / -20 pct</td><td>709% / 189 pct</td><td>161% / -8 pct</td></tr>
+                <tr><td>Loan Provision Ratio</td><td class="dbs">2.00% / -0.10 pct</td><td>1.53% / 0.01 pct</td><td>1.50% / -1.74 pct</td><td>1.81% / 0.02 pct</td><td>4.30% / 0.23 pct</td><td>1.54% / -0.26 pct</td><td>2.46% / 0.01 pct</td><td>2.09% / -0.33 pct</td></tr>
+                <tr><td>NPL</td><td class="dbs">423 / -19%</td><td>840 / 0%</td><td>518 / -34%</td><td>1,439 / -2%</td><td>783 / -10%</td><td>608 / 14%</td><td>118 / -19%</td><td>459 / -15%</td></tr>
+                <tr><td>Provision expense</td><td class="dbs">(402) / -56%</td><td>491 / n/a</td><td>170 / n/a</td><td>(1,734) / 19%</td><td>(217) / 18%</td><td>(795) / 51%</td><td>(104) / -11%</td><td>(193) / -25%</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="fs-line static">
+            <span class="fs-name">NPAT</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement-panel">
+        <div class="statement-title"><b>Balance Sheet</b><span>simplified</span></div>
+        <div class="statement-body statement-split">
+          <div class="substatement">
+            <h3>Assets</h3>
+            <div class="fs-line">
+              <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+                <span class="fs-name">Customer loan</span><span class="fs-meta"><span class="fs-keyword">divergence</span><span class="fs-chevron">&#8964;</span><span class="fs-index">3</span></span>
+              </button>
+              <div class="fs-detail">
+                <div class="fs-detail-grid">
+                  <div class="fs-dbs-line"><b>DBS performance</b>DBS achieved customer loan growth, driven by both consumer finance (+55% YoY) and corporate loan (+7% YoY).</div>
+                  <div class="fs-peer-note"><b>Peers' performance</b><span>HSBC and SCB experienced declines in both corporate and retail loans; SCB is downsizing consumer finance while OCBC saw moderate corporate-loan growth.</span></div>
+                </div>
+                <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                  <tr><td>Net loan balance</td><td class="dbs">59,805 / +12%</td><td>201,925 / -13%</td><td>90,459 / -14%</td><td>104,615 / -3%</td><td>43,589 / -5%</td><td>80,534 / +20%</td><td>32,900 / +9%</td><td>34,495 / -8%</td></tr>
+                  <tr class="sub-row"><td class="detail-link" onclick="event.stopPropagation();openModal('corpLoanSector')">Corporate loans</td><td class="dbs">49,811 / <span class="boxed">+7%</span></td><td>171,509 / <span class="boxed">-12%</span></td><td>80,581 / <span class="boxed">-11%</span></td><td>85,066 / +3%</td><td>36,977 / 0%</td><td>34,728 / +23%</td><td>31,410 / <span class="boxed">+12%</span></td><td>28,951 / -13%</td></tr>
+                  <tr class="sub-row"><td>Retail loans</td><td class="dbs">10,343 / +38%</td><td>32,961 / -13%</td><td>18,094 / -22%</td><td>21,040 / -18%</td><td>8,407 / -22%</td><td>46,970 / +16%</td><td>2,244 / -25%</td><td>n/a</td></tr>
+                  <tr class="sub-row deep"><td>Unsecured and others</td><td class="dbs">9,112 / <span class="boxed">+55%</span></td><td>3,383 / +6%</td><td>6,482 / <span class="boxed">-40%</span></td><td>14,674 / -19%</td><td>125 / -81%</td><td>34,153 / <span class="boxed">+24%</span></td><td>234 / -43%</td><td>n/a</td></tr>
+                </tbody></table>
+                <div class="fs-column-card">
+                  <div class="fs-column-head">
+                    <div class="fs-column-title">Customer loan yield</div>
+                    <div class="fs-column-legend"><span>2025 yield</span><span>DBS highlight</span></div>
+                  </div>
+                  <div class="fs-column-plot">
+                    <div class="fs-col-group dbs">
+                      <div class="fs-col-bars"><div class="fs-col now" style="height:82%">3.91%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">DBS</div><div class="fs-col-change">&minus;22 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:59%">2.84%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">HSBC</div><div class="fs-col-change">&minus;45 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:70%">3.34%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">SCB</div><div class="fs-col-change">&minus;66 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:100%">4.78%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">BEA</div><div class="fs-col-change">&minus;83 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:69%">3.29%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">HACN</div><div class="fs-col-change">&minus;74 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:90%">4.31%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">Fubon</div><div class="fs-col-change">&minus;19 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:64%">3.04%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">OCBC</div><div class="fs-col-change">&minus;103 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:85%">4.08%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">UOB</div><div class="fs-col-change">&minus;38 bps</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fs-line">
+              <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+                <span class="fs-name">Bond investment</span><span class="fs-meta"><span class="fs-keyword">allocation</span><span class="fs-chevron">&#8964;</span><span class="fs-index">5</span></span>
+              </button>
+              <div class="fs-detail">
+                <div class="fs-detail-grid">
+                  <div class="fs-dbs-line"><b>DBS performance</b>DBS's total assets kept growing, mainly from bond investment; bond investment increased 74% YoY to RMB 58,921 Mn.</div>
+                  <div class="fs-peer-note"><b>Peers' performance</b><span>Bond investments fueled asset growth for most peers, with deposits from wealth management deployed into low-risk liquid bonds.</span></div>
+                </div>
+                <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                  <tr><td>Bond investment</td><td class="dbs">58,921 / <span class="boxed">+74%</span></td><td>283,819 / <span class="boxed">+11%</span></td><td>173,055 / <span class="boxed">+34%</span></td><td>26,810 / <span class="boxed">+42%</span></td><td>20,098 / -12%</td><td>51,748 / +10%</td><td>29,706 / <span class="boxed">+43%</span></td><td>13,721 / -9%</td></tr>
+                  <tr><td>Total asset</td><td class="dbs">189,155 / +10%</td><td>677,408 / +4%</td><td>359,343 / +18%</td><td>210,120 / +7%</td><td>83,379 / -11%</td><td>156,334 / +11%</td><td>100,649 / +9%</td><td>79,240 / -11%</td></tr>
+                </tbody></table>
+                <div class="fs-pie-card">
+                  <div class="fs-pie-head">
+                    <div class="fs-pie-title">GB + policy bond / total asset</div>
+                    <div class="fs-pie-note">Government bond plus policy bank bond as % of total asset</div>
+                  </div>
+                  <div class="fs-pie-grid">
+                    <div class="fs-pie-item dbs">
+                      <div class="fs-pie" style="--pct:22.2"></div>
+                      <div class="fs-pie-bank">DBS</div>
+                      <div class="fs-pie-ratio">22.2%</div>
+                      <div class="fs-pie-base">42,039 / 189,155</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:29.5"></div>
+                      <div class="fs-pie-bank">HSBC</div>
+                      <div class="fs-pie-ratio">29.5%</div>
+                      <div class="fs-pie-base">199,650 / 677,408</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:28.3"></div>
+                      <div class="fs-pie-bank">SCB</div>
+                      <div class="fs-pie-ratio">28.3%</div>
+                      <div class="fs-pie-base">101,744 / 359,343</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:10.4"></div>
+                      <div class="fs-pie-bank">BEA</div>
+                      <div class="fs-pie-ratio">10.4%</div>
+                      <div class="fs-pie-base">21,955 / 210,120</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:23.8"></div>
+                      <div class="fs-pie-bank">HACN</div>
+                      <div class="fs-pie-ratio">23.8%</div>
+                      <div class="fs-pie-base">19,813 / 83,379</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:27.1"></div>
+                      <div class="fs-pie-bank">Fubon</div>
+                      <div class="fs-pie-ratio">27.1%</div>
+                      <div class="fs-pie-base">42,418 / 156,334</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie" style="--pct:16.9"></div>
+                      <div class="fs-pie-bank">OCBC</div>
+                      <div class="fs-pie-ratio">16.9%</div>
+                      <div class="fs-pie-base">17,045 / 100,649</div>
+                    </div>
+                    <div class="fs-pie-item">
+                      <div class="fs-pie na"></div>
+                      <div class="fs-pie-bank">UOB</div>
+                      <div class="fs-pie-ratio">n/a</div>
+                      <div class="fs-pie-base">split not disclosed</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="substatement">
+            <h3>Liabilities</h3>
+            <div class="fs-line">
+              <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+                <span class="fs-name">Customer deposit</span><span class="fs-meta"><span class="fs-keyword">fortifiction</span><span class="fs-chevron">&#8964;</span><span class="fs-index">4</span></span>
+              </button>
+              <div class="fs-detail">
+                <div class="fs-detail-grid">
+                  <div class="fs-dbs-line"><b>DBS performance</b>DBS grew deposits from corporate CASA, retail deposit and SIP, with customer deposit rate down 40 bps to 1.82%.</div>
+                  <div class="fs-peer-note"><b>Peers' performance</b><span>HSBC's low overall deposit cost is driven by a much higher CASA proportion; banks with strong wealth management continued deposit growth.</span></div>
+                </div>
+                <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                  <tr><td>Avg customer deposit</td><td class="dbs">95,203 / +8%</td><td>434,687 / +11%</td><td>207,521 / +6%</td><td>139,211 / +13%</td><td>57,181 / +5%</td><td>107,142 / +11%</td><td>47,836 / +16%</td><td>45,983 / +1%</td></tr>
+                  <tr class="sub-row"><td>Corporate</td><td class="dbs">55,087 / -5%</td><td>262,240 / +8%</td><td>142,344 / -6%</td><td>88,039 / +5%</td><td>39,966 / +16%</td><td>75,786 / +12%</td><td>36,225 / +23%</td><td>43,450 / +5%</td></tr>
+                  <tr class="sub-row deep"><td>CASA</td><td class="dbs">26,038 / <span class="boxed">+9%</span></td><td>183,891 / <span class="boxed">+12%</span></td><td>77,573 / -8%</td><td>34,466 / +40%</td><td>14,162 / +1%</td><td>12,334 / -10%</td><td>18,314 / +6%</td><td>20,406 / +6%</td></tr>
+                  <tr class="sub-row deep"><td>TD</td><td class="dbs">29,049 / -15%</td><td>78,349 / +1%</td><td>64,771 / -3%</td><td>53,573 / -10%</td><td>25,804 / +26%</td><td>63,452 / +17%</td><td>17,911 / +46%</td><td>23,043 / +4%</td></tr>
+                  <tr class="sub-row"><td>Retail</td><td class="dbs">21,087 / <span class="boxed">+26%</span></td><td>135,561 / <span class="boxed">+14%</span></td><td>63,989 / <span class="boxed">+45%</span></td><td>34,309 / +41%</td><td>13,493 / -1%</td><td>29,445 / +7%</td><td>2,344 / -3%</td><td>2,085 / -46%</td></tr>
+                  <tr class="sub-row deep"><td>CASA</td><td class="dbs">6,139 / +29%</td><td>62,476 / +16%</td><td>20,051 / +21%</td><td>4,054 / +11%</td><td>4,175 / +12%</td><td>8,227 / +8%</td><td>500 / +5%</td><td>482 / -49%</td></tr>
+                  <tr class="sub-row deep"><td>TD</td><td class="dbs">14,947 / +25%</td><td>73,085 / +13%</td><td>43,938 / <span class="boxed">+59%</span></td><td>30,255 / +46%</td><td>9,318 / -6%</td><td>21,219 / +6%</td><td>1,844 / -5%</td><td>1,603 / -44%</td></tr>
+                  <tr class="sub-row"><td>SIP</td><td class="dbs">16,429 / +46%</td><td>31,185 / +28%</td><td>27,213 / <span class="boxed">+57%</span></td><td>-</td><td>1,934 / -63%</td><td>-</td><td>6,592 / -16%</td><td>686 / -48%</td></tr>
+                  <tr><td>CASA ratio</td><td class="dbs"><span class="boxed">34%</span></td><td><span class="boxed">57%</span></td><td><span class="boxed">47%</span></td><td>28%</td><td>32%</td><td>19%</td><td><span class="boxed">39%</span></td><td>45%</td></tr>
+                </tbody></table>
+                <div class="fs-column-card">
+                  <div class="fs-column-head">
+                    <div class="fs-column-title">Customer deposit rate</div>
+                    <div class="fs-column-legend"><span>2025 rate</span><span>DBS highlight</span></div>
+                  </div>
+                  <div class="fs-column-plot">
+                    <div class="fs-col-group dbs">
+                      <div class="fs-col-bars"><div class="fs-col now" style="height:77%">1.82%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">DBS</div><div class="fs-col-change">-40 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:47%">1.10%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">HSBC</div><div class="fs-col-change">-26 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:69%">1.64%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">SCB</div><div class="fs-col-change">-20 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:83%">1.95%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">BEA</div><div class="fs-col-change">-39 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:70%">1.66%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">HACN</div><div class="fs-col-change">-75 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:100%">2.36%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">Fubon</div><div class="fs-col-change">-64 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:52%">1.23%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">OCBC</div><div class="fs-col-change">-32 bps</div></div>
+                    </div>
+                    <div class="fs-col-group">
+                      <div class="fs-col-bars"><div class="fs-col prev" style="height:89%">2.10%</div></div>
+                      <div class="fs-col-caption"><div class="fs-col-bank">UOB</div><div class="fs-col-change">+19 bps</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="fs-line">
+              <button class="fs-trigger" type="button" onclick="toggleFs(this)">
+                <span class="fs-name">Interbank funding</span><span class="fs-chevron">&#8964;</span>
+              </button>
+              <div class="fs-detail">
+                <div class="fs-detail-grid">
+                  <div class="fs-dbs-line"><b>DBS performance</b>Interbank funding increased 87% YoY to RMB 52,918 Mn, supporting asset growth mainly from bond investment.</div>
+                  <div class="fs-peer-note"><b>Peers' performance</b><span>Funding mix varied widely: SCB and OCBC increased interbank funding, while several regional and Singapore peers reduced it.</span></div>
+                </div>
+                <table class="fs-data"><thead><tr><th>Metric</th><th>DBS</th><th>HSBC</th><th>SCB</th><th>BEA</th><th>HACN</th><th>Fubon</th><th>OCBC</th><th>UOB</th></tr></thead><tbody>
+                  <tr><td>Interbank funding</td><td class="dbs"><span class="boxed">52,918 / +87%</span></td><td>131,278 / +24%</td><td>57,925 / +50%</td><td>27,908 / -17%</td><td>6,331 / -59%</td><td>6,893 / -15%</td><td>26,422 / +50%</td><td>14,370 / -25%</td></tr>
+                  <tr><td>Total liabilities</td><td class="dbs">173,781 / +10%</td><td>610,264 / +4%</td><td>327,103 / +20%</td><td>188,423 / +7%</td><td>69,994 / -13%</td><td>145,210 / +12%</td><td>90,182 / +9%</td><td>69,122 / -12%</td></tr>
+                </tbody></table>
+              </div>
+            </div>
+            <div class="bs-category">
+              <div class="bs-category-label">Equity</div>
+              <div class="bs-category-name">Shareholder equity</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 SLIDE 3 閳烘劏鏅查埡鎰ㄦ櫜閳烘劏鏅查埡鎰ㄦ櫜 -->
+<div class="slide" id="slide-3">
+  <div class="slide-inner">
+    <div class="slide-hero">
+      <div class="slide-hero-title">What are the <span class="accent">future drivers</span></div>
+    </div>
+    <div class="summary-grid">
+      <div>
+        <div class="col-title">How the market<br>looks like</div>
+        <div class="bi" style="transition-delay:.2s"><div class="bdot"></div><div class="btxt">Under low-rate environment that NII is under pressure, leading peers are relying more on non-NII (particularly wealth management) to grow revenue</div></div>
+        <div class="bi" style="transition-delay:.32s"><div class="bdot"></div><div class="btxt">Corporate loan demand remained stagnant and peers are cautious in consumer finance</div></div>
+        <div class="bi" style="transition-delay:.44s"><div class="bdot"></div><div class="btxt">Ample funding from wealth management is deployed into bond investment (mainly Govie. and policy bank bond)</div></div>
+        <div class="bi" style="transition-delay:.56s"><div class="bdot"></div><div class="btxt">Tightly managing expenses and headcount. NPLs remained stable and provisions kept at an adequate level</div></div>
+      </div>
+      <div>
+        <div class="col-title red">What we would do<br>next year</div>
+        <div class="bi right" style="transition-delay:.28s"><div class="bdot" style="background:var(--red)"></div><div class="btxt">Continue to grow low-cost deposits and loans at reasonable margin</div></div>
+        <div class="bi right" style="transition-delay:.4s"><div class="bdot" style="background:var(--red)"></div><div class="btxt">Nimbly deploy surplus funding to maximize NII</div></div>
+        <div class="bi right" style="transition-delay:.52s"><div class="bdot" style="background:var(--red)"></div><div class="btxt">Accelerate Non-NII growth by turbocharging wealth management and capturing two-way investment opportunities of FIs</div></div>
+        <div class="bi right" style="transition-delay:.64s"><div class="bdot" style="background:var(--red)"></div><div class="btxt">Continue to drive productivity and explore use of AI</div></div>
+        <div class="bi right" style="transition-delay:.76s"><div class="bdot" style="background:var(--red)"></div><div class="btxt">Prudent credit risk management and minimize impairment</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #stage -->
+
+<div id="bottom-nav">
+  <button class="nav-btn" id="btn-prev" onclick="navigate(-1)">&larr; Prev</button>
+  <span class="slide-counter" id="counter">1 / 4</span>
+  <button class="nav-btn" id="btn-next" onclick="navigate(1)">Next &rarr;</button>
+</div>
+
+<!-- MODAL -->
+<div id="peer-modal">
+  <div class="modal-box">
+    <div class="modal-hdr">
+      <div class="modal-title" id="modal-title"></div>
+      <button class="modal-close" onclick="closeModal()">x</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<div id="fs-overlay" onclick="if(event.target===this)closeFsOverlay()">
+  <div class="fs-overlay-head">
+    <div class="fs-overlay-title" id="fs-overlay-title"></div>
+    <button class="fs-overlay-close" type="button" onclick="closeFsOverlay()">x</button>
+  </div>
+  <div class="fs-overlay-body" id="fs-overlay-body"></div>
+</div>
+
+<script>
+/* DATA */
+const assetData={
+  2024:[{b:'HSBC',v:653.9,r:1},{b:'SCB',v:304.2,r:2},{b:'BEA',v:197.2,r:3},
+    {b:'Citi',v:176.1,r:4},{b:'DBS',v:171.7,r:5,hi:true},
+    {b:'MUFG',v:156.4,r:6},{b:'SMBC',v:152.2,r:7},{b:'NCB',v:147.0,r:8},
+    {b:'Fubon',v:140.8,r:9},{b:'Mizuho',v:136.6,r:10},{b:'CMBCN',v:107.9,r:11},
+    {b:'HACN',v:93.7,r:12},{b:'OCBC',v:92.6,r:13},{b:'UOB',v:89.2,r:14},
+    {b:'DB',v:82.0,r:15},{b:'JPM',v:73.3,r:16},{b:'BNP',v:71.2,r:17}],
+  2025:[{b:'HSBC',v:677.4,r:1},{b:'SCB',v:359.3,r:2},{b:'BEA',v:210.1,r:3},
+    {b:'DBS',v:189.2,r:4,hi:true},{b:'Citi',v:188.8,r:5},
+    {b:'MUFG',v:158.1,r:6},{b:'Fubon',v:156.3,r:7},{b:'NCB',v:154.5,r:8},
+    {b:'SMBC',v:150.4,r:9},{b:'Mizuho',v:134.5,r:10},{b:'CMBCN',v:109.1,r:11},
+    {b:'OCBC',v:100.6,r:12},{b:'HACN',v:83.4,r:13},{b:'UOB',v:79.7,r:14},
+    {b:'JPM',v:72.6,r:15},{b:'DB',v:71.8,r:16},{b:'BNP',v:61.6,r:17}]
+};
+const npatData={
+  2024:[{b:'HSBC',v:8021,r:1},{b:'SCB',v:2256,r:2},{b:'Citi',v:1756,r:3},
+    {b:'SMBC',v:1551,r:4},{b:'Mizuho',v:1328,r:5},{b:'MUFG',v:1287,r:6},
+    {b:'DB',v:832,r:7},{b:'NCB',v:665,r:8},{b:'JPM',v:630,r:9},
+    {b:'OCBC',v:572,r:10},{b:'CMBCN',v:464,r:11},{b:'Fubon',v:395,r:12},
+    {b:'BNP',v:392,r:13},{b:'DBS',v:352,r:14,hi:true},
+    {b:'HACN',v:257,r:15},{b:'UOB',v:233,r:16},{b:'BEA',v:114,r:17}],
+  2025:[{b:'HSBC',v:6722,r:1},{b:'Citi',v:2017,r:2},{b:'SCB',v:1667,r:3},
+    {b:'DBS',v:1005,r:4,hi:true},{b:'SMBC',v:950,r:5},
+    {b:'Mizuho',v:938,r:6},{b:'MUFG',v:606,r:7},{b:'JPM',v:543,r:8},
+    {b:'OCBC',v:531,r:9},{b:'Fubon',v:518,r:10},{b:'CMBCN',v:481,r:11},
+    {b:'BNP',v:447,r:12},{b:'DB',v:423,r:13},{b:'NCB',v:139,r:14},
+    {b:'HACN',v:134,r:15},{b:'BEA',v:32,r:16},{b:'UOB',v:28,r:17}]
+};
+
+const metricConfig={
+  asset:{label:'Total Asset',unit:"Unit: RMB' Bn",data:assetData,format:v=>v.toFixed(1).replace(/\.0$/,'')},
+  npat:{label:'NPAT',unit:"Unit: RMB' Mn",data:npatData,format:v=>v.toLocaleString()}
+};
+
+function renderChart(id,data,formatValue,metric,year){
+  const c=document.getElementById(id); c.innerHTML='';
+  const maxV=Math.max(...data.map(d=>d.v));
+  const dbs2024=metricConfig[metric].data[2024].find(d=>d.hi);
+  const dbs2025=metricConfig[metric].data[2025].find(d=>d.hi);
+  const rankLift=dbs2024&&dbs2025 ? dbs2024.r-dbs2025.r : 0;
+  data.forEach(d=>{
+    const base=(d.v/maxV)*92;
+    const pct=d.hi ? Math.min(92, base+0.8) : base;
+    const row=document.createElement('div');
+    row.className='rrow'+(d.hi?' dbs':'')+(d.hi&&year===2024?' dbs-base':'')+(d.hi&&year===2025?' dbs-improved':'');
+    const disp=formatValue(d.v);
+    const jump=d.hi&&year===2025&&rankLift>0 ? '<span class="jump-badge"><strong>+'+rankLift+'</strong> rank'+(rankLift>1?'s':'')+'</span>' : '';
+    row.innerHTML=
+      '<span class="rrank">#'+d.r+'</span>'+
+      '<span class="rbank">'+d.b+'</span>'+
+      '<div class="rbar-wrap">'+
+        '<div class="rbar" style="background:'+(d.hi?'var(--red)':'#e8eaed')+';width:0">'+
+          '<span class="rval" style="color:'+(d.hi?'#fff':'#9aa0b0')+'">'+disp+'</span>'+
+        '</div>'+
+      '</div>'+
+      jump;
+    c.appendChild(row);
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      const bar=row.querySelector('.rbar');
+      bar.style.transition='width .6s cubic-bezier(.22,1,.36,1)';
+      bar.style.width=pct+'%';
+    }));
+  });
+}
+
+function setMetric(metric){
+  const cfg=metricConfig[metric];
+  document.getElementById('btnAsset').classList.toggle('active',metric==='asset');
+  document.getElementById('btnNpat').classList.toggle('active',metric==='npat');
+  document.getElementById('chart-title-2024').textContent='2024 '+cfg.label;
+  document.getElementById('chart-title-2025').textContent='2025 '+cfg.label;
+  document.getElementById('chart-unit-2024').textContent=cfg.unit;
+  document.getElementById('chart-unit-2025').textContent=cfg.unit;
+  renderChart('chart-2024',cfg.data[2024],cfg.format,metric,2024);
+  renderChart('chart-2025',cfg.data[2025],cfg.format,metric,2025);
+}
+
+let leftExp=false;
+function toggleExpand(){
+  leftExp=!leftExp;
+  const lp=document.getElementById('s1-left');
+  const rp=document.getElementById('s1-right');
+  const btn=document.getElementById('expand-btn');
+  lp.classList.toggle('expanded',leftExp);
+  rp.style.display=leftExp?'none':'';
+  btn.textContent=leftExp?'Collapse \u2190':'Expand \u2192';
+}
+function toggleME(){
+  const ov=document.getElementById('me-overlay');
+  ov.classList.toggle('show');
+}
+
+function toggleAch(i){
+  const c=document.getElementById('ach-'+i);
+  const was=c.classList.contains('open');
+  const all=document.querySelectorAll('.ach-card');
+  all.forEach(r=>{
+    r.classList.remove('open');
+    r.classList.remove('ghosted');
+  });
+  if(!was) {
+    c.classList.add('open');
+  }
+}
+
+const modalData={
+  income:{title:'Total Income - peer comparison (RMB Mn, 2025)',cols:['Bank','2025 Value','YoY'],rows:[
+    {b:'HSBC',v:'16,224',y:'-3%',yn:true},{b:'SCB',v:'7,550',y:'-23%',yn:true},
+    {b:'DBS',v:'4,076',y:'+12%',dbs:true},{b:'BEA',v:'4,674',y:'0%'},
+    {b:'HACN',v:'1,566',y:'-11%',yn:true},{b:'Fubon',v:'2,566',y:'+28%'},
+    {b:'OCBC',v:'1,855',y:'-15%',yn:true},{b:'UOB',v:'1,537',y:'-15%',yn:true},{b:'Citi',v:'4,341',y:'-25%',yn:true}]},
+  nonnii:{title:'Non-NII - peer comparison (RMB Mn, 2025)',cols:['Bank','2025 Value','YoY'],rows:[
+    {b:'HSBC',v:'8,191',y:'-5%',yn:true},{b:'SCB',v:'4,996',y:'-25%',yn:true},
+    {b:'DBS',v:'1,907',y:'+15%',dbs:true},{b:'BEA',v:'1,471',y:'+25%'},
+    {b:'Fubon',v:'1,111',y:'+1%'},{b:'UOB',v:'749',y:'+7%'},
+    {b:'OCBC',v:'747',y:'-21%',yn:true},{b:'HACN',v:'445',y:'-23%',yn:true}]},
+  npat:{title:'NPAT - peer comparison (RMB Mn, 2025)',cols:['Bank','2025 Value','YoY'],rows:[
+    {b:'HSBC',v:'6,722',y:'-16%',yn:true},{b:'Citi',v:'2,017',y:'+15%'},
+    {b:'SCB',v:'1,667',y:'-26%',yn:true},{b:'DBS',v:'1,005',y:'+185%',dbs:true},
+    {b:'SMBC',v:'950',y:'n/a'},{b:'Mizuho',v:'938',y:'n/a'},{b:'MUFG',v:'606',y:'n/a'},
+    {b:'JPM',v:'543',y:'n/a'},{b:'OCBC',v:'531',y:'-7%',yn:true},{b:'Fubon',v:'518',y:'+31%'},
+    {b:'CMBCN',v:'481',y:'n/a'},{b:'BNP',v:'447',y:'n/a'},{b:'DB',v:'423',y:'n/a'}]},
+  roe:{title:'ROE - peer comparison (2025)',cols:['Bank','ROE 2025','YoY change'],rows:[
+    {b:'HSBC',v:'10.14%',y:'-259 bps',yn:true},{b:'Citi',v:'9.95%',y:'+144 bps'},
+    {b:'DBS',v:'6.75%',y:'+427 bps',dbs:true},{b:'SCB',v:'5.13%',y:'-204 bps',yn:true},
+    {b:'OCBC',v:'5.19%',y:'-72 bps',yn:true},{b:'Fubon',v:'4.91%',y:'+99 bps'},
+    {b:'HACN',v:'1.00%',y:'-95 bps',yn:true},{b:'UOB',v:'0.27%',y:'-196 bps',yn:true},
+    {b:'BEA',v:'0.15%',y:'-155 bps',yn:true}]},
+  cir:{title:'CIR - peer comparison (2025)',cols:['Bank','CIR 2025','YoY change'],rows:[
+    {b:'Fubon',v:'45.18%',y:'-978 bps'},{b:'OCBC',v:'54.72%',y:'+848 bps',yn:true},
+    {b:'HSBC',v:'55.47%',y:'+362 bps',yn:true},{b:'Citi',v:'57.39%',y:'+8 bps',yn:true},
+    {b:'DBS',v:'58.48%',y:'-475 bps',dbs:true},{b:'BEA',v:'60.10%',y:'-274 bps'},
+    {b:'SCB',v:'75.33%',y:'+1921 bps',yn:true},{b:'HACN',v:'77.04%',y:'+265 bps',yn:true},
+    {b:'UOB',v:'83.74%',y:'+1661 bps',yn:true}]},
+  loan:{title:'Customer Loan - peer comparison (RMB Mn, 2025)',cols:['Bank','2025 Value','YoY'],rows:[
+    {b:'HSBC',v:'201,925',y:'-13%',yn:true},{b:'BEA',v:'104,615',y:'-3%',yn:true},
+    {b:'SCB',v:'90,459',y:'-14%',yn:true},{b:'Fubon',v:'80,534',y:'+20%'},
+    {b:'DBS',v:'59,805',y:'+12%',dbs:true},{b:'HACN',v:'43,589',y:'-5%',yn:true},
+    {b:'UOB',v:'34,495',y:'-8%',yn:true},{b:'OCBC',v:'32,900',y:'+9%'}]},
+  corpLoanSector:{title:'Corporate loan by industry (RMB Mn / YoY%)',cols:['Industry','DBS','HSBC','SCB','BEA','HACN','Fubon','OCBC','UOB'],rows:[
+    {b:'Finance',v:'13,674 / +8%',h:'13,627 / 0%',s:'38,182 / -9%',bea:'14,268 / -6%',hacn:'7,214 / +2%',f:'8,659 / +8%',o:'9,298 / +12%',u:'1,644 / -18%',dbs:true},
+    {b:'Property',v:'8,993 / +15%',h:'17,372 / -6%',s:'1,734 / -41%',bea:'11,727 / -31%',hacn:'6,848 / -13%',f:'2,819 / +11%',o:'9,517 / +18%',u:'6,922 / -12%',dbs:true},
+    {b:'Wholesale & retail',v:'8,556 / +6%',h:'41,915 / -9%',s:'17,581 / +10%',bea:'20,752 / +22%',hacn:'9,035 / +1%',f:'6,934 / +3%',o:'5,650 / +15%',u:'8,430 / -5%',dbs:true},
+    {b:'Manufacturing',v:'7,981 / +20%',h:'52,670 / -20%',s:'15,968 / -15%',bea:'14,343 / +30%',hacn:'7,090 / +18%',f:'7,505 / +46%',o:'1,928 / +17%',u:'9,201 / +21%',dbs:true},
+    {b:'Transport/logistics',v:'5,030 / +23%',h:'11,768 / -12%',s:'758 / -71%',bea:'3,652 / +82%',hacn:'232 / -10%',f:'1,017 / +20%',o:'2,400 / -9%',u:'1,741 / -19%',dbs:true},
+    {b:'TMT and IT Service',v:'1,988 / -9%',h:'5,664 / -16%',s:'- / n.m.',bea:'1,249 / -9%',hacn:'1,700 / +1%',f:'432 / +344%',o:'- / -100%',u:'1,804 / +1%',dbs:true}
+  ]},
+  nim:{title:'NIM - peer comparison (2025)',cols:['Bank','NIM 2025','YoY change'],rows:[
+    {b:'Citi',v:'9.95%',y:'+144 bps'},{b:'Fubon',v:'4.91%',y:'+99 bps'},
+    {b:'BEA',v:'1.67%',y:'-28 bps',yn:true},{b:'HSBC',v:'1.59%',y:'-14 bps',yn:true},
+    {b:'DBS',v:'1.51%',y:'-6 bps',dbs:true},{b:'HACN',v:'1.39%',y:'-7 bps',yn:true},
+    {b:'OCBC',v:'1.37%',y:'-51 bps',yn:true},{b:'SCB',v:'1.21%',y:'-50 bps',yn:true},
+    {b:'UOB',v:'1.15%',y:'-41 bps',yn:true}]}
+};
+
+function openModal(key){
+  const d=modalData[key];
+  document.getElementById('modal-title').textContent=d.title;
+  const box=document.querySelector('#peer-modal .modal-box');
+  const bodyEl=document.getElementById('modal-body');
+  const isWide=d.cols.length>3;
+  box.classList.toggle('wide',isWide);
+  bodyEl.classList.toggle('wide',isWide);
+  let html='<table class="mtbl"><thead><tr>'+d.cols.map(c=>'<th>'+c+'</th>').join('')+'</tr></thead><tbody>';
+  d.rows.forEach(r=>{
+    if(isWide){
+      const vals=[r.b,r.v,r.h,r.s,r.bea,r.hacn,r.f,r.o,r.u];
+      html+='<tr>'+vals.map((v,idx)=>'<td class="'+(idx===1&&r.dbs?'dbs-n':'')+'">'+(v||'')+'</td>').join('')+'</tr>';
+    }else{
+      const bc=r.dbs?' dbs-n':''; const vc=r.dbs?' hi':'';
+      const yc=r.yn?' lo':(r.y&&r.y.startsWith('+')?' hi':'');
+      html+='<tr><td class="'+bc.trim()+'">'+r.b+'</td><td class="'+vc.trim()+'">'+r.v+'</td><td class="'+yc.trim()+'">'+r.y+'</td></tr>';
+    }
+  });
+  html+='</tbody></table>';
+  document.getElementById('modal-body').innerHTML=html;
+  document.getElementById('peer-modal').classList.add('show');
+}
+function closeModal(){document.getElementById('peer-modal').classList.remove('show');}
+document.getElementById('peer-modal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+
+function styleOverlayYoy(root){
+  root.querySelectorAll('.fs-data tbody td:not(:first-child)').forEach(td=>{
+    let afterSlash=false;
+    Array.from(td.childNodes).forEach(node=>{
+      if(node.nodeType===Node.TEXT_NODE){
+        const text=node.nodeValue;
+        const slash=text.indexOf('/');
+        if(slash>=0){
+          const before=text.slice(0,slash+1);
+          const after=text.slice(slash+1);
+          const frag=document.createDocumentFragment();
+          frag.appendChild(document.createTextNode(before));
+          if(after.length){
+            const span=document.createElement('span');
+            span.className='yoy-value';
+            span.textContent=after;
+            frag.appendChild(span);
+          }
+          node.replaceWith(frag);
+          afterSlash=true;
+        }else if(afterSlash && text.trim()){
+          const span=document.createElement('span');
+          span.className='yoy-value';
+          span.textContent=text;
+          node.replaceWith(span);
+        }
+      }else if(node.nodeType===Node.ELEMENT_NODE){
+        if(afterSlash || (node.previousSibling&&node.previousSibling.nodeType===Node.TEXT_NODE&&node.previousSibling.nodeValue.includes('/'))){
+          node.classList.add('yoy-value');
+        }
+      }
+    });
+  });
+}
+
+function toggleFs(btn){
+  const line=btn.closest('.fs-line');
+  const title=line.querySelector('.fs-name').textContent;
+  const detail=line.querySelector('.fs-detail');
+  document.getElementById('fs-overlay-title').textContent=title;
+  const body=document.getElementById('fs-overlay-body');
+  body.innerHTML=detail.innerHTML;
+  styleOverlayYoy(body);
+  document.getElementById('fs-overlay').classList.add('show');
+}
+function closeFsOverlay(){
+  document.getElementById('fs-overlay').classList.remove('show');
+}
+
+let current=0; const total=4;
+function goTo(n){
+  if(n<0 || n>=total) return;
+  const prev=document.getElementById('slide-'+current);
+  document.querySelectorAll('.slide').forEach(slide=>slide.classList.remove('active'));
+  if(prev && current!==n){
+    prev.classList.add('exit');
+    setTimeout(()=>prev.classList.remove('exit'),420);
+  }
+  current=n;
+  const next=document.getElementById('slide-'+current);
+  if(next) next.classList.add('active');
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===current));
+  document.getElementById('counter').textContent=(current+1)+' / '+total;
+  document.getElementById('btn-prev').disabled=current===0;
+  document.getElementById('btn-next').disabled=current===total-1;
+}
+function navigate(dir){goTo(current+dir);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')navigate(1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')navigate(-1);
+  if(e.key==='Escape'){closeModal();closeFsOverlay();}
+});
+setMetric('asset');
+goTo(0);
+</script>
+
+
+
+</body></html>

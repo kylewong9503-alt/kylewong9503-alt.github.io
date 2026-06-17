@@ -3,217 +3,277 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta property="og:title" content="2026陆家嘴论坛：沪港金融协同发展圆桌讨论">
-<meta property="og:description" content="陈茂波、吴伟、方星海、许正宇、梁凤仪、刘健、傅帆、禤惠仪、Mike — 9位嘉宾详细发言纪要。">
+<meta property="og:title" content="2026陆家嘴论坛：沪港金融协同发展">
+<meta property="og:description" content="陈茂波、吴伟、方星海等9位嘉宾完整发言纪要——点击展开查看详细内容。">
 <title>沪港金融协同发展 · 2026陆家嘴论坛</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#f5f6f8;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#1a1d23;font-size:16px;line-height:1.75}
-.article{max-width:680px;margin:0 auto;background:#fff;padding:28px 22px 40px}
-h1{font-size:22px;font-weight:800;color:#111;margin-bottom:6px;line-height:1.35}
-.subtitle{font-size:14px;color:#888;margin-bottom:28px;line-height:1.5}
-.speaker{margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid #eee}
-.speaker:last-child{border-bottom:none}
-.sp-header{margin-bottom:14px}
-.sp-name{font-size:18px;font-weight:800;color:#111}
-.sp-title{font-size:13px;color:#888;margin-top:2px}
-.sp-keywords{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.sp-kw{font-size:11px;padding:4px 10px;border-radius:14px;background:#f0f2f5;color:#555;font-weight:600}
-.sp-content p{margin-bottom:12px;text-indent:2em}
-.sp-content .highlight{background:#fff3cd;padding:2px 4px;border-radius:2px;font-weight:600}
-.sp-content .blockquote{display:block;margin:10px 0;padding:10px 14px;background:#f8f9fb;border-left:3px solid #ccc;color:#555;font-size:15px;border-radius:0 6px 6px 0}
-.sp-content .data-point{color:#c0392b;font-weight:700}
-.footer{text-align:center;color:#aaa;font-size:12px;margin-top:30px;padding-top:20px;border-top:1px solid #eee;line-height:1.8}
+body{background:#f0f2f5;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#1a1d23;font-size:15px;line-height:1.7}
+.article{max-width:680px;margin:0 auto;padding:0 0 40px}
+
+.header{background:linear-gradient(160deg,#0f1923 0%,#1a3147 40%,#1e3a54 100%);padding:32px 24px 24px;color:#fff;position:relative}
+.header::after{content:"";position:absolute;bottom:0;left:24px;width:48px;height:3px;background:#e53935;border-radius:2px}
+.header h1{font-size:21px;font-weight:800;line-height:1.4;margin-bottom:6px}
+.header .sub{font-size:13px;color:rgba(255,255,255,.65);line-height:1.5}
+.header .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+.header .tags span{font-size:11px;padding:3px 10px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8)}
+
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#e0e3e8;margin:0 20px;border-radius:10px;overflow:hidden;position:relative;top:-16px;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.stat{padding:14px 10px;text-align:center;background:#fff}
+.stat .val{font-size:18px;font-weight:800;color:#e53935}
+.stat .lbl{font-size:10px;color:#999;margin-top:2px;letter-spacing:.5px}
+
+.speakers{padding:0 16px 20px;margin-top:-4px}
+
+.sp{margin-bottom:10px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid #eef0f3;transition:box-shadow .2s}
+.sp.open{box-shadow:0 4px 20px rgba(0,0,0,.1)}
+
+.sp-bar{display:flex;align-items:center;padding:14px 16px;cursor:pointer;gap:12px;-webkit-tap-highlight-color:transparent;user-select:none}
+.sp-bar:active{background:#fafbfc}
+.sp-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:#fff;flex-shrink:0}
+.sp-avatar.c1{background:#e53935}
+.sp-avatar.c2{background:#1a3a5c}
+.sp-avatar.c3{background:#0d7377}
+.sp-avatar.c4{background:#6c3a9e}
+.sp-avatar.c5{background:#b45309}
+.sp-avatar.c6{background:#2c6e49}
+.sp-avatar.c7{background:#8b2252}
+.sp-avatar.c8{background:#1e4d7b}
+
+.sp-info{flex:1;min-width:0}
+.sp-name{font-size:15px;font-weight:700;color:#111}
+.sp-role{font-size:11px;color:#999;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+.sp-kws{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.sp-kws span{font-size:10px;padding:2px 8px;border-radius:10px;background:#f0f2f5;color:#666}
+
+.sp-arrow{font-size:14px;color:#bbb;flex-shrink:0;transition:transform .25s}
+.sp.open .sp-arrow{transform:rotate(180deg)}
+
+.sp-body{display:none;padding:0 16px 18px;font-size:14px;color:#4a5068;line-height:1.8}
+.sp.open .sp-body{display:block}
+.sp-body p{margin-bottom:10px;text-indent:2em}
+.sp-body .hi{background:#fff3cd;padding:1px 3px;border-radius:2px;font-weight:600}
+.sp-body .dn{color:#e53935;font-weight:700}
+.sp-body .bq{display:block;margin:8px 0;padding:8px 12px;background:#f6f7f9;border-left:3px solid #ccc;color:#666;font-size:13px;border-radius:0 6px 6px 0}
+.sp-body .sec-label{display:inline-block;font-size:11px;font-weight:700;color:#1a3a5c;margin:10px 0 4px;padding:3px 8px;background:#eef2f7;border-radius:4px}
+
+.footer{text-align:center;color:#bbb;font-size:11px;padding:20px;line-height:1.8}
 </style>
 </head>
 <body>
 <div class="article">
 
+<div class="header">
 <h1>2026陆家嘴论坛<br>沪港金融协同发展与高水平金融开放</h1>
-<div class="subtitle">2026年6月17日 · 上海浦东 · 1小时35分钟 · 圆桌讨论</div>
+<div class="sub">2026年6月17日 · 上海浦东 · 圆桌讨论 · 1小时35分钟</div>
+<div class="tags">
+<span>金融强国</span><span>人民币国际化</span><span>国债期货</span><span>科创金融</span><span>企业出海</span><span>绿色金融</span><span>Renewable Yuan</span>
+</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="val">9位</div><div class="lbl">发言嘉宾</div></div>
+<div class="stat"><div class="val">157.7万亿</div><div class="lbl">沪港通累计成交</div></div>
+<div class="stat"><div class="val">4万亿</div><div class="lbl">外资投A股规模</div></div>
+</div>
+
+<div class="speakers">
 
 <!-- 陈茂波 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c1">陈</div>
+<div class="sp-info">
 <div class="sp-name">陈茂波</div>
-<div class="sp-title">香港特别行政区财政司司长 · 开幕致辞</div>
+<div class="sp-role">香港特别行政区财政司司长 · 开幕致辞</div>
+<div class="sp-kws"><span>IPO重登全球第一</span><span>跨境财富超瑞士</span><span>5年期国债期货</span><span>1元→8元跟投</span><span>双向融资</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">金融强国</span><span class="sp-kw">IPO全球第一</span><span class="sp-kw">跨境财富超瑞士</span><span class="sp-kw">全球排名第三</span><span class="sp-kw">5年期国债期货</span><span class="sp-kw">双向融资</span><span class="sp-kw">人民币国际化</span><span class="sp-kw">长期资本</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场指出"十五五"规划首次明确提出加快建设<span class="highlight">金融强国</span>，为沪港两地指明了共同使命——优势互补、协同发力、服务国家发展大局。当前地缘政治纷繁复杂，多元化资产配置已成为"刻不容缓的策略"，既要为资金寻找可靠的稳定锚，也要找到具有潜能的增长引擎。同时 AI 等前沿技术正以前所未有的速度重塑产业格局，"必须及时把握好，才不会被淘汰"。</p>
-<p>沪港两地正受益于这股积极求变的国际大潮。亮出一组数据：香港去年<span class="data-point">IPO 重登全球第一</span>，跨境财富管理规模<span class="data-point">超过瑞士</span>，国际金融中心排名<span class="data-point">稳居第三</span>，与伦敦和纽约仅一两分之差。上海证券交易所的市值与流动性也持续提升。这些发展的背后，"是国际资金对中国发展以行动投下信心的一票"。</p>
-<p>外资持有的内地股票<span class="data-point">超过七成通过股票通</span>配置，境外投资者持有的内地债券<span class="data-point">约三分之二经过债券通</span>进入——体现了国际投资者对两地制度安排、结算安全、监管协同的长期信任。</p>
-<p>重大宣布：中国证监会主席刘青宣布<b>支持香港于近期启动 5 年期人民币国债期货上市交易</b>——将与债券通、互换通等安排紧密配合，形成更完整的人民币债券市场风险管理工具组合，有助吸引更多国际投资者参与内地国债市场，提升国债流动性。</p>
-<p>披露上海企业在香港上市已有 <span class="data-point">212 家</span>，总市值超过 <span class="data-point">4.3 万亿港元</span>，约占香港整体市值的 10%。近年多家上海科创企业赴港上市获得海内外资本积极追捧。去年 6 月特区政府与上海市政府签署了沪港国际金融中心协同发展行动方案，今年初香港与上海黄金交易所确立合作机制，港交所与中金所也将在本次论坛签署合作备忘录——"两地的合作已从单点单向走向系统性的联动协同发展"。</p>
-<p>提出两点建议：<b>第一，共同打通全链条筹融资通道。</b>推动更多科创企业走通"双向融资"路径；联手共创更多 ETF 等跨境交易产品（如两年前促成的沪港深港互挂投资沙特 ETF）；香港投资管理有限公司已形成<span class="data-point">"1 元投资拉动 8 元跟投"</span>的资本共享效应，沪港可研究盘活养老基金、保险基金等长期资本，共同"投小、投长、投硬科技"，陪伴企业穿越发展周期。<b>第二，共同提升人民币的国际功能。</b>沪港可协同在黄金与大宗商品领域推动更多以人民币计价的"中国价格"产品落地；上周刚公布企业财资中心发展行动计划，未来可推动"产业在上海，境外财资在香港"的协同组合；香港正在推进首份五年规划编制。</p>
+<div class="sp-body">
+<p>"十五五"规划首次明确提出加快建设<span class="hi">金融强国</span>，为沪港两地指明了共同使命。当前地缘政治纷繁复杂，多元化资产配置成为"刻不容缓的策略"。同时 AI 正以前所未有的速度重塑产业格局，"不及时把握好就会被淘汰"。</p>
+<p>数据亮牌：香港去年<span class="dn">IPO 重登全球第一</span>，跨境财富管理规模<span class="dn">超过瑞士</span>，金融中心排名稳居第三，与伦敦纽约仅一两分之差。外资持 A 股超七成通过股票通、持境内债券约 2/3 通过债券通——"是国际资金对中国发展以行动投下信心的一票"。</p>
+<p>宣布重磅政策：证监会主席刘青支持香港近期启动<span class="hi">5 年期人民币国债期货</span>。上海企业在港上市 <span class="dn">212 家</span>，总市值 <span class="dn">4.3 万亿港元</span>，占香港整体约 10%。沪港已从"单点单向走向系统性联动协同"——去年签行动方案、今年初金交所确立合作、本次论坛港交所×中金所签备忘录。</p>
+<p><span class="sec-label">两点建议</span></p>
+<p><b>第一，打通全链条筹融资通道。</b>推动科创企业双向融资；联手共创更多 ETF 产品（如沪港深港互挂沙特 ETF）；香港投资管理公司已形成 <span class="dn">"1 元投资拉动 8 元跟投"</span>效应，沪港可盘活养老基金、保险基金等长期资本，共同"投小、投长、投硬科技"。</p>
+<p><b>第二，提升人民币国际功能。</b>推动黄金与大宗商品人民币计价"中国价格"产品；上周公布企业财资中心行动计划，推动"产业在上海，境外财资在香港"；香港正在编制首份五年规划。</p>
 </div>
 </div>
 
 <!-- 吴伟 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c2">吴</div>
+<div class="sp-info">
 <div class="sp-name">吴伟</div>
-<div class="sp-title">上海市委常委、常务副市长 · 开幕致辞</div>
+<div class="sp-role">上海市委常委、常务副市长 · 开幕致辞</div>
+<div class="sp-kws"><span>157.7万亿</span><span>黄金国际版</span><span>科创金融</span><span>一站式出海</span><span>绿色金融</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">157.7万亿</span><span class="sp-kw">黄金国际版</span><span class="sp-kw">科创金融生态圈</span><span class="sp-kw">一站式出海</span><span class="sp-kw">绿色金融</span><span class="sp-kw">长期资本投早投小</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>回顾去年陆家嘴论坛期间与陈茂波司长共同见证沪港国际金融中心协同发展行动方案签署。一年来，两地金融市场互联互通机制持续优化，跨境和离岸金融协同不断深化，科创金融、绿色金融和金融科技等新兴领域合作亮点纷呈。截至今年 5 月，沪港通累计成交额近 <span class="data-point">157.7 万亿元</span>，成为跨境资本高效配置的重要通道。上海黄金交易所落地香港国际版指定交割仓库，并同步推出离岸黄金交割合约。</p>
-<p>当前国际格局深刻调整，全球经济复苏承压，持续深化沪港金融协作是助力金融强国建设的战略举措。提出<b>三点倡议</b>：</p>
-<p><b>一、共筑科创金融生态圈，协同赋能产业能级跃升。</b>上海正加快建设具有全球影响力的科技创新高地，香港在全力建设国际创新科技中心。今年初在香港参加了首届全球产业峰会，深刻感受到两地产业链、创新链、资金链协同发展的巨大潜力。期待共同搭建适配未来产业全生命周期发展的多元化金融服务体系，积极引导长期资本<span class="highlight">投早、投小、投硬科技</span>。</p>
-<p><b>二、共搭全球服务大平台，合力护航企业出海发展。</b>上海依托超大规模内地市场与丰富金融资源持续赋能各类主体扬帆出海；香港凭借联通全球的国际化网络、成熟的专业服务体系加力服务内地企业走向世界。希望两地联合打造<span class="highlight">一站式出海服务体系</span>，充分发挥香港作为内地对接全球市场的"超级联系人"优势，为中资企业开拓海外市场、布局全球产业链提供全方位金融支持。</p>
-<p><b>三、共拓绿色金融新赛道，携手引领绿色低碳发展。</b>上海全力建设国际绿色金融枢纽，香港持续发挥区域绿色金融枢纽功能。希望两地加快绿色金融规则标准互认对接，联合开展绿色金融产品创新，推进绿色产业信息共享项目对接。</p>
+<div class="sp-body">
+<p>沪港通累计成交额近 <span class="dn">157.7 万亿元</span>。上海黄金交易所落地香港国际版指定交割仓库，同步推出离岸黄金交割合约。持续深化沪港金融协作，既是助力金融强国建设的战略举措，也是提升两大国际金融中心竞争力的长远之策。</p>
+<p><span class="sec-label">三点倡议</span></p>
+<p><b>一、共筑科创金融生态圈。</b>搭建适配未来产业全生命周期的多元化金融服务体系，引导长期资本<span class="hi">投早、投小、投硬科技</span>。上海正加快建设具有全球影响力的科创高地，香港全力建设国际创新科技中心，两地产业链、创新链、资金链协同潜力巨大。</p>
+<p><b>二、共搭全球服务大平台。</b>联合打造<span class="hi">一站式出海服务体系</span>，上海依托超大规模内地市场赋能企业扬帆出海，香港发挥"超级联系人"优势，为中资企业开拓海外市场、布局全球产业链提供全方位金融支持。</p>
+<p><b>三、共拓绿色金融新赛道。</b>加快绿色金融规则标准互认对接，联合开展产品创新，推进绿色产业信息共享项目对接。</p>
 </div>
 </div>
 
 <!-- 方星海 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c3">方</div>
+<div class="sp-info">
 <div class="sp-name">方星海</div>
-<div class="sp-title">中国证监会原副主席、中国金融学会副会长 · 主题演讲</div>
+<div class="sp-role">中国证监会原副主席 · 中国金融学会副会长</div>
+<div class="sp-kws"><span>沪深港综合指数</span><span>Quant落户香港</span><span>外资4万亿</span><span>A+H互补</span><span>Renewable Yuan</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">沪深港综合指数</span><span class="sp-kw">Quant落户香港</span><span class="sp-kw">沪港通/深港通</span><span class="sp-kw">A+H IPO</span><span class="sp-kw">外资4万亿</span><span class="sp-kw">Renewable Yuan</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场即回应今早重大政策——何副总理及三大金融管理部门宣布<span class="highlight">中金所推出外汇期货试点</span>、<span class="highlight">港交所推出人民币国债期货交易</span>——"十分鼓舞人心，必将对我们国家的金融市场发展和开放、对香港金融中心建设发挥很大作用"。他坦言自己长期在上海工作，但也非常喜欢香港，"一碗水端平"，专门讲沪港如何合作互相促进。</p>
-<p><b>回顾两大成功案例：</b></p>
-<p>其一，<b>沪港通（含深港通）的推出。</b>QFII 自 2001 年推出后，外资投资内地股市规模长期徘徊在 5000 亿人民币左右。两通推出后，外资投资内地的量快速增长，且促使 A 股加入了 MSCI 指数。现在外资投资内地已达 <span class="data-point">4 万亿人民币</span>。成功之处在于"充分发挥了两地的优势"——香港的优势是国际机构投资者愿意把总部和资金放在香港，法治健全、资金进出方便有保障；内地的优势是庞大的市场和上市资源。</p>
-<p>其二，<b>A+H 股 IPO 的互补。</b>2023-24 年内地市场调整、IPO 很慢，大量企业到香港做 IPO 获得急速发展机会，对香港市场发展和内地企业成长都有帮助。内地企业先发 H 股，最终回到 A 股，或已经是 A 股的到香港发 H 股——"内地企业很多要上市，香港注册制成熟、上市时间有保障，两地的优势都发挥出来"。</p>
-<p><b>两项新建议：</b></p>
-<p><b>第一，推出沪深港三地综合中国指数。</b>香港 1-5 月 61 单 IPO 中 30 只来自内地，香港市场主要上市公司已是内地企业。如果国际投资者要投中国，光投沪深不够，沪深港都要投才覆盖整个中国。建议指数编制公司编一个<b>覆盖沪深港三地的"真正的中国指数"</b>，甚至可以进一步推出 AI、半导体等科创领域的行业类三地指数，"中国的科技创新能力越来越强，这样的指数应该很有吸引力"。</p>
-<p><b>第二，吸引内地量化机构（Quant）落户香港。</b>中国 Quant 这几年发展非常快，"跟国际上现在最好的 Quant 比我们也不差"。他们很多人非常愿意在香港开展更多业务——既做香港市场交易，也通过两通交易内地产品。建议香港金融管理部门着力吸引这些机构落户，上海和深圳可以联合推动，"会吸引更多国际资金投资香港、投资内地"。</p>
-<p>闭幕总结时呼应了梁凤仪的 <b>"Renewable Yuan"</b> 概念，认为与上海今早提出的<span class="highlight">离岸金融行动计划</span>可以合作，"双方共同推进人民币国际化真正迈上一个新的台阶，上海和香港的金融中心都会得到质的提升"。</p>
+<div class="sp-body">
+<p>开场回应今早政策——<span class="hi">中金所外汇期货试点</span>和<span class="hi">港交所人民币国债期货</span>——"十分鼓舞人心"。他曾在上海长期工作，也喜欢香港，"一碗水端平"。</p>
+<p><span class="sec-label">两大成功案例回顾</span></p>
+<p><b>沪港通/深港通：</b>QFII 自 2001 年推出后外资长期徘徊在 5000 亿左右，两通推出后快速增长，促使 A 股纳入 MSCI，现外资已达 <span class="dn">4 万亿人民币</span>。"充分发挥了两地优势——香港法治健全、资金进出方便，内地市场庞大。"</p>
+<p><b>A+H IPO 互补：</b>2023-24 年内地 IPO 慢，大量企业赴港上市获得急速发展。"内地企业多要上市，香港注册制成熟、上市时间有保障。"</p>
+<p><span class="sec-label">两项新建议</span></p>
+<p><b>第一，推沪深港三地综合中国指数。</b>香港 1-5 月 61 单 IPO 中 30 只来自内地，光投沪深不够，需覆盖沪深港的<span class="hi">"真正的中国指数"</span>。还可推 AI、半导体等科创行业三地指数，"中国科创能力越来越强，这样的指数很有吸引力"。</p>
+<p><b>第二，吸引内地 Quant 落户香港。</b>中国 Quant "跟国际上最好的比我们也不差"。他们愿意在香港开展更多业务，做港市交易也通过两通做内地。建议金融管理部门着力吸引，联合上海深圳推动。</p>
+<p>闭幕呼应梁凤仪 <span class="hi">"Renewable Yuan"</span> 概念与上海离岸金融行动计划——"双方合作共同推进人民币国际化迈上新台阶，两个金融中心都会得到质的提升"。</p>
 </div>
 </div>
 
 <!-- 许正宇 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c4">许</div>
+<div class="sp-info">
 <div class="sp-name">许正宇</div>
-<div class="sp-title">香港特别行政区财经事务及库务局局长 · 主题演讲</div>
+<div class="sp-role">香港特别行政区财经事务及库务局局长</div>
+<div class="sp-kws"><span>综合性</span><span>长期性</span><span>联动性</span><span>黄金交易中心</span><span>财资中心四部曲</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">综合性</span><span class="sp-kw">长期性</span><span class="sp-kw">联动性</span><span class="sp-kw">融资+资管+保险</span><span class="sp-kw">黄金交易中心</span><span class="sp-kw">财资中心四部曲</span><span class="sp-kw">企业自保保险</span><span class="sp-kw">十五五规划</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>用<b>三个关键词</b>概括沪港协同发展：</p>
-<p><b>第一，综合性。</b>香港金融中心的综合性体现在三方面——融资（券商）、资产管理（一家国际知名管理公司刚把香港确定为<span class="highlight">全世界最大的跨境财富管理中心</span>）、保险（风险管理）。在大变局加深演进之下，企业既要利润极大化，也要风险极小化。今天早上吴伟主席宣布支持香港发行 5 年期国债期货"是关键一步"，但更重要的是面对企业复杂多元的风险管理需求，香港能提供什么——"风险管理在这个大变局之下是越来越重要"。</p>
-<p><b>第二，长期性。</b>今年是十五五规划开局之年，也是香港特区政府第一次参与并同时规划自己的计划。很多地区和政府很难有长远的经济规划，但香港在一国之下有安稳的社会政治环境，在一国两制之下有独特地位——"让我们做长远规划提供了充分的条件"。在金融领域，必须把一些现在看似很难做、但长远应该做而且对香港和国家都有利的事情做起来。具体例子：以<span class="highlight">黄金为切入点</span>，与上海黄金交易所合作在香港建造国际性黄金交易中心，今年亚洲金融论坛上已签协议。</p>
-<p><b>第三，联动性。</b>香港背后是国际资本，上海背后是超庞大内地市场——"这两个元素正是金融市场开放和实体经济发展的两大关键元素，也是我们两大枢纽的核心"。他进一步指出，内地来港上市的企业在他心中不是"内地企业"，而是"跨国企业"甚至"未来庞大的国际企业"——"我们内地的企业基本上在世界任何一个地方的竞争力是越来越强，而且所占据的领域是战略性的"。下一步可以在海外做联合路演，让国际投资者充分看到中国经济实力以及金融如何赋能实体经济发展。</p>
-<p>闭幕总结补充了具体举措：香港正在推动<b>财资中心四部曲</b>——税务豁免、改革税制以吸引更多财资中心设立、扩大与不同经济体签署避免双重征税协议（让企业在投资目的地也获得税务确定性）、点对点推广并培育相关财资人才。另外推动企业自保保险业务，上汽已经在香港设立了自保公司，欢迎更多内地企业利用香港保险制度保障境外运营风险。</p>
+<div class="sp-body">
+<p>用<span class="hi">三个关键词</span>概括沪港协同：</p>
+<p><b>综合性。</b>香港集融资、资产管理（全球最大跨境财富管理中心）、保险（风险管理）三大功能于一身。大变局下企业既要利润极大化也要风险极小化——国债期货是关键一步，"但更重要的，面对复杂多元的风险管理需求，香港能提供什么"。</p>
+<p><b>长期性。</b>十五五是香港首次参与国家五年规划。一国两制提供安定环境，能做其他国家做不了的长期规划。具体：以<span class="hi">黄金为切入点</span>与上海金交所合作建国际黄金交易中心，亚洲金融论坛已签协议。</p>
+<p><b>联动性。</b>香港背后是国际资本，上海背后是超庞大内地市场——"双枢纽核心"。内地赴港企业在他心中不是"内地企业"，而是"跨国企业""未来庞大的国际企业"，下一步可在海外联合路演。</p>
+<p>闭幕补充：<b>财资中心四部曲</b>——税务豁免→税制改革→避免双重征税协议→点对点推广+人才培育。推动企业自保保险，上汽已在港设立自保公司。</p>
 </div>
 </div>
 
 <!-- 梁凤仪 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c5">梁</div>
+<div class="sp-info">
 <div class="sp-name">梁凤仪</div>
-<div class="sp-title">香港证券及期货事务监察委员会行政总裁 · 主题演讲</div>
+<div class="sp-role">香港证监会行政总裁</div>
+<div class="sp-kws"><span>Renewable Yuan</span><span>新能源人民币</span><span>国债期货</span><span>固收蓝图</span><span>人民币柜台</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">Renewable Yuan</span><span class="sp-kw">新能源人民币</span><span class="sp-kw">石油美元</span><span class="sp-kw">国债期货</span><span class="sp-kw">固收市场蓝图</span><span class="sp-kw">人民币股票柜台</span><span class="sp-kw">抵押品</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场回忆与方星海"已经在上海工作的时候"就开始研究沪港两地优势互补、错位发展、沪港通建立——"真正建立了一个渠道，让内地跟国际连接起来"。</p>
-<p>提出全场最具原创性的概念——<b>"Renewable Yuan"（新能源人民币）</b>。她将之与大家熟悉的<b>"石油美元"（Petro Dollar）</b>体系做对比：石油美元体系下，全球石油贸易以美元定价和交易，石油进口国必须获得美元作为支付工具，石油出口国的美元收益又循环投资美元资产，形成了对美元的强劲需求。而当前经济学家提出的"新能源人民币"路径，是以<span class="highlight">中国廉价高效的新能源产业——太阳能、风能、电池储备、电动汽车等低碳供应链产品——作为出口新增增长点</span>，推动这些优势产业在全球贸易中采取人民币计价和结算，进而带动对人民币的实质性需求。人民币支付在全球贸易占比虽不高，但随着全球能源转型和供应链重塑，新能源贸易有望成为人民币国际化的新动力。她承认目前"为时尚早"，但"千里之行始于足下"，香港作为全球离岸人民币业务枢纽必须扮演更核心的角色。</p>
-<p>她分析：当更多国际企业资产负债表中积累了规模可观的人民币时，会进一步配置国债和其他人民币产品，构成更广更深的离岸人民币生态圈，最终形成"产业→货币→投资"的有机循环，"与当年欧洲美元市场发展异曲同工"。</p>
-<p>具体举措方面，香港证监会与香港金管局去年 9 月联合发表了固收及货币市场发展蓝图。关键进展包括：</p>
-<p>一、<b>5 年期国债期货</b>——"香港证监会将很快公布业界翘首以盼的国际国债期货挂牌买卖的时间表"，这将推动国际投资者更积极参与国债市场。</p>
-<p>二、<b>抵押品创新</b>——香港场外结算公司已接受债券通持仓的国债作为所有衍生品交易的抵押品。今年香港证监会将连同港交所推出账户收益产品，将离岸或在岸国债纳入港交所旗下其他结算所认可的保证金范围。</p>
-<p>三、继续支持港交所推出更多<b>人民币外汇期货、人民币计价黄金期货、结构性固收产品</b>。</p>
-<p>四、争取早日将<b>人民币股票交易柜台纳入港股通</b>。</p>
-<p>五、推动<b>债券电子交易平台</b>构建，配合做市机制和回购市场建设，全面提升债券交易效率和市场流动性。</p>
-<p>闭幕时补充了扩容方向：港股通可扩容、ETF 通可增加主动型产品、债券通南向可增加更多产品、甚至研究南向是否可以做——"用好现有的渠道，开拓新的渠道，永远朝着这个大潮推进"。</p>
+<div class="sp-body">
+<p>提出全场最具原创性的概念——<b>"Renewable Yuan"（新能源人民币）</b>。</p>
+<p>对比石油美元体系：石油贸易美元定价结算→美元需求→美元资产循环投资。新能源人民币路径：以中国<span class="hi">太阳能、风能、电池、电动车等绿色产业链</span>为出口新增增长点，推动人民币计价结算→带动实质性需求。"千里之行始于足下"，香港必须扮演核心角色。当更多国际企业资产负债表积累人民币时→配置国债和其他产品→形成"产业→货币→投资"有机循环，"与当年欧洲美元市场异曲同工"。</p>
+<p><span class="sec-label">具体举措</span></p>
+<p>一、<b>5 年期国债期货</b>——"香港证监会将很快公布挂牌时间表"。</p>
+<p>二、<b>抵押品创新</b>——场外结算公司已接受债券通持仓国债作为衍生品抵押；今年将国债纳入其他结算所保证金范围。</p>
+<p>三、推动<b>人民币外汇期货、黄金期货、结构性固收产品</b>。</p>
+<p>四、争取<span class="hi">人民币股票交易柜台纳入港股通</span>。</p>
+<p>五、建<span class="hi">债券电子交易平台</span>+做市机制+回购市场。</p>
+<p>闭幕补充：港股通扩容、ETF 通增加主动型产品、债券通南向拓展、甚至研究南向——"用好现有渠道，开拓新渠道，永远朝着大潮推进"。</p>
 </div>
 </div>
 
 <!-- 刘健 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c6">刘</div>
+<div class="sp-info">
 <div class="sp-name">刘健</div>
-<div class="sp-title">证券公司董事长 · 主题演讲</div>
+<div class="sp-role">证券公司董事长</div>
+<div class="sp-kws"><span>制度型开放</span><span>300+企业赴港</span><span>人民币占比8.5%</span><span>跨境研究一体化</span><span>港股通扩容</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">制度型开放</span><span class="sp-kw">跨境投资两大驱动力</span><span class="sp-kw">人民币占比8.5%</span><span class="sp-kw">跨境研究一体化</span><span class="sp-kw">港股通扩容</span><span class="sp-kw">收益互换</span><span class="sp-kw">300+企业赴港</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场定位话题"有很强的现实意义和战略意义"——它不仅是两个城市之间的金融协作，更是中国金融市场连接世界、中国资产和人民币资产走向世界的重要支撑。中国企业和居民对外投资的需求将持续增长，"背后的逻辑在于境外资产的风险收益特征与境内资产不同，跨境配置有利于提高投资的可能性边界，这种需求是真实的、长期的"。</p>
-<p><b>第一个观察：沪港金融协作是制度型开放的范例。</b></p>
-<p>从 2003 年开始已超过 20 年，历经股票通、债券通、互换通、基金互认、ETF 通。当前外资投资 A 股<span class="data-point">近 90%</span>通过陆港通，投资中国债券<span class="data-point">接近 70%</span>通过债券通——这也是 A 股和中国债券纳入全球指数的重要支撑。总结了三条成功经验：一是<span class="highlight">循序渐进、优势互补、互利共赢</span>（沪港投资者结构不同，有很强的互补性，即使有竞争也是良性竞争）；二是<span class="highlight">封闭运行、全程监控、风险可控</span>（整个过程不涉及换汇，绕开了资本项目不完全可兑换的限制，多年运行没有发生大的风险）；三是<span class="highlight">有效的监管协同和监管互认</span>（两地证券监管部门和交易所有非常良好的沟通和人员交流机制）。</p>
-<p><b>第二个观察：深化沪港金融合作有利于打造金融强国双引擎。</b></p>
-<p>未来两大驱动力：一是<b>跨境投资</b>——随着中国产业发展、科技创新、国际竞争能力提升，企业出海是必选项。2023 年以来，<span class="data-point">近 300 家内地企业</span>出海上市，有 A+H、有 18A/18C 专特科技企业赴港上市；二是<b>全球货币多元化和资产配置</b>——人民币在外汇交易中占比已达 <span class="data-point">8.5%</span>，国内居民存款 166 万亿催生大量国际配置需求，人民币已成为"全球最主要的一个主权货币和安全资产"，配置价值正在凸显，"从选项变成了优选项甚至首选项"。</p>
-<p>政策建议：推进两地从业人员资质、职业标准、信息披露互认；港股通标的进一步扩容，把更多优质科技企业包括未盈利企业纳入；研究允许内地投资者参与港股 IPO 和配股；拓展 ETF 互通互挂和基金互认产品类型；优化两地资金交收规则一致性。</p>
-<p><b>第三个观察：一流国际金融中心需要一流投资银行。</b></p>
-<p>提出三个角色定位：一是<b>跨境研究一体化</b>——"我们对 A 股资产是最熟悉的"（深覆盖近 2000 家 A 股上市公司），但要打通境内外研究一体化，了解国际规则和投资者偏好，才能"讲好中国资产的故事"。二是<b>跨境综合金融服务提供者</b>——提供收益互换、利率互换、结构化产品等综合化解决方案，涵盖产品选择、市场因素选择、汇率风险和风险管理工具。三是<b>人民币国际化的产品服务商</b>——帮助国内企业到香港和海外上市、发行人民币债券，同时帮助一带一路国家来上海和香港进行股债融资。</p>
+<div class="sp-body">
+<p>沪港金融协作是制度型开放范例。从 2003 年起逾 20 年，历经股票通→债券通→互换通→基金互认→ETF 通。当前外资投 A 股<span class="dn">近 90%</span>通过陆港通，投债券<span class="dn">近 70%</span>通过债券通——也是纳入全球指数的重要支撑。</p>
+<p>三条成功经验：<span class="hi">循序渐进、优势互补</span>；<span class="hi">封闭运行、全程监控、风险可控</span>（不涉及换汇，绕开资本项目限制）；<span class="hi">有效监管协同和监管互认</span>。</p>
+<p>两大驱动力：<b>企业出海</b>——2023 年以来 <span class="dn">近 300 家</span>内地企业赴港上市；<b>全球货币多元化</b>——人民币外汇交易占比已达 <span class="dn">8.5%</span>，国内居民存款 166 万亿，人民币从"选项→优选项"。</p>
+<p>政策建议：港股通扩容纳入未盈利科技企业；研究内地投资者参与港股 IPO/配股；拓展 ETF 互挂产品；优化两地交收规则。</p>
+<p>三个角色定位：<b>跨境研究一体化</b>（深覆盖近 2000 家 A 股，"讲好中国资产故事"）；<b>跨境综合金融服务</b>（收益互换、利率互换、结构化产品）；<b>人民币国际化产品服务商</b>。</p>
 </div>
 </div>
 
 <!-- 傅帆 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c7">傅</div>
+<div class="sp-info">
 <div class="sp-name">傅帆</div>
-<div class="sp-title">中国太平洋保险集团董事长 · 主题演讲</div>
+<div class="sp-role">中国太平洋保险集团董事长</div>
+<div class="sp-kws"><span>一张保单全球</span><span>再保险双枢纽</span><span>39万亿险资</span><span>电动车国际标准</span><span>AI+金融</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">一张保单覆盖全球</span><span class="sp-kw">再保险双枢纽</span><span class="sp-kw">巨灾债券</span><span class="sp-kw">39万亿险资</span><span class="sp-kw">电动车国际标准</span><span class="sp-kw">数据跨境</span><span class="sp-kw">AI+金融</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场指出，面对严峻复杂的国际形势，中国保险业急需提升全球服务能力，完善风险保障和风险分散机制，为中国的海外利益提供保障——"这正是沪港保险协同的发力点"。</p>
-<p><b>第一，通过沪港协同，筑牢跨境风险保障。</b></p>
-<p>当前中资企业出海呈现新趋势：市场布局更加多元，产业向高端化、智能化、绿色化跃升，模式从工程承包拓展至海外研发、生产和区域总部落地。如许正宇局长所言，企业希望"效益最大化，风险最小化"。三个具体方向：一是<b>深化境外保险服务网络建设</b>，以香港为支点，实现<span class="highlight">"一张保单覆盖多国家、多场景"</span>的综合保障，同时融入香港为出海企业打造的专业服务平台，提供属地化法规适配、市场调研、落地合作等跨境服务。二是<b>打造再保险"离岸枢纽+在岸中心"互补格局</b>——上海正在加快建设在岸再保险中心，依托境内庞大直保市场和临港制度创新；香港作为离岸再保险枢纽，制度规则与国际接轨、跨境服务经验丰富。推动两地保险融合发展，是"我国再保险市场从单向开放迈向双向开放的关键路径"，有助于形成自主风险定价能力。三是<b>构建新型风险转移和分散机制</b>——中资保险机构已在香港成功发行多个巨灾债券，上海正借鉴香港经验，通过制度创新将新型风险转移工具向科技创新、重大基建等场景延伸，依托香港国际化投资者网络进一步打通境内外风险分散渠道。</p>
-<p><b>第二，通过互联互通，优化全球金融资源配置。</b></p>
-<p>险资运用余额已超过 <span class="data-point">39 万亿</span>，规模大、久期长、运作稳健。通过港股通等渠道长期布局香港市场，不仅能实现全球优质资产多元化配置，还能发挥"长钱"属性对冲短期资本波动。以太平洋保险自身为例：2009 年赴港上市，2022 年在方星海副主席支持下于伦敦发行 GDR 并在伦交所上市，去年在香港溢价发行零息 H 股可转债——"公司治理的透明度和国际化水平在不断提升"。</p>
-<p><b>第三，通过数字化合作，提升金融科技发展能力。</b></p>
-<p>两个突破方向：一是<b>推动数据跨境流动</b>——今年 3 月签署的沪港货运贸易及金融数字化合作备忘录，将区块链技术用于电子提单和贸易融资，探索航贸及金融数据的境内外联通；4 月上海拓展数据负面清单出境实施范围，推动再保险和国际航运数据跨境流动。"技术创新加制度创新，沪港之间正构建起合规、安全、高效的跨境数据流出路径"。二是<b>推动 AI+ 行动</b>——上海依托丰富产业场景推进规模化应用，香港侧重前沿攻关，聚焦 AI 在金融监管、合规风控等领域的深度探索。</p>
-<p>闭幕时爆出一个重磅案例：<span class="highlight">20 天前，IUMI（国际航运保险组织）在上海召开全球执委会，太平洋保险发布了《中国电动汽车航运火灾风险减损方案》，获 ABB 高度认可，准备向国际海事组织（IMO）申报，将中国电动汽车电池热失控预警系统技术规范等中国技术标准吸纳为国际标准。</span>——"我们非常希望中国从过往的业务参与向国际标准的制定方向迈进"。</p>
+<div class="sp-body">
+<p><span class="sec-label">一、筑牢跨境风险保障</span></p>
+<p>中企出海升级：市场多元、产业高端化智能化绿色化、从工程承包→海外研发生产区域总部。三个方向：<b>境外保险服务网络</b>——<span class="hi">"一张保单覆盖多国家多场景"</span>；<b>再保险双枢纽</b>——上海在岸中心+香港离岸枢纽，从单向开放迈向双向开放；<b>新型风险转移</b>——中资已在港发行多个巨灾债券，上海正借鉴向科技创新延伸。</p>
+<p><span class="sec-label">二、优化全球资源配置</span></p>
+<p>险资运用余额超 <span class="dn">39 万亿</span>。太平洋保险自身路径：2009 赴港上市→2022 伦敦发行 GDR→2025 香港可转债。更多境内机构可依托香港市场完善资本补充机制。</p>
+<p><span class="sec-label">三、数字化合作</span></p>
+<p>3 月签沪港贸易数字化备忘录（区块链+电子提单+贸易融资）；4 月上海拓展数据负面清单。AI+：上海规模化应用，香港前沿攻关。</p>
+<p><span class="sec-label">重磅案例</span></p>
+<p class="bq">20 天前 IUMI 上海全球执委会：太平洋保险发布《中国电动汽车航运火灾风险减损方案》→获 ABB 高度认可→准备向 IMO 申报，将<span class="hi">中国电动车电池热失控预警技术规范吸纳为国际标准</span>——从业务参与到国际标准制定。</p>
 </div>
 </div>
 
 <!-- 禤惠仪 -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c8">禤</div>
+<div class="sp-info">
 <div class="sp-name">禤惠仪</div>
-<div class="sp-title">渣打银行行政总裁 · 主题演讲</div>
+<div class="sp-role">渣打银行行政总裁</div>
+<div class="sp-kws"><span>黄金窗口期</span><span>超级联系人</span><span>企业出海三段论</span><span>CIPS/FPS</span><span>基础设施互联</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">黄金窗口期</span><span class="sp-kw">超级联系人</span><span class="sp-kw">企业出海三段论</span><span class="sp-kw">CIPS</span><span class="sp-kw">FPS</span><span class="sp-kw">资产重新配置</span><span class="sp-kw">基础设施互联</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场定位今年是十五五规划开局之年、中国高水平开放持续深化的重要一年，同时全球金融格局正在发生变化，市场更加重视风险分散和多元配置。一个趋势正在形成——<b>中国企业加快走向全球，全球资本重新关注中国</b>，"资金、产业、投资的双向流动持续增强"。</p>
-<p><b>第一，深化沪港联动，支持中国企业高水准出海。</b></p>
-<p>中国企业出海正进入新阶段：过去更多是拓展市场，今天已深延到<span class="highlight">供应链布局、跨境资金管理以及全球运营能力建设</span>，对金融服务的需求更加丰富。她分享随香港特区政府代表团访问中东和参加中央访问的亲身体验——海外客户告诉她，"今天中国企业的出海，不单单是走出去，而是在全球范围内寻找增长机会、建立产业合作、并融入当地经济发展"。与此同时，"海外市场对中国企业、中国技术还是中国资本的兴趣也在持续上升"——这意味着中国企业走向全球和全球资本走向中国，是同一个趋势的两个方向。在这个过程中，上海是企业出海的重要起点，香港是连接中国与国际市场的主要门户。金融机构应该发挥好<span class="highlight">"超级联系人"</span>的作用。随着中国企业更大规模走向全球，市场对跨境结算、融资、财资管理和分散风险的对冲需求上升，为人民币更广泛使用打开了空间——"人民币国际化步向了一个前所未有的<span class="highlight">黄金窗口期</span>"。</p>
-<p><b>第二，把握资产重新配置的机遇，吸引全球投资者深度连接中国。</b></p>
-<p>中国资产在全球投资组合中的占比，与中国经济影响力的占比之间，仍存在明显提升空间。"对于全球资本而言，中国资产的重要性不仅体现在回报，更在于其作为亚洲增长核心的战略价值。"今年以来国际投资者在香港资本市场的活跃度明显提升，IPO 市场逐步回暖。</p>
-<p><b>第三，基础设施互联，提升沪港协同开放的承载力。</b></p>
-<p>过去沪港合作更多体现在"市场互联"，未来需要进一步深延至<b>支付、数据和科创金融</b>等领域。具体例举：香港已建立较成熟的人民币跨境支付系统，包括 <span class="highlight">CIPS</span>、跨境 <span class="highlight">FPS</span> 以及 <span class="highlight">EMBRACE</span> 等创新平台，同时正持续推动跨境数据流通、Hydrox 以及商业数据通等重要项目。上海在自贸区、临港新片区以及数字化场景创新方面也走在前列。如果两地能进一步加强监管协同、标准对接和场景互通，"就能让资金、数据流和信息流更加流畅地流动——最终把市场连接起来、把资金连接起来、也把机遇连接起来"。</p>
-<p>闭幕总结：人民币国际化要走的更远，不单单是能结算，还需要"<span class="highlight">好使用、易管理和可配置</span>"。国际金融机构的作用就是"把政策的红利真正转化为企业和投资者看得见、用得上的解决方案——把人先搭起来，把产品做出来，把资金流动起来，让金融开放创造更大的价值"。</p>
+<div class="sp-body">
+<p>一个趋势正在形成——<b>中国企业加快走向全球，全球资本重新关注中国</b>。</p>
+<p><b>第一，支持企业高水准出海。</b>出海已从拓展市场→<span class="hi">供应链布局+跨境资金管理+全球运营能力建设</span>。随团访问中东的亲身体验："海外市场对中国企业、中国技术、中国资本的兴趣在持续上升"。上海是出海起点，香港是国际门户——金融机构应发挥"超级联系人"作用。人民币国际化步向<span class="hi">前所未有的黄金窗口期</span>。</p>
+<p><b>第二，把握资产重新配置机遇。</b>中国资产在全球投资组合占比与中国经济影响力之间仍有明显提升空间。今年以来国际投资者活跃度明显提升，IPO 逐步回暖。</p>
+<p><b>第三，基础设施互联。</b>从"市场互联"深延至<span class="hi">支付、数据、科创金融</span>。香港已有 CIPS、跨境 FPS、EMBRACE 等平台，正推动 Hydrox 及商业数据通。上海自贸区临港走在前列。加强监管协同+标准对接+场景互通→"让资金、数据流和信息流流畅流动——最终把市场、资金、机遇都连接起来"。</p>
+<p>闭幕：人民币国际化不能只靠结算，需"<span class="hi">好使用、易管理和可配置</span>"——"把人搭起来，把产品做出来，把资金流动起来"。</p>
 </div>
 </div>
 
 <!-- Mike -->
-<div class="speaker">
-<div class="sp-header">
+<div class="sp">
+<div class="sp-bar" onclick="this.parentElement.classList.toggle('open')">
+<div class="sp-avatar c4" style="background:#555">M</div>
+<div class="sp-info">
 <div class="sp-name">Mike</div>
-<div class="sp-title">Z/Yen（GFCI 全球金融中心指数）代表 · 主题演讲</div>
+<div class="sp-role">Z/Yen（GFCI 全球金融中心指数）</div>
+<div class="sp-kws"><span>五大维度</span><span>竞争与协作</span><span>信任</span><span>可持续金融</span><span>数字化</span></div>
 </div>
-<div class="sp-keywords">
-<span class="sp-kw">基础设施</span><span class="sp-kw">营商环境</span><span class="sp-kw">声誉</span><span class="sp-kw">人力资本</span><span class="sp-kw">竞争与协作</span><span class="sp-kw">信任</span><span class="sp-kw">数字化</span>
+<div class="sp-arrow">▼</div>
 </div>
-<div class="sp-content">
-<p>开场表示非常高兴再次来到上海论坛，"China is the only country with two top financial centers"。他从事金融中心表现评估已 20 年，自 2000 年以来上海和香港在每次排名中都在前 10。</p>
-<p>分析金融中心的<b>五大评估维度</b>：<b>基础设施</b>是基本底线——成功金融中心需要非常好的环境、物流、交通、数字基础设施，且"不能太贵"；<b>营商环境</b>——让国内外企业易于设立和运营；<b>声誉</b>——涵盖公司、安全、风险水平、监管能力，"这是人们选择城市时的关键差异化因素"；<b>金融行业发展</b>——实际上作为差异化因素的作用相对较小，因为所有顶尖金融中心在这方面都表现出色，但必须有"广泛而深入的金融机构体系"；<b>人力资本</b>——绝对关键，"国际化人才是金融中心的核心"。以伦敦金融城为例，49% 的从业人员为非英国籍。</p>
-<p>关键洞察：金融中心既要<b>竞争</b>也要<b>协作</b>——沪港可以相互学习、标准对接、在监管上协调一致，同时当然也有竞争，但这是一种"良性的、不同的协作方式"。未来金融中心的四个方向：<b>可持续金融</b>（优先支持可持续公司和生产力解决方案）、<b>知识管理</b>（理解和管理现有知识与文化）、<b>创新监管平衡</b>（允许创新的同时平衡风险与消费者保护）、<b>数字化平台</b>（几乎所有服务都通过数字平台呈现）。</p>
-<p>闭幕时强调最重要的资产——<b>信任</b>。"Trust exists in Hong Kong and Shanghai. The trust is about the whole relationships together. And that's why it's important to gather cases by this world to build trust." 他特别提到中国和香港在可再生能源领域的巨大机遇——可以用这个行业"帮助世界理解你能带来的改变，同时也能赚到钱"，但需要与时俱进、持续参与。</p>
+<div class="sp-body">
+<p>"China is the only country with two top financial centers." 从事金融中心评估 20 年，上海和香港自 2000 年以来每次排名都在前十。</p>
+<p>五大维度：<b>基础设施</b>（基本底线，且不能太贵）；<b>营商环境</b>（国内外企业易于设立运营）；<b>声誉</b>（公司安全、风险水平、监管能力——关键差异化因素）；<b>金融行业发展</b>（都必须有广泛深入的金融机构体系）；<b>人力资本</b>——绝对关键，伦敦金融城 49% 为非英国籍。</p>
+<p>金融中心既要<span class="hi">竞争</span>也要<span class="hi">协作</span>——相互学习、标准对接、监管协调。四个未来方向：可持续金融、知识管理、创新监管平衡、数字化平台。</p>
+<p>最重要资产——<span class="hi">信任</span>。"Trust exists in Hong Kong and Shanghai. The trust is about the whole relationships together." 中国和香港在可再生能源领域的机遇巨大——"用这个行业帮助世界理解你能带来的改变，同时也能赚到钱"。</p>
 </div>
 </div>
 
+</div>
+
 <div class="footer">
-<p>2026陆家嘴论坛 · 沪港金融协同发展与高水平金融开放<br>圆桌讨论完整纪要</p>
-<p>来源：飞书妙记 obcnaph546o131mmd34z6mj2<br>生成时间：2026年6月17日</p>
+2026陆家嘴论坛 · 沪港金融协同发展圆桌讨论<br>来源：飞书妙记 · 自动生成
 </div>
 
 </div>

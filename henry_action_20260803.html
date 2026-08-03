@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta property="og:title" content="Henry 行动清单 · DBS × 深农商合作进展 Review（2026-08-03）">
+<meta property="og:description" content="8月活动落地 → 9月数字与奖项 → 9月中大会与报告 → 10-11月新增量：Henry 下半年重点行动一览">
+<meta property="og:type" content="article">
+<title>Henry 行动清单 · DBS × 深农商 Review 2026-08-03</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: #f0f2f5;
+    color: #2d3748;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container { max-width: 680px; margin: 0 auto; background: #ffffff; min-height: 100vh; padding-bottom: 40px; }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8a 60%, #3a7bb5 100%);
+    color: #fff;
+    padding: 42px 28px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: 30px; bottom: -80px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative; z-index: 1;
+    padding-bottom: 12px;
+  }
+  .hero .underline {
+    width: 56px; height: 4px;
+    background: #c0392b;
+    border-radius: 2px;
+    margin-top: 2px;
+    position: relative; z-index: 1;
+  }
+  .hero .sub {
+    margin-top: 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    position: relative; z-index: 1;
+  }
+  .hero .meta {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    position: relative; z-index: 1;
+  }
+  .hero .meta span { display: flex; align-items: center; gap: 4px; }
+
+  /* ===== Summary cards ===== */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px 20px 0;
+  }
+  .stat-card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    border-top: 3px solid #2c5f8a;
+  }
+  .stat-card .num { font-size: 24px; font-weight: 800; color: #1a3a5c; }
+  .stat-card .label { font-size: 12px; color: #718096; margin-top: 2px; }
+
+  /* ===== Sections ===== */
+  .section { padding: 26px 20px 0; }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-title .icon {
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: #1a3a5c;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .section-title h2 { font-size: 18px; font-weight: 700; color: #1a3a5c; }
+  .section-title .line { flex: 1; height: 2px; background: linear-gradient(90deg, #e2e8f0, transparent); }
+
+  /* ===== Timeline ===== */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px; top: 6px; bottom: 6px;
+    width: 3px;
+    background: linear-gradient(180deg, #2c5f8a 0%, #c0392b 60%, #e2e8f0 100%);
+    border-radius: 2px;
+  }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -22px; top: 8px;
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #2c5f8a;
+  }
+  .tl-item.hot::before { border-color: #c0392b; background: #c0392b; box-shadow: 0 0 0 4px rgba(192,57,43,0.15); }
+  .tl-item .tl-date {
+    font-size: 13px;
+    font-weight: 700;
+    color: #c0392b;
+    margin-bottom: 4px;
+  }
+  .tl-item .tl-date .badge {
+    display: inline-block;
+    background: #c0392b;
+    color: #fff;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: 1px;
+  }
+  .tl-item .tl-date .badge.blue { background: #2c5f8a; }
+  .tl-item .tl-title { font-size: 16px; font-weight: 700; color: #1a3a5c; }
+  .tl-item .tl-desc { font-size: 14px; color: #4a5568; margin-top: 3px; }
+  .tl-item .tl-desc b { color: #2d3748; }
+
+  /* ===== Cards ===== */
+  .card {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border-left: 4px solid #2c5f8a;
+  }
+  .card.red { border-left-color: #c0392b; background: #fdf6f5; }
+  .card.orange { border-left-color: #d97706; background: #fdfaf3; }
+  .card.green { border-left-color: #2f855a; background: #f3faf6; }
+  .card h3 { font-size: 15px; font-weight: 700; color: #1a3a5c; margin-bottom: 4px; }
+  .card.red h3 { color: #c0392b; }
+  .card p { font-size: 14px; color: #4a5568; }
+  .card .chip {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #1a3a5c;
+    font-size: 12px;
+    padding: 1px 10px;
+    border-radius: 12px;
+    margin: 6px 6px 0 0;
+  }
+
+  /* ===== Progress bars ===== */
+  .progress-block { margin-bottom: 14px; }
+  .progress-head { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 5px; }
+  .progress-head .name { font-weight: 600; color: #2d3748; }
+  .progress-head .pct { color: #c0392b; font-weight: 700; }
+  .bar { height: 9px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+  .bar > div { height: 100%; border-radius: 5px; background: linear-gradient(90deg, #2c5f8a, #3a7bb5); }
+  .bar.hot > div { background: linear-gradient(90deg, #c0392b, #e0675b); }
+
+  /* ===== Table ===== */
+  .tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #e2e8f0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th {
+    background: #1a3a5c; color: #fff;
+    padding: 10px 12px; text-align: left;
+    font-weight: 600; white-space: nowrap;
+  }
+  tbody td { padding: 10px 12px; border-top: 1px solid #e2e8f0; color: #4a5568; vertical-align: top; }
+  tbody tr:nth-child(even) td { background: #f8fafc; }
+  tbody td:first-child { color: #2d3748; font-weight: 600; white-space: nowrap; }
+
+  /* ===== Callout ===== */
+  .callout {
+    margin: 22px 20px 0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  .callout.blue { background: #eef4fb; border: 1px solid #c5d8ec; color: #1a3a5c; }
+  .callout.red { background: #fdf3f2; border: 1px solid #f0c9c5; color: #8a2c22; }
+  .callout h4 { font-size: 14px; margin-bottom: 4px; }
+
+  .footer {
+    text-align: center;
+    padding: 30px 20px 0;
+    font-size: 12px;
+    color: #a0aec0;
+  }
+
+  @media (max-width: 375px) {
+    .hero h1 { font-size: 20px; }
+    .summary-grid { grid-template-columns: repeat(3, 1fr); padding: 16px 12px 0; }
+    .section { padding: 22px 14px 0; }
+    body { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== Hero ===== -->
+  <div class="hero">
+    <span class="tag">📋 行动清单</span>
+    <h1>Henry 下半年重点行动</h1>
+    <div class="underline"></div>
+    <div class="sub">DBS × 深圳农商行 合作项目进展 Review 会 · 会后行动梳理</div>
+    <div class="meta">
+      <span>📅 2026-08-03</span>
+      <span>⏱ 32 分钟</span>
+      <span>👤 Henry / 团队负责人 / 快哥</span>
+    </div>
+  </div>
+
+  <!-- ===== Summary stats ===== -->
+  <div class="summary-grid">
+    <div class="stat-card"><div class="num">8</div><div class="label">8月前落地项</div></div>
+    <div class="stat-card"><div class="num">9月</div><div class="label">数字 & 奖项</div></div>
+    <div class="stat-card"><div class="num">3+</div><div class="label">新增量机会</div></div>
+  </div>
+
+  <!-- ===== Timeline ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon">🗓</div>
+      <h2>时间线总览</h2>
+      <div class="line"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item hot">
+        <div class="tl-date">8月中旬前 <span class="badge">活动落地</span></div>
+        <div class="tl-title">8/18 资本出海专题讲座 + 6 支行出海沙龙</div>
+        <div class="tl-desc">英吕主讲半小时带 2-3 同事；Angie 团队每场到场；<b>支行国结人员主持串场</b></div>
+      </div>
+      <div class="tl-item hot">
+        <div class="tl-date">8月底 – 9月初 <span class="badge">备数字</span></div>
+        <div class="tl-title">为舒珊 Review Note 汇总结果数字</div>
+        <div class="tl-desc">结算量、feedback 数、专家解决件数 + <b>奖项方案 + 激励数据</b></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">9/15 – 9/16 <span class="badge blue">大会</span></div>
+        <div class="tl-title">上海开业 + 新质生产力大会</div>
+        <div class="tl-desc">跟进陈林总、李董事长出席；三季度 report 发出（CC 团队负责人）</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">10月 – 11月 <span class="badge blue">新增量</span></div>
+        <div class="tl-title">Ken 对齐 + 供应链 / 外汇新机会</div>
+        <div class="tl-desc">11 月战略会前与 Ken 定高净值产品方向；样板间供应链突破；外汇展业资格</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Phase 1: August ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon" style="background:#c0392b;">🎤</div>
+      <h2>阶段一 · 8月：活动落地</h2>
+      <div class="line"></div>
+    </div>
+    <div class="card red">
+      <h3>🎯 8/18 资本出海专题讲座（二三十人）</h3>
+      <p>英吕主讲 30 分钟 + 带 2-3 名同事到场，从参会客户中识别<b>赴港上市机会</b>；核心是让英吕团队与支行对公总监建立<b>机会输送机制</b>，解决"临上市才介入、根本抓不到"的痛点。</p>
+      <span class="chip">对接英吕</span><span class="chip">支行对公总监</span>
+    </div>
+    <div class="card red">
+      <h3>🏦 6 样板间支行出海沙龙（各一场）</h3>
+      <p>Angie 团队每场派人到场对接香港机会（开户/跨境/上市）；<b>支行国际结算人员负责主持串场</b>——借活动锻炼支行国结能力。</p>
+      <span class="chip">对接 Angie</span><span class="chip">国际结算人员</span>
+    </div>
+    <div class="card">
+      <h3>🔄 核对 SJV 行研报告使用情况</h3>
+      <p>确认 6 个样板间团队是否在用 SJV 行研报告：没用 → 推动用起来；有用 → 行长+行助开权限，<b>发全行、定期（月/周）分发</b>。</p>
+    </div>
+  </div>
+
+  <!-- ===== Phase 2: Sep ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon" style="background:#d97706;">📊</div>
+      <h2>阶段二 · 9月初：数字 & 奖项</h2>
+      <div class="line"></div>
+    </div>
+    <div class="card orange">
+      <h3>📈 汇总成果数字（8月底-9月初）</h3>
+      <p>国结结算量、分行/支行 feedback 数量、专家团队解决件数——<b>支撑"零的突破"</b>，写入舒珊 Review Note（9/15 前需备好）。</p>
+    </div>
+    <div class="card orange">
+      <h3>🏆 奖项方案（与高翔、陈林商量）</h3>
+      <p>四方向各评 1 奖 + 1 综合奖（约 5-6 人）；不与深农商自有奖金机制重复；部分延续、部分 ad hoc。对应 200 万奖金池（4 项 × 50 万）。</p>
+    </div>
+    <div class="card">
+      <h3>📋 激励数据统计（找高晓）</h3>
+      <p>个人业务激励统计（监管敏感、未下放分支行）——内部 reference 用，9 月前拿到。</p>
+    </div>
+  </div>
+
+  <!-- ===== Phase 3: Sep mid ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon" style="background:#2f855a;">🎪</div>
+      <h2>阶段三 · 9月中：大会 & 报告</h2>
+      <div class="line"></div>
+    </div>
+    <div class="card green">
+      <h3>🎪 9/15-16 上海开业 + 新质生产力大会</h3>
+      <p>团队负责人邀请深农商高管（陈林总、李董事长）；Henry 收到通知后跟进出席，<b>确定是否陪同</b>。</p>
+    </div>
+    <div class="card green">
+      <h3>✍️ 三季度 Summary Report</h3>
+      <p>发给金哲，CC 团队负责人（成果部分由团队整理转呈 Sandra + CC Craig）；<b>季度后 1-2 周内</b>发出。</p>
+    </div>
+  </div>
+
+  <!-- ===== Phase 4: Q4 ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon">🚀</div>
+      <h2>阶段四 · 10-11月：新增量</h2>
+      <div class="line"></div>
+    </div>
+    <div class="card">
+      <h3>🤝 与 Ken 对齐高净值产品方向</h3>
+      <p>Ken 将参加 <b>11 月深农商战略会</b>——会前定下公募基金/海外产品合作思路；姚刚来后探讨引入国内头部公募基金。</p>
+      <span class="chip">11月战略会前</span>
+    </div>
+    <div class="card">
+      <h3>🧩 供应链：跟踪样板间突破</h3>
+      <p>顺丰已落总行营业部（三季度数据入 report）；预计 <b>1-2 个样板间</b>三季度突破，非样板间贡献也设奖认可。</p>
+    </div>
+    <div class="card">
+      <h3>🌐 外汇展业资格（明年指标 / 加分项）</h3>
+      <p>本月活动忙完后，区经同事联系林瑞强林总敲申请流程——<b>不急，定位为今年加分项 + 明年指标</b>。</p>
+    </div>
+  </div>
+
+  <!-- ===== Progress ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon">📶</div>
+      <h2>进展判断（会中评估）</h2>
+      <div class="line"></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-head"><span class="name">国际金融 / 国结（最易出成绩）</span><span class="pct">● 高</span></div>
+      <div class="bar"><div style="width: 80%;"></div></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-head"><span class="name">供应链金融（首笔落地）</span><span class="pct">● 高</span></div>
+      <div class="bar hot"><div style="width: 70%;"></div></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-head"><span class="name">行研能力建设（长效投入）</span><span class="pct">◐ 中</span></div>
+      <div class="bar"><div style="width: 50%;"></div></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-head"><span class="name">高净值产品（缺人缺产品）</span><span class="pct">◌ 低</span></div>
+      <div class="bar"><div style="width: 25%;"></div></div>
+    </div>
+  </div>
+
+  <!-- ===== Key deadlines ===== -->
+  <div class="section">
+    <div class="section-title">
+      <div class="icon">⏰</div>
+      <h2>关键节点速查</h2>
+      <div class="line"></div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>日期</th><th>事项</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>8/18</td><td>资本出海专题讲座（英吕主讲）</td><td>待办</td></tr>
+          <tr><td>8月内</td><td>6 支行出海沙龙（Angie 到场）</td><td>待办</td></tr>
+          <tr><td>8月底-9月初</td><td>成果数字 + 奖项方案 + 激励数据</td><td>待办</td></tr>
+          <tr><td>9/15-16</td><td>上海开业 + 新质生产力大会</td><td>待确认</td></tr>
+          <tr><td>9月内</td><td>新加坡 Trip proposal（团队侧）</td><td>进行中</td></tr>
+          <tr><td>三季度后 1-2 周</td><td>三季度 Summary Report 发出</td><td>待办</td></tr>
+          <tr><td>11月战略会前</td><td>与 Ken 定高净值产品方向</td><td>待办</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== Callouts ===== -->
+  <div class="callout blue">
+    <h4>💡 一句话主线</h4>
+    8月活动落地 → 9月初交数字与奖项 → 9月中大会 + 三季度报告 → 10-11月 Ken 对齐与新增量。
+    <b>今年最大的成绩定义：把渠道、机制、资源全部梳理通。</b>
+  </div>
+  <div class="callout red">
+    <h4>⚠️ 汇报注意</h4>
+    对外只放<b>成果 + 数字</b>（国结零突破、供应链首笔、行研分发机制）；系统对接对外表述为"纳入长期规划，聚焦流程梳理"；激励数据因监管敏感性仅内部参考。
+  </div>
+
+  <div class="footer">Generated by mimiko · 2026-08-03 · 基于飞书妙记转录整理</div>
+</div>
+</body>
+</html>

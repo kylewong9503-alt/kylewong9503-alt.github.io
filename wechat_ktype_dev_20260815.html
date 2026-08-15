@@ -3,456 +3,421 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta property="og:title" content="K型发展研讨会纪要 · 嵌入式发展×房地产×AI×财税（2026-08-15）">
-<meta property="og:description" content="五位专家闭门研讨：嵌入式发展1.0→2.0转型、房地产存量时代三重折旧压力、2026人工智能全景与资本流向、财政政策空间与债务结构">
+<meta property="og:title" content="K型发展研讨会纪要（2026-08-15）">
+<meta property="og:description" content="五位嘉宾闭门研讨：嵌入式发展、房地产存量时代、人工智能、财税政策">
 <meta property="og:type" content="article">
 <title>K型发展研讨会纪要 · 2026-08-15</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    background: #f0f2f5;
-    color: #2d3748;
-    line-height: 1.7;
+    background: #ececec;
+    color: #333;
+    line-height: 1.75;
     font-size: 16px;
   }
-  .container { max-width: 680px; margin: 0 auto; background: #ffffff; min-height: 100vh; padding-bottom: 40px; }
+  .container { max-width: 680px; margin: 0 auto; background: #ffffff; min-height: 100vh; padding-bottom: 48px; }
 
-  /* ===== Hero ===== */
-  .hero {
-    background: linear-gradient(135deg, #1a3a5c 0%, #2c5f8a 60%, #3a7bb5 100%);
+  /* ===== 头部（黑） ===== */
+  .header {
+    background: #1a1a1a;
     color: #fff;
-    padding: 42px 28px 36px;
-    position: relative;
-    overflow: hidden;
+    padding: 40px 26px 34px;
+    border-bottom: 4px solid #b30000;
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    right: -60px; top: -60px;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.06);
-  }
-  .hero::before {
-    content: "";
-    position: absolute;
-    right: 30px; bottom: -80px;
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-  }
-  .hero .tag {
+  .header .tag {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.35);
-    border-radius: 20px;
-    padding: 4px 14px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-    position: relative; z-index: 1;
-  }
-  .hero h1 {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    position: relative; z-index: 1;
-    padding-bottom: 12px;
-  }
-  .hero .underline {
-    width: 56px; height: 4px;
-    background: #c0392b;
+    border: 1px solid #666;
     border-radius: 2px;
-    margin-top: 2px;
-    position: relative; z-index: 1;
-  }
-  .hero .sub {
-    margin-top: 14px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.85);
-    position: relative; z-index: 1;
-  }
-  .hero .meta {
-    margin-top: 20px;
-    display: flex;
-    gap: 16px;
+    padding: 3px 12px;
     font-size: 12px;
-    color: rgba(255,255,255,0.7);
-    position: relative; z-index: 1;
+    letter-spacing: 2px;
+    color: #ccc;
+    margin-bottom: 18px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+  }
+  .header .rule { width: 48px; height: 3px; background: #b30000; margin-bottom: 16px; }
+  .header .sub { font-size: 14px; color: #aaa; }
+  .header .meta {
+    margin-top: 18px;
+    display: flex;
+    gap: 18px;
+    font-size: 12px;
+    color: #888;
     flex-wrap: wrap;
   }
-  .hero .meta span { display: flex; align-items: center; gap: 4px; }
+  .header .meta span { display: flex; align-items: center; }
 
-  /* ===== Summary cards ===== */
-  .summary-grid {
+  /* ===== 概览 ===== */
+  .overview {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px 20px 0;
+    gap: 8px;
+    padding: 18px 16px 0;
   }
-  .stat-card {
-    background: #f8fafc;
-    border-radius: 10px;
-    padding: 14px 10px;
+  .ov-card {
+    background: #f4f4f4;
+    border-top: 3px solid #b30000;
+    padding: 12px 8px;
     text-align: center;
-    border-top: 3px solid #2c5f8a;
   }
-  .stat-card .num { font-size: 22px; font-weight: 800; color: #1a3a5c; }
-  .stat-card .label { font-size: 12px; color: #718096; margin-top: 2px; }
+  .ov-card .num { font-size: 20px; font-weight: 800; color: #111; }
+  .ov-card .label { font-size: 11px; color: #777; margin-top: 2px; }
 
-  /* ===== Sections ===== */
-  .section { padding: 26px 20px 0; }
-  .section-title {
+  /* ===== 区块标题 ===== */
+  .sec { padding: 26px 18px 0; }
+  .sec-title {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
-  .section-title .icon {
-    width: 34px; height: 34px;
-    border-radius: 9px;
-    background: #1a3a5c;
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 17px;
-    flex-shrink: 0;
-  }
-  .section-title h2 { font-size: 18px; font-weight: 700; color: #1a3a5c; }
-  .section-title .line { flex: 1; height: 2px; background: linear-gradient(90deg, #e2e8f0, transparent); }
-
-  /* ===== Timeline ===== */
-  .timeline { position: relative; padding-left: 24px; }
-  .timeline::before {
-    content: "";
-    position: absolute;
-    left: 7px; top: 6px; bottom: 6px;
-    width: 3px;
-    background: linear-gradient(180deg, #2c5f8a 0%, #c0392b 60%, #e2e8f0 100%);
-    border-radius: 2px;
-  }
-  .tl-item { position: relative; margin-bottom: 18px; }
-  .tl-item::before {
-    content: "";
-    position: absolute;
-    left: -22px; top: 8px;
-    width: 13px; height: 13px;
-    border-radius: 50%;
-    background: #fff;
-    border: 3px solid #2c5f8a;
-  }
-  .tl-item.hot::before { border-color: #c0392b; background: #c0392b; box-shadow: 0 0 0 4px rgba(192,57,43,0.15); }
-  .tl-item .tl-date {
+  .sec-title .idx {
     font-size: 13px;
     font-weight: 700;
-    color: #c0392b;
+    color: #b30000;
+    border: 1px solid #b30000;
+    padding: 2px 8px;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .sec-title h2 { font-size: 17px; font-weight: 700; color: #111; letter-spacing: 0.5px; }
+  .sec-title .line { flex: 1; height: 1px; background: #ddd; margin-left: 12px; }
+
+  /* ===== 议程列表 ===== */
+  .agenda { padding: 0; }
+  .agenda-item {
+    padding: 12px 16px;
+    border-left: 3px solid #ccc;
     margin-bottom: 4px;
+    background: #fafafa;
   }
-  .tl-item .tl-date .badge {
-    display: inline-block;
-    background: #c0392b;
-    color: #fff;
-    font-size: 11px;
-    padding: 1px 8px;
-    border-radius: 10px;
-    margin-left: 6px;
-    vertical-align: 1px;
-  }
-  .tl-item .tl-date .badge.blue { background: #2c5f8a; }
-  .tl-item .tl-title { font-size: 16px; font-weight: 700; color: #1a3a5c; }
-  .tl-item .tl-desc { font-size: 14px; color: #4a5568; margin-top: 3px; }
-  .tl-item .tl-desc b { color: #2d3748; }
+  .agenda-item .topic { font-size: 15px; font-weight: 700; color: #111; }
+  .agenda-item .who { font-size: 12px; color: #b30000; font-weight: 700; margin-right: 6px; }
+  .agenda-item .desc { font-size: 13px; color: #666; margin-top: 2px; }
 
-  /* ===== Cards ===== */
-  .card {
-    background: #f8fafc;
-    border-radius: 10px;
+  /* ===== 折叠框（发言人） ===== */
+  .speaker { margin-bottom: 10px; }
+  details {
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+  details[open] { border-color: #999; }
+  summary {
+    list-style: none;
+    cursor: pointer;
     padding: 14px 16px;
-    margin-bottom: 12px;
-    border-left: 4px solid #2c5f8a;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f7f7f7;
   }
-  .card.red { border-left-color: #c0392b; background: #fdf6f5; }
-  .card.orange { border-left-color: #d97706; background: #fdfaf3; }
-  .card.green { border-left-color: #2f855a; background: #f3faf6; }
-  .card h3 { font-size: 15px; font-weight: 700; color: #1a3a5c; margin-bottom: 4px; }
-  .card.red h3 { color: #c0392b; }
-  .card p { font-size: 14px; color: #4a5568; }
-  .card .chip {
-    display: inline-block;
-    background: #e2e8f0;
-    color: #1a3a5c;
-    font-size: 12px;
-    padding: 1px 10px;
-    border-radius: 12px;
-    margin: 6px 6px 0 0;
+  summary::-webkit-details-marker { display: none; }
+  summary .no {
+    width: 26px; height: 26px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
   }
+  summary .name { font-size: 15px; font-weight: 700; color: #111; }
+  summary .role { font-size: 12px; color: #999; margin-left: auto; white-space: nowrap; }
+  summary .arrow {
+    width: 8px; height: 8px;
+    border-right: 2px solid #b30000;
+    border-bottom: 2px solid #b30000;
+    transform: rotate(45deg);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 4px;
+  }
+  details[open] summary .arrow { transform: rotate(-135deg); }
+  details[open] summary { border-bottom: 1px solid #eee; }
+  .body { padding: 14px 16px 16px; }
 
-  /* ===== Table ===== */
-  .tbl-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #e2e8f0; }
-  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .point { margin-bottom: 12px; }
+  .point:last-child { margin-bottom: 0; }
+  .point .p-title { font-size: 14px; font-weight: 700; color: #111; margin-bottom: 2px; }
+  .point .p-title .dot { color: #b30000; margin-right: 6px; }
+  .point p { font-size: 14px; color: #555; }
+  .point p b { color: #111; }
+  .point .sub { margin-top: 4px; padding-left: 14px; font-size: 13px; color: #777; }
+
+  /* ===== 表格 ===== */
+  .tbl-wrap { overflow-x: auto; border: 1px solid #ddd; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
   thead th {
-    background: #1a3a5c; color: #fff;
-    padding: 10px 12px; text-align: left;
+    background: #1a1a1a; color: #fff;
+    padding: 9px 12px; text-align: left;
     font-weight: 600; white-space: nowrap;
   }
-  tbody td { padding: 10px 12px; border-top: 1px solid #e2e8f0; color: #4a5568; vertical-align: top; }
-  tbody tr:nth-child(even) td { background: #f8fafc; }
-  tbody td:first-child { color: #2d3748; font-weight: 600; white-space: nowrap; }
+  tbody td { padding: 9px 12px; border-top: 1px solid #eee; color: #555; vertical-align: top; }
+  tbody tr:nth-child(even) td { background: #fafafa; }
+  tbody td:first-child { color: #111; font-weight: 600; white-space: nowrap; }
 
-  /* ===== Callout ===== */
-  .callout {
-    margin: 22px 20px 0;
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 14px;
+  /* ===== 收尾 ===== */
+  .note {
+    margin: 22px 18px 0;
+    border: 1px solid #ddd;
+    padding: 12px 14px;
+    font-size: 13px;
   }
-  .callout.blue { background: #eef4fb; border: 1px solid #c5d8ec; color: #1a3a5c; }
-  .callout.red { background: #fdf3f2; border: 1px solid #f0c9c5; color: #8a2c22; }
-  .callout.green { background: #f0faf4; border: 1px solid #bfe3cf; color: #22543d; }
-  .callout h4 { font-size: 14px; margin-bottom: 4px; }
+  .note.red { border-left: 4px solid #b30000; background: #fcf8f8; color: #8a1f1f; }
+  .note.gray { border-left: 4px solid #666; background: #f7f7f7; color: #555; }
+  .note h4 { font-size: 13px; margin-bottom: 3px; color: #111; }
 
   .footer {
     text-align: center;
-    padding: 30px 20px 0;
-    font-size: 12px;
-    color: #a0aec0;
+    padding: 28px 20px 0;
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
   }
 
   @media (max-width: 375px) {
-    .hero h1 { font-size: 20px; }
-    .summary-grid { grid-template-columns: repeat(3, 1fr); padding: 16px 12px 0; }
-    .section { padding: 22px 14px 0; }
+    .header h1 { font-size: 22px; }
+    .overview { padding: 16px 12px 0; }
+    .sec { padding: 22px 12px 0; }
     body { font-size: 15px; }
+    summary .role { display: none; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- ===== Hero ===== -->
-  <div class="hero">
-    <span class="tag">📝 闭门研讨会纪要</span>
+  <!-- ===== 头部 ===== -->
+  <div class="header">
+    <span class="tag">闭门研讨会纪要</span>
     <h1>K型发展研讨会</h1>
-    <div class="underline"></div>
-    <div class="sub">嵌入式发展 × 房地产存量时代 × 人工智能 × 财税政策 · 专家闭门研讨</div>
+    <div class="rule"></div>
+    <div class="sub">嵌入式发展 · 房地产存量时代 · 人工智能 · 财税政策</div>
     <div class="meta">
-      <span>📅 2026-08-15</span>
-      <span>⏱ 1小时55分</span>
-      <span>👤 勤伟教授 / 艾米 / 陆总 / 王司长 / 黄老师</span>
+      <span>2026-08-15</span>
+      <span>1小时55分</span>
+      <span>五位嘉宾</span>
     </div>
   </div>
 
-  <!-- ===== Summary stats ===== -->
-  <div class="summary-grid">
-    <div class="stat-card"><div class="num">5</div><div class="label">位嘉宾演讲</div></div>
-    <div class="stat-card"><div class="num">1.2万亿</div><div class="label">2025贸易顺差(美元)</div></div>
-    <div class="stat-card"><div class="num">3重</div><div class="label">房价下行压力</div></div>
+  <!-- ===== 概览 ===== -->
+  <div class="overview">
+    <div class="ov-card"><div class="num">5</div><div class="label">嘉宾演讲</div></div>
+    <div class="ov-card"><div class="num">1.2万亿</div><div class="label">2025顺差(美元)</div></div>
+    <div class="ov-card"><div class="num">3重</div><div class="label">房价下行压力</div></div>
   </div>
 
-  <!-- ===== 议程总览 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon">🗓</div>
-      <h2>议程总览</h2>
-      <div class="line"></div>
-    </div>
-    <div class="timeline">
-      <div class="tl-item hot">
-        <div class="tl-date">主题一 <span class="badge">理论框架</span></div>
-        <div class="tl-title">嵌入式发展：从 1.0 到 2.0</div>
-        <div class="tl-desc">勤伟教授——以长鑫科技 IPO 为引，提出"市场嵌入国家治理"框架，论证中国经济需从生产导向转向居民需求导向</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">主题二 <span class="badge blue">房地产</span></div>
-        <div class="tl-title">存量时代的房地产：未做的制度准备</div>
-        <div class="tl-desc">艾米——一线/二线/其他城市分化，新开工回到 1996 年水平，存量住宅面临三重折旧压力</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">主题三 <span class="badge blue">人工智能</span></div>
-        <div class="tl-title">2026 年人工智能：资本、政策与产业链全景</div>
-        <div class="tl-desc">陆总——AI 已成经济新扩张核心牵引力，但中美算力差距 15 倍/5 倍，商业化未闭环</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">主题四 <span class="badge blue">财税</span></div>
-        <div class="tl-title">财政政策的空间与债务结构</div>
-        <div class="tl-desc">王司长——土地出让收入萎缩后财政平衡承压，赤字率破 4%，中央地方债务结构倒挂</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-date">主题五 <span class="badge blue">评论交锋</span></div>
-        <div class="tl-title">嵌入式发展的评价与追问</div>
-        <div class="tl-desc">黄老师——框架有借鉴意义，但"长鑫模式"可复制性存疑，改革大方向应是政府后退、市场前进</div>
-      </div>
+  <!-- ===== 议程 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">目 录</span><h2>议程</h2><div class="line"></div></div>
+    <div class="agenda">
+      <div class="agenda-item"><span class="who">壹</span><span class="topic">嵌入式发展：从 1.0 到 2.0</span><div class="desc">勤伟教授 · 理论框架</div></div>
+      <div class="agenda-item"><span class="who">贰</span><span class="topic">存量时代的房地产：未做的制度准备</span><div class="desc">艾米 · 市场与供给</div></div>
+      <div class="agenda-item"><span class="who">叁</span><span class="topic">2026 年人工智能：资本、政策与产业链</span><div class="desc">陆总 · 券商研究所</div></div>
+      <div class="agenda-item"><span class="who">肆</span><span class="topic">财政政策的空间与债务结构</span><div class="desc">王司长 · 财税视角</div></div>
+      <div class="agenda-item"><span class="who">伍</span><span class="topic">嵌入式发展的评价与追问</span><div class="desc">黄老师 · 评论</div></div>
     </div>
   </div>
 
-  <!-- ===== 主题一：嵌入式发展 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon">🧩</div>
-      <h2>主题一 · 嵌入式发展 1.0 → 2.0</h2>
-      <div class="line"></div>
-    </div>
-    <div class="card red">
-      <h3>🎯 核心框架：市场嵌入国家，而非双轨并行</h3>
-      <p>以<b>长鑫科技</b>（合肥，A股第一股，3万多亿市值）为引：它是地方产业基金+市场力量共同培育的产物，既非行政指令，也非纯市场——正是"嵌入式发展"的写照。40 年改革开放本质是<b>把市场机制引入既有治理体制</b>：市场提供<b>激励机制、信息反馈、筛选机制</b>，弥补计划经济缺失；政府规划、土地、信贷并未消失，也不能替代企业创新与市场检验。</p>
-      <span class="chip">政府+市场非对立</span><span class="chip">超越双轨制叙事</span>
-    </div>
-    <div class="card">
-      <h3>📈 1.0 版的成功逻辑（生产端）</h3>
-      <p>政府通过<b>经济增长目标层层分解</b>（省平均目标比全国高约1%，市再上浮）调动地方；80% 城市未达自身目标，但全国达标——靠土地财政、基建项目发动地方企业。高储蓄率（&gt;投资率）支撑高投资率（曾接近 40%，美国约 20%），<b>不依赖外债、反向输出资本</b>，克服了后发国家的资本短缺难题。2008 年后目标与实际增速关系愈发紧密。</p>
-    </div>
-    <div class="card orange">
-      <h3>⚠️ 1.0 的结构性代价</h3>
-      <p>资源长期偏向生产端 → <b>生产强、内需弱</b>。内卷三条件同时出现：<b>进入强 + 退出弱 + 内需不足</b>（比亚迪利润率仅约 5%，电动车企业普遍亏损）。2025 年贸易顺差创纪录 <b>1.2 万亿美元</b>，其中大半已是高端制造——"中国冲击 2.0"与发达国家正面竞争，<b>出口作为泄压阀作用已近上限</b>。</p>
-      <span class="chip">内卷三条件</span><span class="chip">顺差1.2万亿</span>
-    </div>
-    <div class="card">
-      <h3>🔬 传统政策工具为何失灵</h3>
-      <p>标准 VAR 分析：<b>M2 增长对 CPI 无显著影响</b>，对 PPI 短期正效应一年内反转、7-8 个季度后显著转负。行业层面：企业负债上升的行业，PPI 反而下降更明显。原因：货币传导直接流向<b>生产端</b>（企业、地方政府项目），经工资再间接达居民端；房地产下行后这条间接通道失灵。财政宽松同样沿生产端传导，效果有限。分税制下<b>消费税是地方政府唯一不分享的税种</b>，且 GDP 按生产端核算 → 地方政府天然无动力刺激消费。</p>
-    </div>
-    <div class="card green">
-      <h3>🚀 2.0 版：从生产到繁荣</h3>
-      <p>核心矛盾从"生产力不足"切换到"<b>内需不足</b>"。方向：把生产能力转化为<b>利润</b>、产业升级转化为<b>居民收入</b>、增长转化为<b>居民福利</b>（安全感、发展机会）。抓手：加大社保（养老/医疗/教育）投入让居民敢消费；改革税制（消费税分享）调动地方政府促消费积极性；调整以生产端为主的 GDP 核算与考核体系。</p>
-      <span class="chip">产能→利润</span><span class="chip">升级→收入</span><span class="chip">增长→福利</span>
-    </div>
-  </div>
-
-  <!-- ===== 主题二：房地产 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon" style="background:#c0392b;">🏠</div>
-      <h2>主题二 · 房地产存量时代</h2>
-      <div class="line"></div>
-    </div>
-    <div class="card">
-      <h3>📊 2026年1-7月市场：一线好、二线最差</h3>
-      <p>总体疲软但未掉头向下：一线商品房成交同比 <b>+1.7%</b>（7月深圳+6%、上海+9%，北京-28.8%），一线二手房 <b>+10.9%</b>；二线商品房 <b>-10%</b>（二手房+3.4%），是所有城市中最冷；其他城市二手房 +14%（最高）。全国二手房价格继续下行但<b>降幅收窄</b>（二线环比下跌城市占比 83%→78%，其他城市 69%→51%）。挂牌量 7 月环比 +0.4%（东北/西北/中部增加，一线靠深圳下降 5000+套）。</p>
-    </div>
-    <div class="card red">
-      <h3>🏗 新开工崩塌：回到 1996 年水平</h3>
-      <p>1-7 月一线住宅用地成交额 -29%（约为 2011 年一半），二线 -43%（约为 2021 年 20%）。商品房新开工同比 <b>-24%</b>，若含保障房等全口径城镇住宅新开工已回到 <b>1996 年（亚洲金融危机前）水平</b>。对标日本：千人住房建设套数日本 2002-2025 为 7.5 套（53 年更新一次），中国 2024 年 5.6、今年预计 &lt;4（更新周期 100+ 年，低于美法）；北京上海仅 3.7/5.1（108/70 年更新）。住房固定资本形成占 GDP 预计跌破 4%（日本常态 4.3%）。<b>建设量一定不对 → 投资数字不对。</b></p>
-    </div>
-    <div class="card orange">
-      <h3>📉 存量住宅三重下行压力</h3>
-      <p><b>①功能性折旧</b>：新产品入市直接压低周边房价（深圳某新盘降价超30%，北京新盘周边14个小区全跌）；<b>②资本折旧</b>：建筑 15-20 年开始出问题，专项维修基金未做准备，房龄越老跌幅越快（东京规律）；<b>③土地期权价值不确定性</b>：房屋 31 年后才可能因"更新价值"止跌，否则房价下跌无下限。当前城市更新政策未解决任何一个问题——一次性危改投入对政府不可持续。</p>
-      <span class="chip">功能性折旧</span><span class="chip">资本折旧</span><span class="chip">土地期权</span>
-    </div>
-    <div class="card green">
-      <h3>💡 制度准备：居民自治 + 价值财政</h3>
-      <p><b>居民端</b>：强化缴费法律义务、形成可对接第三方的法律实体、自主制定更新改造方案并养成付费习惯。<b>政府端</b>：从<b>土地财政 → 不动产价值财政</b>（以"更新价值"捕获存量价值，比房产税更可行、争议更小）；政府投资转向不具市场自发改造能力的项目（社区养老、公共设施），画好安全底线后把改造权交给居民。</p>
-      <span class="chip">城市更新</span><span class="chip">不动产价值财政</span>
+  <!-- ===== 壹：勤伟教授 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">壹</span><h2>嵌入式发展 1.0 → 2.0</h2><div class="line"></div></div>
+    <div class="speaker">
+      <details open>
+        <summary>
+          <span class="no">1</span>
+          <span class="name">勤伟教授</span>
+          <span class="arrow"></span>
+        </summary>
+        <div class="body">
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>核心框架：市场嵌入国家，而非双轨并行</div>
+            <p>以<b>长鑫科技</b>（合肥，A股第一股，3万多亿市值）为引——它是地方产业基金与市场力量共同培育的产物，既非行政指令，也非纯市场，正是"嵌入式发展"的写照。40 年改革开放的本质，是把<b>市场机制引入既有治理体制</b>：市场提供激励机制、信息反馈、筛选机制，弥补计划经济缺失；政府规划、土地、信贷并未消失，但也不能替代企业创新与市场检验。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>1.0 版的成功逻辑（生产端）</div>
+            <p>经济增长目标<b>层层分解</b>（省平均目标比全国高约1%，市再上浮）调动地方；80% 城市未达自身目标，但全国达标——靠土地财政、基建项目发动地方企业。高储蓄率支撑高投资率（曾接近40%，美国约20%），<b>不依赖外债、反向输出资本</b>，克服后发国家资本短缺难题。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>1.0 的结构性代价</div>
+            <p>资源长期偏向生产端 → <b>生产强、内需弱</b>。内卷三条件同时出现：<b>进入强 + 退出弱 + 内需不足</b>（比亚迪利润率仅约5%，电动车企业普遍亏损）。2025 年贸易顺差创纪录 <b>1.2万亿美元</b>，其中大半已是高端制造——"中国冲击 2.0"与发达国家正面竞争，<b>出口作为泄压阀已近上限</b>。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>传统政策工具为何失灵</div>
+            <p>标准 VAR 分析：<b>M2 增长对 CPI 无显著影响</b>，对 PPI 短期正效应一年内反转、7-8 个季度后显著转负。货币传导直接流向<b>生产端</b>，房地产下行后经工资间接达居民端的通道失灵。分税制下<b>消费税是地方政府唯一不分享的税种</b>，且 GDP 按生产端核算 → 地方政府无动力刺激消费。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>2.0 版：从生产到繁荣</div>
+            <p>核心矛盾从"生产力不足"切换到"<b>内需不足</b>"。方向：把生产能力转化为<b>利润</b>、产业升级转化为<b>居民收入</b>、增长转化为<b>居民福利</b>。抓手：加大社保（养老/医疗/教育）投入让居民敢消费；改革税制（消费税分享）调动地方促消费；调整以生产端为主的 GDP 核算与考核体系。</p>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
-  <!-- ===== 主题三：人工智能 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon" style="background:#d97706;">🤖</div>
-      <h2>主题三 · 2026 人工智能全景</h2>
-      <div class="line"></div>
-    </div>
-    <div class="card">
-      <h3>💰 资本流向：钱往应用层走</h3>
-      <p>中国 AI 产业链 Q1 一级市场融资 <b>1000+ 起</b>，三分之二流向应用服务层（投资逻辑从"技术行不行"转向"能否赚钱"）；前三行业：软件应用 24%、物理AI 13%、无人驾驶 8.6%；早期融资占三分之二，大额融资集中在物理AI芯片与基础大模型。Q1 IPO <b>23 家</b>，香港主板占约 87%（上交所 6 月推出第五套标准利好硬科技）。海外 Q1 融资 400+ 起，集中于头部基础模型公司（融资规模已到"天文数字"，赛道收敛中）；海外 IPO 近乎停滞——2025 年上市的 AI 公司估值表现不佳抑制了上市意愿。</p>
-    </div>
-    <div class="card">
-      <h3>🏛 政策路线：中国 vs 美国</h3>
-      <p>中国：<b>治理+基础设施+行业应用三线并进</b>——伦理审查/智能体管理细则落地；算电协同写入政府工作报告、算力网进政治局会议、算力被定义为基础生产资源；制造/教育/政务/医疗/交通专项政策陆续出台。美国：对内松绑创新，对外从<b>技术壁垒转向生态绑定</b>（硬件+模型+数据系统打包绑定盟友）。英国务实聚焦垂直领域，欧盟监管最严，日韩聚焦 AI 硬件/半导体/机器人。</p>
-    </div>
-    <div class="card">
-      <h3>🔬 技术方向：模型→系统效率，物理AI成主线</h3>
-      <p>大模型竞争从"比参数"转向"<b>比系统效率/落地能力</b>"，物理模型成新主线（机器人、自动驾驶值得关注）；训练侧从单芯片转向系统有效算力（<b>液冷成刚需</b>），推理侧 token 成本成核心指标；国产算力靠超级节点+高速互联补短板。<b>AI 应用三大重点</b>：机器人（空间最大、确定性高）、智能驾驶（落地最快、产业链成熟）、智能硬件（AI 从云端走向终端，成为所有智能设备的底层能力）。</p>
-    </div>
-    <div class="card green">
-      <h3>📈 AI 对经济的拉动与隐忧</h3>
-      <p>ICT 设备固投增速与整体投资下行明显背离；6 月 ICT 增加值 <b>+15.7%</b>（工业整体 +5.3%）；A 股一季报显示 AI 相关产业成为<b>资本开支核心动能</b>；AI 硬件对出口拉动占过去一年约 <b>39%</b>。隐忧：结构性景气未外移到广泛领域（传导不畅）；<b>美国算力规模是中国的 15 倍/5 倍</b>（制约大模型训练）；商业化未闭环——国内大模型厂商盈利困难，B 端付费意愿低于海外，算力基建资本形成效率存疑。</p>
-      <span class="chip">机器人</span><span class="chip">智能驾驶</span><span class="chip">智能硬件</span>
-    </div>
-    <div class="card">
-      <h3>🧭 巨头战略：海外拼生态，中国拼落地</h3>
-      <p>海外五大巨头：模型分层化（轻量到高阶全覆盖）、从模型走向<b>智能体平台</b>建生态、安全治理成核心竞争力——竞争已从单点模型升级到平台生态。中国巨头：<b>全栈技术和场景落地</b>——全栈布局从芯片到应用、开源生态建开发者社区、依托各自行业优势（搜索/内容/社交/电商）做场景深度融合。</p>
-    </div>
-  </div>
-
-  <!-- ===== 主题四：财税 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon">🏛</div>
-      <h2>主题四 · 财政政策空间</h2>
-      <div class="line"></div>
-    </div>
-    <div class="card red">
-      <h3>⚠️ 财政平衡承压：土地收入没了，赤字率破4</h3>
-      <p>98 年后财政政策持续发力（2008 为转折），依靠减税降费（增值税改革、税率降低、高新技术企业优惠）+ 支出强度不减；过去靠<b>土地出让收入</b>维持平衡，如今土地收入萎缩 → 赤字率从长期 3% 附近<b>突破 4%</b>（广义口径更高）。</p>
-    </div>
-    <div class="card">
-      <h3>🏦 债务结构：中央地方倒挂</h3>
-      <p>地方专项债、一般债规模有限，超长期特别国债需地方承担部分偿还责任；融资平台隐性债务显性化压力大。地方真实可用于投资的自有资金（资金来源+项目来源）有限，<b>县级政府承担跨区域基建压力过重</b>。建议：债务结构优化——专项债/超长期国债更多由<b>省级统筹</b>、减少向县级转移；容忍较低的经济增速区间以减轻政府投资依赖。</p>
-    </div>
-    <div class="card orange">
-      <h3>💰 房地产税与地方激励</h3>
-      <p>房地产税有财富调节+市场调节双功能，长期未落地；真正值得探讨的是把<b>社区公共服务水平与房产价值挂钩</b>（参考美国基层社区财政模式）。增值税/所得税地方分享比例高 → 助长"内卷式"招商；消费税改革（后移环节、地方参与分享）方向正确但量级不足以解决问题。可探索<b>住宿税</b>等新税种（大理/丽江案例：游客按床位缴税，有效避开本地居民，纽约已有类似实践），让旅游热点城市从公共服务中分享收益。</p>
+  <!-- ===== 贰：艾米 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">贰</span><h2>房地产存量时代</h2><div class="line"></div></div>
+    <div class="speaker">
+      <details>
+        <summary>
+          <span class="no">2</span>
+          <span class="name">艾米</span>
+          <span class="arrow"></span>
+        </summary>
+        <div class="body">
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>2026年1-7月：一线好、二线最差</div>
+            <p>总体疲软但未掉头向下。一线商品房成交同比 <b>+1.7%</b>（7月深圳+6%、上海+9%，北京-28.8%），一线二手房 <b>+10.9%</b>；二线商品房 <b>-10%</b>（二手房+3.4%）最冷；其他城市二手房 +14%（最高）。全国二手房价格继续下行但<b>降幅收窄</b>（二线环比下跌城市占比83%→78%，其他城市69%→51%）。挂牌量7月环比+0.4%（一线靠深圳下降5000+套）。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>新开工崩塌：回到1996年水平</div>
+            <p>1-7月一线住宅用地成交额 <b>-29%</b>（约为2011年一半），二线 <b>-43%</b>（约为2021年20%）。商品房新开工同比 <b>-24%</b>；含保障房等全口径城镇住宅新开工已回到 <b>1996年</b>（亚洲金融危机前）水平。对标日本：千人住房建设套数日本2002-2025为7.5套（53年更新一次），中国2024年5.6、今年预计&lt;4（更新周期100+年，低于美法）；北京上海仅3.7/5.1（108/70年更新）。住房固定资本形成占GDP预计跌破4%（日本常态4.3%）。<b>建设量不对，投资数字就不对。</b></p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>存量住宅三重下行压力</div>
+            <p><b>①功能性折旧</b>：新产品入市直接压低周边房价（深圳某新盘降价超30%，北京新盘周边14个小区全跌）；<b>②资本折旧</b>：建筑15-20年开始出问题，专项维修基金未做准备，房龄越老跌幅越快（东京规律）；<b>③土地期权价值不确定性</b>：房屋31年后才可能因"更新价值"止跌，否则房价下跌无下限。当前城市更新政策未解决任何一个问题——一次性危改投入对政府不可持续。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>制度准备：居民自治 + 价值财政</div>
+            <p><b>居民端</b>：强化缴费法律义务、形成可对接第三方的法律实体、自主制定更新改造方案并养成付费习惯。<b>政府端</b>：从<b>土地财政 → 不动产价值财政</b>（以"更新价值"捕获存量价值，比房产税争议更小）；政府投资转向不具市场自发改造能力的项目（社区养老、公共设施），画好安全底线后把改造权交给居民。</p>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
-  <!-- ===== 主题五：评论交锋 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon" style="background:#2f855a;">⚖️</div>
-      <h2>主题五 · 评论与交锋</h2>
-      <div class="line"></div>
-    </div>
-    <div class="card green">
-      <h3>👍 肯定：嵌入式框架是"有效市场+有为政府"的具体化</h3>
-      <p>传统表述只说"结合"却不知如何结合，嵌入式提供了可操作的框架——市场作为四类机制（激励/信息/筛选等）嵌入国家治理体系。光靠政府不行（苏联投资边际回报 80 年代初归零），光靠市场也不行（华盛顿共识在无成熟市场机制的发展中国家失效）。政策是科学也是<b>艺术</b>：要能落得下去、结果导向、持续迭代。</p>
-    </div>
-    <div class="card red">
-      <h3>❓ 追问一：长鑫模式可复制吗？</h3>
-      <p>长鑫成功（未干预企业、未干预市场）值得肯定，但<b>政府做创投与创投本身的定义存在张力</b>；一个成功案例能否复制、能否借鉴存疑。地方政府长期直接推动经济增长可能是<b>历史性产物</b>——早期市场机制不完善时需要，市场成熟后是否还该如此？</p>
-    </div>
-    <div class="card red">
-      <h3>❓ 追问二：大方向是政府往后走</h3>
-      <p>改革开放成功主要因为"<b>放</b>得好"而非"管"得好——政府得往后走、市场得往前走，最终走向成熟的市场经济（但非政府撒手不管）。刺激消费除了加强社保，更根本的可能是：<b>让居民而非地方政府占有更多国民收入</b>（公共部门占比过高挤压了居民消费能力）。</p>
+  <!-- ===== 叁：陆总 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">叁</span><h2>2026 人工智能全景</h2><div class="line"></div></div>
+    <div class="speaker">
+      <details>
+        <summary>
+          <span class="no">3</span>
+          <span class="name">陆总</span>
+          <span class="arrow"></span>
+        </summary>
+        <div class="body">
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>资本流向：钱往应用层走</div>
+            <p>中国AI产业链Q1一级市场融资 <b>1000+起</b>，三分之二流向应用服务层（投资逻辑从"技术行不行"转向"能否赚钱"）；前三行业：软件应用24%、物理AI 13%、无人驾驶8.6%；早期融资占三分之二，大额融资集中在物理AI芯片与基础大模型。Q1 IPO <b>23家</b>，香港主板占约87%（上交所6月第五套标准利好硬科技）。海外Q1融资400+起，集中于头部基础模型公司（融资规模已到"天文数字"，赛道收敛中）；海外IPO近乎停滞——2025年上市的AI公司估值表现不佳抑制了上市意愿。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>政策路线：中国 vs 美国</div>
+            <p>中国：<b>治理+基础设施+行业应用三线并进</b>——伦理审查/智能体管理细则落地；算电协同写入政府工作报告、算力网进政治局会议、算力被定义为基础生产资源；制造/教育/政务/医疗/交通专项政策陆续出台。美国：对内松绑创新，对外从<b>技术壁垒转向生态绑定</b>（硬件+模型+数据系统打包绑定盟友）。英国务实聚焦垂直领域，欧盟监管最严，日韩聚焦AI硬件/半导体/机器人。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>技术方向：模型→系统效率，物理AI成主线</div>
+            <p>大模型竞争从"比参数"转向"<b>比系统效率/落地能力</b>"，物理模型成新主线（机器人、自动驾驶值得关注）；训练侧从单芯片转向系统有效算力（<b>液冷成刚需</b>），推理侧token成本成核心指标；国产算力靠超级节点+高速互联补短板。<b>AI应用三大重点</b>：机器人（空间最大、确定性高）、智能驾驶（落地最快、产业链成熟）、智能硬件（AI从云端走向终端，成为所有智能设备的底层能力）。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>AI对经济的拉动与隐忧</div>
+            <p>ICT设备固投增速与整体投资下行明显背离；6月ICT增加值 <b>+15.7%</b>（工业整体+5.3%）；A股一季报显示AI相关产业成为<b>资本开支核心动能</b>；AI硬件对出口拉动占过去一年约 <b>39%</b>。隐忧：结构性景气未外移到广泛领域；<b>美国算力规模是中国的15倍/5倍</b>（制约大模型训练）；商业化未闭环——国内大模型厂商盈利困难，B端付费意愿低于海外，算力基建资本形成效率存疑。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>巨头战略：海外拼生态，中国拼落地</div>
+            <p>海外五大巨头：模型分层化（轻量到高阶全覆盖）、从模型走向<b>智能体平台</b>建生态、安全治理成核心竞争力——竞争已从单点模型升级到平台生态。中国巨头：<b>全栈技术和场景落地</b>——全栈布局从芯片到应用、开源生态建开发者社区、依托各自行业优势（搜索/内容/社交/电商）做场景深度融合。</p>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 
-  <!-- ===== 关键数据速查 ===== -->
-  <div class="section">
-    <div class="section-title">
-      <div class="icon">📋</div>
-      <h2>关键数据速查</h2>
-      <div class="line"></div>
+  <!-- ===== 肆：王司长 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">肆</span><h2>财政政策空间</h2><div class="line"></div></div>
+    <div class="speaker">
+      <details>
+        <summary>
+          <span class="no">4</span>
+          <span class="name">王司长</span>
+          <span class="arrow"></span>
+        </summary>
+        <div class="body">
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>财政平衡承压：土地收入没了，赤字率破4</div>
+            <p>98年后财政政策持续发力（2008为转折），依靠减税降费（增值税改革、税率降低、高新技术企业优惠）+支出强度不减；过去靠<b>土地出让收入</b>维持平衡，如今土地收入萎缩 → 赤字率从长期3%附近<b>突破4%</b>（广义口径更高）。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>债务结构：中央地方倒挂</div>
+            <p>地方专项债、一般债规模有限，超长期特别国债需地方承担部分偿还责任；融资平台隐性债务显性化压力大。地方真实可用于投资的自有资金有限，<b>县级政府承担跨区域基建压力过重</b>。建议：债务结构优化——专项债/超长期国债更多由<b>省级统筹</b>、减少向县级转移；容忍较低的经济增速区间以减轻政府投资依赖。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>房地产税与地方激励</div>
+            <p>房地产税有财富调节+市场调节双功能，长期未落地；真正值得探讨的是把<b>社区公共服务水平与房产价值挂钩</b>（参考美国基层社区财政模式）。增值税/所得税地方分享比例高 → 助长"内卷式"招商；消费税改革（后移环节、地方参与分享）方向正确但量级不足。可探索<b>住宿税</b>等新税种（大理/丽江案例：游客按床位缴税，有效避开本地居民，纽约已有类似实践），让旅游热点城市从公共服务中分享收益。</p>
+          </div>
+        </div>
+      </details>
     </div>
+  </div>
+
+  <!-- ===== 伍：黄老师 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">伍</span><h2>评论与交锋</h2><div class="line"></div></div>
+    <div class="speaker">
+      <details>
+        <summary>
+          <span class="no">5</span>
+          <span class="name">黄老师</span>
+          <span class="arrow"></span>
+        </summary>
+        <div class="body">
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>肯定：嵌入式框架是"有效市场+有为政府"的具体化</div>
+            <p>传统表述只说"结合"却不知如何结合，嵌入式提供了可操作的框架——市场作为四类机制（激励/信息/筛选等）嵌入国家治理体系。光靠政府不行（苏联投资边际回报80年代初归零），光靠市场也不行（华盛顿共识在无成熟市场机制的发展中国家失效）。政策是科学也是<b>艺术</b>：要能落得下去、结果导向、持续迭代。</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>追问一：长鑫模式可复制吗？</div>
+            <p>长鑫成功（未干预企业、未干预市场）值得肯定，但<b>政府做创投与创投本身的定义存在张力</b>；一个成功案例能否复制、能否借鉴存疑。地方政府长期直接推动经济增长可能是<b>历史性产物</b>——早期市场机制不完善时需要，市场成熟后是否还该如此？</p>
+          </div>
+          <div class="point">
+            <div class="p-title"><span class="dot">■</span>追问二：大方向是政府往后走</div>
+            <p>改革开放成功主要因为"<b>放</b>得好"而非"管"得好——政府得往后走、市场得往前走，最终走向成熟的市场经济（但非政府撒手不管）。刺激消费除了加强社保，更根本的可能是：<b>让居民而非地方政府占有更多国民收入</b>（公共部门占比过高挤压了居民消费能力）。</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ===== 关键数据 ===== -->
+  <div class="sec">
+    <div class="sec-title"><span class="idx">表</span><h2>关键数据速查</h2><div class="line"></div></div>
     <div class="tbl-wrap">
       <table>
         <thead><tr><th>指标</th><th>数据</th><th>来源</th></tr></thead>
         <tbody>
           <tr><td>长鑫科技市值</td><td>3万多亿元，A股第一股</td><td>勤伟教授</td></tr>
-          <tr><td>2025 贸易顺差</td><td>1.2万亿美元（创纪录）</td><td>勤伟教授</td></tr>
-          <tr><td>一线商品房成交</td><td>1-7月 +1.7%（二手 +10.9%）</td><td>艾米</td></tr>
+          <tr><td>2025贸易顺差</td><td>1.2万亿美元（创纪录）</td><td>勤伟教授</td></tr>
+          <tr><td>一线商品房成交</td><td>1-7月 +1.7%（二手+10.9%）</td><td>艾米</td></tr>
           <tr><td>二线商品房成交</td><td>1-7月 -10%（最冷）</td><td>艾米</td></tr>
-          <tr><td>城镇住宅新开工</td><td>回到 1996 年水平</td><td>艾米</td></tr>
-          <tr><td>AI Q1 一级市场</td><td>融资 1000+ 起，2/3 流向应用层</td><td>陆总</td></tr>
-          <tr><td>AI Q1 IPO</td><td>23 家，港股占 87%</td><td>陆总</td></tr>
-          <tr><td>ICT 增加值增速</td><td>6月 +15.7%（工业 +5.3%）</td><td>陆总</td></tr>
-          <tr><td>中美算力差距</td><td>美国为中国的 15 倍/5 倍</td><td>陆总</td></tr>
-          <tr><td>赤字率</td><td>从 3% 附近突破 4%</td><td>王司长</td></tr>
+          <tr><td>城镇住宅新开工</td><td>回到1996年水平</td><td>艾米</td></tr>
+          <tr><td>AI Q1一级市场</td><td>融资1000+起，2/3流向应用层</td><td>陆总</td></tr>
+          <tr><td>AI Q1 IPO</td><td>23家，港股占87%</td><td>陆总</td></tr>
+          <tr><td>ICT增加值增速</td><td>6月 +15.7%（工业+5.3%）</td><td>陆总</td></tr>
+          <tr><td>中美算力差距</td><td>美国为中国的15倍/5倍</td><td>陆总</td></tr>
+          <tr><td>赤字率</td><td>从3%附近突破4%</td><td>王司长</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- ===== Callouts ===== -->
-  <div class="callout blue">
-    <h4>💡 一句话主线</h4>
-    中国经济的"嵌入式发展"1.0 靠生产端驱动完成了工业化与产业升级，代价是内需不足与内卷；走向 2.0 需把增长红利转向居民——而房地产的存量时代、AI 的新引擎、财政的空间约束，都是这一转型路上的关键变量。
+  <!-- ===== 收尾 ===== -->
+  <div class="note gray">
+    <h4>一句话主线</h4>
+    中国经济的"嵌入式发展"1.0靠生产端驱动完成了工业化与产业升级，代价是内需不足与内卷；走向2.0需把增长红利转向居民——房地产的存量时代、AI的新引擎、财政的空间约束，都是这一转型路上的关键变量。
   </div>
-  <div class="callout red">
-    <h4>⚠️ 注意</h4>
-    本纪要基于飞书妙记音频 AI 转录整理（语音识别可能存在同音字误差，数字为发言人口述），仅供内部参考，不构成投资或政策建议。
+  <div class="note red">
+    <h4>说明</h4>
+    本纪要基于飞书妙记音频AI转录整理（语音识别可能存在同音字误差，数字为发言人口述），仅供内部参考，不构成投资或政策建议。
   </div>
 
-  <div class="footer">Generated by sol · 2026-08-15 · 基于飞书妙记转录整理</div>
+  <div class="footer">sol · 2026-08-15 · 基于飞书妙记转录整理</div>
 </div>
 </body>
 </html>

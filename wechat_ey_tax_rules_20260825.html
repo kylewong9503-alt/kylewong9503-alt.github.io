@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EY 新税务规则专题分享纪要 | Circular 21 离岸信托全球征税 × CRS 2.0</title>
+<meta property="og:title" content="EY 新税务规则专题分享纪要：Circular 21 离岸信托全球征税 × CRS 2.0">
+<meta property="og:description" content="2026-08-25 EY 税务专家专题分享：中国全球征税新规对离岸信托、CRS 申报、境外投资的影响与银行应对要点。">
+<meta property="og:type" content="article">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+  }
+  .hero {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 48px 28px 40px 28px;
+  }
+  .hero .tag {
+    display: inline-block;
+    font-size: 13px;
+    color: #b30000;
+    border: 1px solid #b30000;
+    padding: 3px 12px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .hero .sub {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #bbb;
+    line-height: 1.6;
+  }
+  .hero .rule {
+    width: 56px;
+    height: 3px;
+    background: #b30000;
+    margin-top: 22px;
+  }
+  .meta {
+    background: #fafafa;
+    border-left: 3px solid #b30000;
+    padding: 16px 20px;
+    margin: 24px 20px 0 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  .meta b { color: #1a1a1a; }
+  .section { padding: 8px 20px 0 20px; }
+  h2 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin: 34px 0 6px 0;
+    font-weight: 700;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 10px;
+  }
+  h2 .no {
+    color: #b30000;
+    margin-right: 8px;
+    font-style: normal;
+  }
+  h3 {
+    font-size: 17px;
+    color: #1a1a1a;
+    margin: 22px 0 8px 0;
+    font-weight: 700;
+    border-left: 4px solid #b30000;
+    padding-left: 10px;
+  }
+  p { margin: 10px 0; color: #333; }
+  .verdict {
+    border: 1px solid #b30000;
+    color: #b30000;
+    font-size: 14px;
+    padding: 10px 14px;
+    margin: 14px 0;
+    background: #fff;
+    font-weight: 600;
+  }
+  .card {
+    background: #f4f4f4;
+    border-left: 3px solid #b30000;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 15px;
+    color: #333;
+  }
+  .card .t { font-weight: 700; color: #1a1a1a; display: block; margin-bottom: 4px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  thead th {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) { background: #fafafa; }
+  ul.bullets { margin: 8px 0 8px 4px; list-style: none; }
+  ul.bullets > li { position: relative; padding-left: 18px; margin: 7px 0; color: #333; }
+  ul.bullets > li::before { content: "·"; position: absolute; left: 4px; color: #b30000; font-weight: 700; }
+  ul.bullets > li ul { list-style: none; margin: 4px 0 4px 12px; }
+  ul.bullets > li ul li { position: relative; padding-left: 14px; margin: 4px 0; color: #555; font-size: 14.5px; }
+  ul.bullets > li ul li::before { content: "–"; position: absolute; left: 0; color: #999; }
+  details {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    margin: 12px 0;
+  }
+  summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 15px;
+    outline: none;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸ "; color: #b30000; }
+  details[open] summary::before { content: "▾ "; }
+  details .inner { padding: 4px 16px 14px 16px; }
+  details .inner p { font-size: 14.5px; color: #444; }
+  .foot {
+    margin: 40px 20px 0 20px;
+    padding-top: 16px;
+    border-top: 1px solid #ddd;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.7;
+  }
+  .hl { color: #b30000; font-weight: 600; }
+  @media (max-width: 375px) {
+    body { font-size: 15px; }
+    .hero { padding: 38px 20px 32px 20px; }
+    .hero h1 { font-size: 22px; }
+    .section { padding: 8px 16px 0 16px; }
+    h2 { font-size: 18px; }
+    .meta { margin: 20px 16px 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="tag">会 议 纪 要</span>
+  <h1>EY 新税务规则专题分享</h1>
+  <div class="sub">Circular 21 离岸信托全球征税 · CRS 2.0 · 红筹审批 · ODI 登记<br>—— EY 税务专家 × DBS 专题交流</div>
+  <div class="rule"></div>
+</div>
+
+<div class="meta">
+  <b>时间：</b>2026-08-25 13:55（约 48 分钟）<br>
+  <b>形式：</b>EY 税务团队专题分享 + 现场问答讨论<br>
+  <b>参会：</b>EY 税务专家（主讲）、DBS 财富管理 / 合规相关同事<br>
+  <b>语言：</b>英文
+</div>
+
+<div class="section">
+
+<div class="verdict">一句话：中国正以「全球征税 + 大数据信息整合」收紧对离岸信托、境外收入与身份安排的税务监管，Circular 21 覆盖信托全生命周期，历史存量信托面临追溯征税风险；CRS 2.0 将多重税务居民申报常态化。</div>
+
+<h2><span class="no">壹</span>Circular 21：离岸信托纳入全球征税</h2>
+
+<p>中国历来对税务居民实行全球征税（类似美国），过去两年重点已放在信托以外的境外收入；随着 <b>Circular 21（21 号公告）</b>出台，信托这块"最后拼图"被补上——<span class="hl">无论资产是否置于信托之下，都在全球征税视野内</span>。</p>
+
+<h3>覆盖信托全生命周期</h3>
+<ul class="bullets">
+  <li>信托设立（settlement）与资产注入
+    <ul><li>中国税务居民向离岸信托注入资产，视为应税交易（taxable transaction），后果因资产类型而异</li></ul>
+  </li>
+  <li>存续期：收益如何计算、信托安排变更</li>
+  <li>分配与受益、委托人税务居民身份变更（触发征税）</li>
+  <li>终止与退出</li>
+  <li>同时覆盖居民信托与非居民信托两类场景，也覆盖 ESOP 信托</li>
+</ul>
+
+<div class="card">
+  <span class="t">关键风险人群</span>
+  2021 年 1 月后设立的离岸信托最受关注——当时是另一波 IPO 高峰，注入信托的股份估值通常很高；若注入行为被认定为应税交易，按<span class="hl">注入时市值</span>计税，对委托人是显著成本。
+</div>
+
+<h3>追溯征税：可回溯至信托设立日</h3>
+<p>规则可回溯到信托设立当天（可能 20 年前），期间累计收益均纳入征税。市场争论焦点：存续多年的信托，10-20 年前的财务信息难以准确还原。</p>
+
+<h3>市况下跌未必能抵亏损</h3>
+<p>与印尼的做法（按市值但适用 2-3.5% 折扣率）相比，Circular 21 更严厉。EY 用 2019-2025 中国内地实际市值做了测算：</p>
+
+<table>
+<thead>
+<tr><th>情景</th><th>有效税率</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>损失可抵扣</td><td>约 20%</td><td>市场下行期注入，损失计入成本</td></tr>
+<tr><td>损失被忽略</td><td>约 41.8%</td><td>注入时估值高 → 21 年下跌损失不认 → 25 年回升，税基仍按高位</td></tr>
+</tbody>
+</table>
+
+<div class="card">
+  <span class="t">现实案例</span>
+  有客户在 2021 年高位将股份注入信托，如今股价已跌至很低，但税按注入时市值计算——<span class="hl">潜在税负可能高于公司当前价值</span>。EY 有在办案件尝试争取更优处理。
+</div>
+
+<p>就成本扣除而言：2021 年后注入的股份，注入时已计税的部分可在退出时作为成本扣除；2021 年前注入、不在追溯范围内的，原始成本可能极低，扣除有限。</p>
+
+<h2><span class="no">贰</span>全球征税：换身份 ≠ 脱身</h2>
+
+<div class="verdict">美国放弃国籍即可切断税务居民身份；中国则要求"放弃国籍 + 切断经济联系"，缺一不可。</div>
+
+<ul class="bullets">
+  <li>中国公民即使变更税务居民身份，只要仍持有信托或存在中国经济联系，仍可能被全球征税追及</li>
+  <li>身份变更本身即触发信托征税；变更后的信托分配仍可能因"资金源于中国"而被追查</li>
+  <li>相对"安全"的情形：非中国国籍 + 无信息交换渠道 + 资产与中国无关联
+    <ul><li>CRS 主要报告中国国籍人或中国税务居民；非中国籍且非中国税务居民者，中国税务机关原则上无权调取其 CRS 信息</li></ul>
+  </li>
+  <li>但实际案例：一位 20 年前放弃中国国籍的加拿大籍客户，以境外资金投资中国——税务机关通过中国分出的股息现金流追踪其离岸结构，要求提供信息，并可能限制股息分配</li>
+  <li>中国税务机关控制手段很多：停止股息分配、冻结在华资产等，纳税人若不配合将面临后果</li>
+</ul>
+
+<h2><span class="no">叁</span>CRS 2.0：多重税务居民申报常态化</h2>
+
+<h3>核心变化（2027 年 1 月 1 日生效）</h3>
+<ul class="bullets">
+  <li>个人若为多个国家税务居民，须向银行申报<span class="hl">全部</span>税务居民身份，银行须向所有相关国家报送</li>
+  <li>护照不是税务居民身份的判定指标——判定责任在个人，银行仅做合理评估（reasonable assessment）</li>
+  <li>银行须综合评估地址、电话、财富来源、护照等全部信息，而非孤立看 CRS 申报</li>
+</ul>
+
+<div class="card">
+  <span class="t">与 IRAS 的沟通（DBS 合规视角）</span>
+  新加坡 IRAS 在与 EY 讨论 Circular 21 时明确：国籍不能作为税务居民指标。即使持中国护照或在中国有经济利益，新加坡仍按税务居民（而非国籍）申报。但韩国已率先发布 FAQ：韩国税务居民若持美国/墨西哥/匈牙利/阿根廷护照，须同时按这些国家税务居民申报（中国不在该名单）。
+</div>
+
+<h3>对中国身份的两种可能走向</h3>
+<ul class="bullets">
+  <li>中国明确表态：持中国护照/有户籍/有经营联系 = 中国税务居民（类似韩国做法）</li>
+  <li>或中国与各国逐一谈判 CRS 协议，要求将中国护照持有者视为中国税务居民上报</li>
+  <li>目前均未发生，需持续关注 OECD 网站指引变化</li>
+</ul>
+
+<h3>数据交叉比对：账户关闭也可能留痕</h3>
+<p>CRS 申报中账户须标注关闭状态。有客户此前 CRS 信息覆盖 2022-2024 三年，某账户余额从未申报被要求解释；若 2024 年变更国籍未标注关闭，前一年有中国税号、后一年记录消失——税务机关可凭此类痕迹做大数据分析识别异常。</p>
+
+<h2><span class="no">肆</span>配套监管动态</h2>
+
+<h3>红筹架构：已成历史</h3>
+<p>自 2023 年 4 月 1 日起，中概股海外上市须经中国证监会（CSRC）审批，传统红筹架构退出历史舞台。未来海外上市公司大概率保留离岸结构，股东退出或分红回流中国即成为离岸资产——税务机关的追踪逻辑是"财富源自中国，追查归处"。</p>
+
+<h3>个人境外投资（ODI）：登记时代到来</h3>
+<ul class="bullets">
+  <li>2026 年 1 月 1 日起，中国个人设立 SPV/信托做境外投资，须向政府部门做记录备案并获批</li>
+  <li>实施细则草案上周五（8 月中旬）刚发布征求意见</li>
+  <li>监管态度：并非放开个人境外投资渠道（QDII/QDLP、康文通等批准渠道除外），而是让存量离岸投资进入登记与税务核查视野</li>
+</ul>
+
+<h3>金税系统与跨部门数据整合</h3>
+<ul class="bullets">
+  <li>税务机关大幅扩展信息来源 + 大数据分析：CRS、公开信息、外管局（SAFE）、发改委（NDRC）、证监会（CSRC）、商务部等数据汇聚</li>
+  <li>据可靠消息，存量离岸信托估计约 1 万-10 万个（含显著资产），来源包括 CRS 数据与公开资料</li>
+  <li>已有客户收到税务部门电话：通过 CRS 发现境外账户有未申报余额，要求解释</li>
+</ul>
+
+<h2><span class="no">伍</span>市场反应与银行应对</h2>
+
+<h3>90 天窗口</h3>
+<div class="verdict">规则落地后 90 天为申报/处理窗口，今天（8/25）后还剩约 58 天。</div>
+
+<h3>澄清预期</h3>
+<ul class="bullets">
+  <li>EY 已向国家税务总局提交一批待澄清问题，并拜访财政部；预计 <b>9 月</b>出澄清（公开发文或对基层税务局的内部执行指引，尚不确定）</li>
+  <li>市场担忧"上令下效"过度执行：如 IPO 高位注入的控股股东，纸面财富高但受禁售限制无法卖股缴税，可能出现无法缴税甚至破产的极端情况</li>
+  <li>EY 判断：规则出台时部分情形监管层未必预见到，后续大概率按个案处理（case by case），而非立刻修订规则</li>
+</ul>
+
+<h3>保险产品：官方立场暂未改变</h3>
+<p>EY 在国家级会议确认：Circular 21 起草时未讨论保险；监管已注意到某些结构（如 EPL 类安排）。<span class="hl">官方对保险产品的立场在 Circular 21 前后保持不变</span>，但个案影响需逐案分析。</p>
+
+<h3>对银行的行动建议</h3>
+<table>
+<thead>
+<tr><th>领域</th><th>建议动作</th></tr>
+</thead>
+<tbody>
+<tr><td>识别盲点</td><td>盘点系统、报告、运营流程中与信托/CRS 相关的能力缺口，内部对齐政策与流程</td></tr>
+<tr><td>客户沟通</td><td>更新客户条款（TCS）；制定客户接洽策略——一次上门、签署补救文件、一次性说明所需信息</td></tr>
+<tr><td>业务价值</td><td>与客户重谈信托意义：多数客户设立信托初衷是<span class="hl">财富传承而非税务筹划</span>，税务利益缩减不必然否定信托价值</td></tr>
+<tr><td>产品机会</td><td>保险类产品、在岸/离岸结构调整讨论增加；关注个案税务影响的咨询需求</td></tr>
+</tbody>
+</table>
+
+<details>
+<summary>附：问答环节要点（香港税务居民等）</summary>
+<div class="inner">
+  <p><b>问：</b>中国人在香港工作满 7 年取得香港身份证，是香港还是中国税务居民？<br>
+  <b>答：</b>判定责任在个人。银行按 CRS 申报（香港地址/电话/税务居民申报）做合理评估，不会因持中国护照而主动认定其为中国税务居民；但若其在中国仍有房产、经济利益，可能构成双重税务居民，需个人自证。中国企业在港员工，总部通常已要求中国护照持有者向国内申报境外收入。</p>
+  <p><b>问：</b>已放弃中国国籍者是否安全？<br>
+  <b>答：</b>若已放弃国籍且非中国税务居民、无信息交换渠道，原则上中国税务机关无从获知；但若投资中国产生股息分配等现金流，仍可能被追踪要求提供离岸结构信息。</p>
+  <p><b>问：</b>信托与遗产税？<br>
+  <b>答：</b>中国目前无遗产税（inheritance tax）；但信托委托人去世、受益人继承时，仍可能触发信托层面的应税事件（一次性或年度税负，视受益人是否在中国而定）。</p>
+  <p><b>问：</b>退出税（exit tax）？<br>
+  <b>答:</b>税务居民转为非居民，生前即按市值征税（mark to market），该规则同样适用于非信托场景，属于后续新规的一部分。</p>
+  <p><b>问：</b>追溯期限？<br>
+  <b>答：</b>各国可自行决定税法追溯适用（主权权利）。EY 为客户做的事：梳理并固化历史技术立场，证明当时安排合法（非避税/逃税），以降低被定性为逃税的风险等级。</p>
+</div>
+</details>
+
+<div class="foot">
+  本纪要基于飞书妙记转录整理，内容为 EY 分享观点与现场讨论，不构成税务或法律意见；具体个案请咨询税务顾问。<br>
+  整理：Hermes Agent ｜ 2026-08-25
+</div>
+
+</div>
+</body>
+</html>

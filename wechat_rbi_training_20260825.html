@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTS 培训纪要｜人民币国际化（RBI）——DBS 的战略打法</title>
+<meta property="og:title" content="GTS 培训纪要｜人民币国际化（RBI）——DBS 的战略打法">
+<meta property="og:description" content="2026-08-25 GTS 专题培训：人民币国际化四阶段、DBS 四张牌照、赤兔 Taskforce、2030 目标与四大商业案例">
+<meta property="og:type" content="article">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; background: #ffffff; padding: 0 20px 48px; }
+
+  /* Hero */
+  .hero {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 40px 24px 36px;
+    margin: 0 -20px 28px;
+  }
+  .hero .kicker {
+    font-size: 13px;
+    color: #bbb;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .hero .rule {
+    width: 56px;
+    height: 4px;
+    background: #b30000;
+    margin-bottom: 16px;
+  }
+  .hero .meta {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.8;
+  }
+  .hero .meta b { color: #ddd; font-weight: 600; }
+
+  /* Section */
+  h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 36px 0 16px;
+    padding-left: 12px;
+    border-left: 4px solid #b30000;
+    line-height: 1.4;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 22px 0 10px;
+    color: #1a1a1a;
+  }
+  p { margin-bottom: 12px; }
+  .lead { color: #333; }
+  .note { color: #777; font-size: 14px; }
+
+  /* Verdict cards */
+  .verdict {
+    border: 1px solid #b30000;
+    border-left: 4px solid #b30000;
+    color: #b30000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    background: #fff;
+  }
+  .verdict span { color: #1a1a1a; font-weight: 400; }
+
+  /* Cards */
+  .card {
+    background: #f4f4f4;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    border-left: 4px solid #b30000;
+  }
+  .card p { margin-bottom: 8px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 14px;
+  }
+  thead th {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+    color: #333;
+  }
+  tbody tr:nth-child(even) { background: #fafafa; }
+  tbody td b { color: #1a1a1a; }
+
+  /* Bullets */
+  ul.bullets { list-style: none; margin: 8px 0 14px; }
+  ul.bullets li { position: relative; padding-left: 18px; margin-bottom: 8px; }
+  ul.bullets li::before { content: "·"; position: absolute; left: 4px; color: #b30000; font-weight: 700; }
+  ul.bullets li li { padding-left: 16px; }
+  ul.bullets li li::before { content: "–"; color: #999; }
+  .bt { font-weight: 700; color: #1a1a1a; }
+
+  /* Collapsible */
+  details {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 12px;
+  }
+  details summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: #1a1a1a;
+  }
+  details summary::-webkit-details-marker { display: none; }
+  details summary .num {
+    background: #1a1a1a;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  details summary .arrow { margin-left: auto; color: #999; font-size: 13px; }
+  details[open] summary .arrow { transform: rotate(180deg); }
+  details .body { padding: 4px 16px 16px; border-top: 1px solid #eee; padding-top: 12px; }
+  details .body .verdict { margin-top: 12px; }
+
+  /* Action list */
+  .action { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid #eee; align-items: baseline; }
+  .action:last-child { border-bottom: none; }
+  .action .no {
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    background: #1a1a1a;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+  .action .txt { font-size: 14.5px; color: #333; }
+  .action .txt b { color: #1a1a1a; }
+  .action .tag {
+    display: inline-block;
+    background: #b30000;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 8px;
+    margin-left: 6px;
+    vertical-align: 2px;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 13px;
+    color: #999;
+    line-height: 1.8;
+  }
+
+  .tag-red {
+    display: inline-block;
+    background: #b30000;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 10px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+  .tag-gray {
+    display: inline-block;
+    background: #e5e5e5;
+    color: #555;
+    font-size: 12px;
+    padding: 2px 10px;
+    margin-right: 8px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 375px) {
+    body { font-size: 15px; }
+    .hero h1 { font-size: 21px; }
+    h2 { font-size: 17px; }
+    table { font-size: 13px; }
+    thead th, tbody td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="kicker">Meeting Notes · 内部培训纪要</div>
+    <h1>人民币国际化（RBI）<br>DBS 的战略打法与商业机会</h1>
+    <div class="rule"></div>
+    <div class="meta">
+      主讲：<b>J（GTS COO）</b><br>
+      时间：<b>2026-08-25 12:30</b> ｜ 时长：<b>约 61 分钟</b><br>
+      形式：GTS 专题培训（回应年初问卷）<br>
+      内容：发展历程 · 牌照布局 · 组织架构 · 商业案例
+    </div>
+  </div>
+
+  <!-- 核心速览 -->
+  <h2>核心速览</h2>
+  <div class="card">
+    <p><span class="tag-red">壹</span><b>监管定调：</b>人民币国际化是今年工作重点（Must），PBOC 主动向外资行开放清算/指定行资质。</p>
+    <p><span class="tag-red">贰</span><b>牌照卡位：</b>DBS 已集齐 4 张人民币牌照，为外资行中布局最完整之一。</p>
+    <p><span class="tag-red">叁</span><b>最大目标：</b>2026 Q4 成为首家正式开业的外资人民币清算行。</p>
+    <p><span class="tag-red">肆</span><b>打法：</b>用 solution 打客户、不拼价格；核心客群锁定「非中资企业」。</p>
+    <p><span class="tag-red">伍</span><b>2030 愿景：</b>新加坡人民币业务份额 &gt;15%、香港 &gt;5%、熊猫债 ≥8%。</p>
+  </div>
+
+  <!-- 一、四阶段 -->
+  <h2>壹 · 人民币国际化：四个阶段</h2>
+  <p class="lead">DBS 内部框架把人民币国际化划分为四个阶段，当前正从「套利驱动」转向「真实需求驱动」。</p>
+
+  <table>
+    <thead>
+      <tr><th>阶段</th><th>时期</th><th>特征</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>① 套利驱动</b></td>
+        <td>2009–2015</td>
+        <td>2009 年 PBOC 放开人民币贸易结算正式启动国际化；CNY/CNH 双轨价差大，单边升值预期下离岸套利活跃</td>
+      </tr>
+      <tr>
+        <td><b>② 冬眠期</b></td>
+        <td>2015 起</td>
+        <td>811 汇改后人民币下行，国家转建国际化基建：CIPS 推出、中资行海外布局</td>
+      </tr>
+      <tr>
+        <td><b>③ 贸易流</b></td>
+        <td>疫后复苏</td>
+        <td>汇率双向波动、套利盘被清洗；去美元化趋势显现（SWIFT、e-CNY）</td>
+      </tr>
+      <tr>
+        <td><b>④ 展望</b></td>
+        <td>未来</td>
+        <td><b>新加坡有望成为新的人民币离岸中心（“第二个圈”）</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <p class="bt">当下为什么做？</p>
+    <ul class="bullets">
+      <li>地缘政治推动全球两极化，企业（不仅中资）开始考虑人民币结算、对冲 CNH 敞口</li>
+      <li>这轮出海不只卖产品，而是把<b>整个 Ecosystem 带出去</b>——中资企业海外建厂，带动体系内 Non-Chinese 客户开始用人民币</li>
+      <li>PBOC 开始 appointing 外资银行（人民币清算/指定行），外资行合计约 5% 名额</li>
+    </ul>
+  </div>
+
+  <!-- 二、四张牌照 -->
+  <h2>贰 · DBS 的四张「人民币牌照」</h2>
+  <p class="lead">DBS 在人民币国际化上一路是领头羊：2006 年 DBS China 成立（首批外资法人银行）；去年连拿 3 个 mandate，今年新增 1 个。</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:26px">#</th><th>Mandate</th><th>要点</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>1</b></td>
+        <td><b>CIPS Direct 指定行</b></td>
+        <td>2015 年 DBS China 即获指定；<b>去年 DBS 新加坡也获批</b>——可帮助更多 foreign/local banks 成为参与者，人民币跨境结算“高速通道”</td>
+      </tr>
+      <tr>
+        <td><b>2</b></td>
+        <td><b>OTC 债市通道</b><br><span class="note">（DBS 独有）</span></td>
+        <td>投资者在新加坡直接经 OTC 投资中国债市（全球第二大），无需赴华 KYC/开户；区别于 QFI/CIBM 通道，拟从 FI 扩展至企业财资中心（CTC/PTC），盘活海外人民币沉淀</td>
+      </tr>
+      <tr>
+        <td><b>3</b></td>
+        <td><b>人民币清算行</b><br><span class="note">（PBOC 授权）</span></td>
+        <td><b>DBS 是唯一一家“真的在做”的外资行</b>：与 PBOC 每月更新、有专门时间表，目标 <b>2026 Q4 正式开业</b>——届时 DBS Singapore 获<b>国民待遇</b>，可直接 access 境内流动性、发行 NCD、参与境内人民币拆借</td>
+      </tr>
+      <tr>
+        <td><b>4</b></td>
+        <td><b>发债类 license</b></td>
+        <td>与熊猫债发行资格等相关，基于四张 license 识别出三大业务场景</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="verdict">⭐ 最大战略目标 <span>2026 Q4 首家正式开业的外资人民币清算行 → DBS Singapore 获国民待遇</span></div>
+
+  <!-- 三、场景与客群 -->
+  <h2>叁 · 三大业务场景 &amp; 客户画像</h2>
+
+  <h3>三大场景（Priority Areas）</h3>
+  <div class="card">
+    <p><span class="tag-red">1</span><b>Trade &amp; Settlement</b> —— capture 快速增长的中资制造贸易流，配套 trade financing</p>
+    <p><span class="tag-red">2</span><b>Funding / Intermediary</b> —— offshore 人民币沉淀多在香港、新加坡，tap more deposit → deploy to real needs</p>
+    <p><span class="tag-red">3</span><b>Capital Market</b> —— 更多产品与发行（熊猫债、点心债等）</p>
+  </div>
+
+  <h3>五种客户画像（Persona）</h3>
+  <ul class="bullets">
+    <li><b>Chinese Corporate</b>——最直接客群：走出去的中资（贸易、对外投资）</li>
+    <li><b>Non-Chinese Corporate</b> <span class="tag-gray">DBS 独特优势</span>——在港、新、印尼、越南、印度对非中资企业渗透率远高于中资行；这正是 <b>PBOC 给外资行 license 的初衷</b>：借中资—非中资的贸易联系，让非中资企业用人民币</li>
+    <li><b>Banks</b>——CIPS 资金、与同业互联</li>
+    <li><b>Investor &amp; 电商/支付</b>——Capital Market 场景</li>
+  </ul>
+
+  <!-- 四、2030目标 -->
+  <h2>肆 · 2030 战略目标</h2>
+  <table>
+    <thead>
+      <tr><th>目标</th><th>数字</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>新加坡人民币业务市场份额</td><td><b>&gt;15%</b>（目前新+港合计约 2%）</td></tr>
+      <tr><td>香港市场份额</td><td><b>&gt;5%</b></td></tr>
+      <tr><td>Funding / Bonding 目标</td><td><b>20 亿</b>并补充 <b>150 亿以上新增</b></td></tr>
+      <tr><td>Panda Bond 市场份额</td><td><b>≥8%</b></td></tr>
+      <tr><td>Revenue 增量</td><td><b>+5 亿新币</b></td></tr>
+    </tbody>
+  </table>
+
+  <!-- 五、赤兔 -->
+  <h2>伍 · 集团级「赤兔」Taskforce</h2>
+  <p class="lead">去年底连拿 3 个 mandate 后成立，今年初命名「赤兔」（战马）。承接 DBS Group 所有 All-Flow RMB 使用场景，<b>5 大 sponsor、2 个 co-lead，成员超 100 人</b>。</p>
+
+  <table>
+    <thead>
+      <tr><th style="width:26px">#</th><th>Workstream</th><th>内容</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>1</b></td><td><b>Regulator Engagement</b></td><td>与 MSR/PBOC 月度见面 + 线上会；各类 request/ask/lobby</td></tr>
+      <tr><td><b>2</b></td><td><b>Liquidity Management</b></td><td>盘活 offshore RMB：打通 PanelBond、NCD 等资金渠道；<b>年底前新加坡所有 RM/IPG 新增 1000 个人民币账户</b></td></tr>
+      <tr><td><b>3</b></td><td><b>Commercialization</b> <span class="tag-red">核心</span></td><td>抓客户、抓新业务，转化商业场景；中国区最关键（源头都是中资企业）</td></tr>
+      <tr><td><b>4</b></td><td><b>Bundles &amp; Infra Readiness</b></td><td>人民币系统/流程设计：clearing、GTS、Ops、Tech 等，保障 RMB Clearing 开业</td></tr>
+      <tr><td><b>5</b></td><td><b>Reporting</b></td><td>人民币国际化/clearing 监管报送（DBS China 承接）</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 六、商业化 -->
+  <h2>陆 · 商业化：Quick Win 与 Co-creation</h2>
+
+  <h3>模式一：Quick Win（存量转化）</h3>
+  <ul class="bullets">
+    <li><b>盘点现有客户</b>：Trade 用什么币种、counterparty 是谁；推动 Chinese counterparty 转用人民币——更便宜、无 FX risk</li>
+    <li><b>人民币资金池</b>：两笔人民币额度一两个星期被用光，可再 extend</li>
+    <li><b>1000 个新人民币账户</b>目标：目前开户速度非常好</li>
+    <li><b>跨境支付三通道</b>：CHIPS/Fedwire ｜ CIPS ｜ <b>DBS 自有通道</b>——新加坡直达中国约 10 分钟到账，系统已完成、很快上线</li>
+    <li><b>CIPS Direct 第一单 = 中石油</b>（主动找来，政策驱动）</li>
+  </ul>
+
+  <h3>模式二：Co-creation（与大型企业共建场景）</h3>
+
+  <details>
+    <summary><span class="num">1</span>外资航司人民币闭环<span class="arrow">▾</span></summary>
+    <div class="body">
+      <div class="verdict">核心结论 <span>在华人民币收益直接收、直接付，形成闭环，少一道汇兑</span></div>
+      <p class="bt">痛点</p>
+      <p>外资航司在华产生大量人民币收益，目前经 IATA 全部换成外币汇至海外总部；海外总部与中石油等结算又用本币——双重汇兑。</p>
+      <p class="bt">方案</p>
+      <p>在华直接收人民币 → 与 PBOC 沟通提供更快支付通道打到海外 → 海外结算用人民币 → <b>形成 closed loop</b>。航司少一道 FX、降成本；DBS Singapore 获人民币 payment/cash 与融资机会。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="num">2</span>EV 出海经销商融资<span class="arrow">▾</span></summary>
+    <div class="body">
+      <div class="verdict">核心结论 <span>把国内成熟的经销商融资模式搬到海外，帮车企销售 + 去化 + 出表</span></div>
+      <p class="bt">痛点</p>
+      <p>日韩车企 90 年代出海时已垄断优质海外经销商；出口带来 working capital 压力，要给经销商 payment plan 又不想占压资金。</p>
+      <p class="bt">方案</p>
+      <p>通过海外 subsidiary 做 LTV 控制、DBS 海外建立资金池支持经销商购车；建厂场景做<b>零部件/KD 件出海融资</b>，用 Separation Finance 帮其 deleverage。</p>
+      <p class="note">进展：已出海车企在谈，新势力刚开始 pitch。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="num">3</span>跨国公司采购闭环（币种错配）<span class="arrow">▾</span></summary>
+    <div class="body">
+      <div class="verdict">核心结论 <span>用人民币融资解决全球采购的 Currency Mismatch</span></div>
+      <p class="bt">痛点</p>
+      <p>某跨国公司在华设厂、产品销全球：全球 subsidiary 向中国厂商采购，境外实体资金来源全是人民币 → 币种错配。</p>
+      <p class="bt">方案</p>
+      <p>DBS China FTN 直接<b>融资人民币</b>给境外实体支付中国采购方；还款等中国公司<b>分红（人民币）</b>——拉长账期、对冲中间 FX risk。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="num">4</span>物流公司出海<span class="arrow">▾</span></summary>
+    <div class="body">
+      <div class="verdict">核心结论 <span>物流公司与生产厂商捆绑出海，双向赋能</span></div>
+      <p class="bt">痛点</p>
+      <p>物流公司难以在海外复制国内「快递员 + 重资产」模式。</p>
+      <p class="bt">方案</p>
+      <p>与中国生产厂商捆绑（类似 KD 件模式）：物流公司提供一站式物流并购买生产商 inventory；生产商获出海流动性支持与报表优化；后续可做 SPV 融资、多场景复用。</p>
+    </div>
+  </details>
+
+  <div class="card">
+    <p class="bt">所有案例共同逻辑</p>
+    <p><b>用 solution 打客户，不拼价格</b>——通过 solution 保护销售与利润，绑定战略关系（Co-creation）后争取客户全部经贸业务。中资行靠政府关系 by default 拿项目，DBS 没有，只能靠 solution 与能力。</p>
+  </div>
+
+  <!-- 七、Q&A -->
+  <h2>柒 · 关键问题答疑</h2>
+  <div class="card">
+    <p class="bt">Q1：人民币升值趋势若逆转，国际化会否受影响？</p>
+    <p>两个驱动：① Market-driven（套利）始终是强驱动；② 地缘政治——全球两极化，企业主动分散 USD 敞口，<b>真实需求（real needs）正在起来</b>：从 arbitrage-driven 转向 real-needs driven。DBS 愿景是打造<b>两个 ecosystem</b>：中资企业走出去生态 + offshore 人民币生态，五条 flow（payment / deposit / bonding / FX / capital market）。当前 deposit flow 偏弱——企业不愿持有人币；成为清算行后新加坡将成第二个人民币离岸中心，更多人民币计价的资本产品（熊猫债、点心债、equity）出现后，持有意愿上升。</p>
+  </div>
+  <div class="card">
+    <p class="bt">Q2：竞争格局如何？</p>
+    <p>汇丰、渣打都很 active，打法相似；但外资行必须 capture <b>non-Chinese corporate</b> 责任市场——拼人民币 deposit 价格拼不过中资行。DBS 的底气：<b>有中资客户基础可以源源不断制造通道</b>。</p>
+  </div>
+  <div class="card">
+    <p class="bt">Q3：EV 出海适用哪些市场？</p>
+    <p>选 DBS 有 presence + 无资本管制的市场；欧洲、澳洲是 EV 主战场，DBS 可发挥 flexible 优势。如何把新加坡低成本人民币给到印尼——第一步靠 CB/PB 通道，先把海外子公司/分行全部设为 DBS Singapore 的 participant，成本自行定价；海外拿便宜人民币需要时间。</p>
+  </div>
+
+  <!-- 八、行动清单 -->
+  <h2>捌 · 行动清单</h2>
+  <div>
+    <div class="action"><span class="no">1</span><div class="txt"><b>RMB Clearing 正式开业</b>（外资行首家）<span class="tag">2026 Q4</span><br><span class="note">WS4 + PBOC 沟通</span></div></div>
+    <div class="action"><span class="no">2</span><div class="txt"><b>新加坡 RM/IPG 新增 1000 个人民币账户</b><span class="tag">2026 年底</span><br><span class="note">新加坡 IPG/RM</span></div></div>
+    <div class="action"><span class="no">3</span><div class="txt"><b>Piracy Pay 跨境通道上线</b> + 试点客户<span class="tag">尽快</span><br><span class="note">GTS（系统已完成）</span></div></div>
+    <div class="action"><span class="no">4</span><div class="txt"><b>外资航司人民币闭环案例落地</b><span class="tag">持续</span><br><span class="note">Co-creation + 中国区</span></div></div>
+    <div class="action"><span class="no">5</span><div class="txt"><b>EV 出海经销商融资</b>（已出海车企在谈）<span class="tag">持续</span><br><span class="note">中国区 + 海外分支</span></div></div>
+    <div class="action"><span class="no">6</span><div class="txt"><b>OTC 债市通道扩展至企业财资中心</b><span class="tag">持续</span><br><span class="note">LCS + 监管沟通（已获口头绿灯）</span></div></div>
+    <div class="action"><span class="no">7</span><div class="txt"><b>9 月 3 日 deck 在 All of Sight 首次亮相</b><span class="tag">2026-09-03</span><br><span class="note">J / Taskforce</span></div></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    本文整理自 DBS 内部培训（2026-08-25，约 61 分钟），基于本地语音转录。部分专有名词可能存在同音误差；内容供内部参考，引用请以官方口径为准。<br><br>
+    DBS GTS 培训 · 人民币国际化（RBI）专题 ｜ 整理：sol
+  </div>
+
+</div>
+</body>
+</html>

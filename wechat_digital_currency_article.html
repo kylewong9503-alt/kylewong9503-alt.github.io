@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta property="og:title" content="数字货币专题研讨会纪要：数字人民币 1.0→2.0 改革与全球竞争">
+<meta property="og:description" content="CF40 数字货币专题研讨会：穆长春详解数字人民币计量框架 2.0 改革，交行钱行长谈落地痛点与主战场，易纲、黄益平、徐忠点评——央行支持数字货币、存款代币化、批发型 CBDC、支付机构入二层等核心议题。">
+<title>数字货币专题研讨会纪要 | CF40</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#fff; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; color:#1a1a1a; font-size:16px; line-height:1.75; }
+  .article { max-width:680px; margin:0 auto; padding:0 16px 48px; }
+  /* Hero */
+  .hero { background:#1a1a1a; color:#fff; padding:36px 24px 30px; margin:0 -16px 28px; }
+  .hero .badge { display:inline-block; font-size:12px; letter-spacing:2px; color:#b30000; border:1px solid #b30000; padding:3px 12px; margin-bottom:14px; }
+  .hero h1 { font-size:22px; line-height:1.45; font-weight:700; margin-bottom:12px; }
+  .hero .meta { font-size:13px; color:#999; line-height:2; }
+  .hero .redline { width:56px; height:3px; background:#b30000; margin:16px 0 0; }
+  /* Section */
+  .section { margin:34px 0 0; }
+  .sec-title { font-size:18px; font-weight:700; color:#1a1a1a; margin-bottom:14px; padding-left:12px; border-left:4px solid #b30000; line-height:1.4; }
+  .sec-sub { font-size:13px; color:#777; margin:-8px 0 14px 16px; }
+  /* Cards */
+  .card { background:#fafafa; border-left:3px solid #555; padding:14px 16px; margin:12px 0; font-size:14.5px; }
+  .card.hl { border-left-color:#b30000; background:#fafafa; }
+  .card.blue { border-left-color:#666; }
+  .card p { margin:6px 0; }
+  .card p:first-child { margin-top:0; }
+  /* Verdict tag */
+  .verdict { border:1px solid #b30000; color:#b30000; background:#fff; padding:10px 14px; margin:10px 0 14px; font-size:14.5px; line-height:1.7; }
+  .verdict b { color:#b30000; }
+  /* Details / summary */
+  details { margin:14px 0; border:1px solid #e0e0e0; background:#fff; }
+  summary { list-style:none; cursor:pointer; padding:12px 14px; display:flex; align-items:center; gap:10px; font-size:15px; font-weight:700; color:#1a1a1a; }
+  summary::-webkit-details-marker { display:none; }
+  summary .num { background:#1a1a1a; color:#fff; font-size:13px; font-weight:700; padding:3px 9px; flex-shrink:0; }
+  summary .who { flex:1; }
+  summary .role { display:block; font-size:12px; font-weight:400; color:#888; margin-top:1px; }
+  summary .arrow { color:#999; font-size:12px; }
+  details[open] summary .arrow { transform:rotate(90deg); }
+  details .body { padding:0 16px 16px; border-top:1px solid #eee; }
+  details .body .inner { padding-top:12px; }
+  /* Bullets */
+  ul.bullets { list-style:none; margin:8px 0; }
+  ul.bullets > li { position:relative; padding-left:16px; margin:7px 0; font-size:14.5px; }
+  ul.bullets > li::before { content:"■"; position:absolute; left:0; top:1px; color:#b30000; font-size:10px; }
+  ul.bullets ul { list-style:none; margin:4px 0 0 14px; }
+  ul.bullets ul li { position:relative; padding-left:14px; margin:4px 0; font-size:13.5px; color:#555; }
+  ul.bullets ul li::before { content:"–"; position:absolute; left:0; color:#999; }
+  /* Table */
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:13.5px; }
+  th { background:#1a1a1a; color:#fff; padding:8px 10px; text-align:left; font-weight:600; }
+  td { border:1px solid #e0e0e0; padding:8px 10px; vertical-align:top; }
+  tr:nth-child(even) td { background:#fafafa; }
+  /* Data strip */
+  .datastrip { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+  .databox { flex:1 1 40%; min-width:150px; background:#f4f4f4; padding:10px 12px; }
+  .databox .n { font-size:18px; font-weight:700; color:#b30000; }
+  .databox .l { font-size:12px; color:#666; }
+  /* TOC */
+  .toc { background:#f4f4f4; padding:14px 16px; margin:18px 0; font-size:14px; }
+  .toc b { color:#1a1a1a; }
+  .toc p { margin:4px 0; color:#444; }
+  /* Footer */
+  .footer { margin-top:36px; padding-top:16px; border-top:1px solid #e0e0e0; font-size:12px; color:#999; line-height:1.8; }
+  .footer .redline { width:56px; height:3px; background:#b30000; margin-bottom:10px; }
+  .quote { border-left:3px solid #999; background:#fafafa; padding:10px 14px; margin:10px 0; font-size:14px; color:#444; font-style:normal; }
+  @media (max-width:375px) {
+    .article { padding:0 12px 40px; }
+    .hero { padding:28px 18px 24px; margin:0 -12px 24px; }
+    .hero h1 { font-size:19px; }
+    details .body { padding:0 12px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="badge">会议纪要 · CF40 研讨会</span>
+    <h1>数字货币专题研讨会<br>数字人民币 1.0 → 2.0 改革与全球竞争</h1>
+    <div class="meta">
+      时间：2026-08-30 14:35 起 ｜ 时长：1 小时 54 分<br>
+      主办：中国金融四十人论坛（CF40）<br>
+      嘉宾：穆长春 · 钱行长（交行）· 易纲 · 黄益平 · 徐忠
+    </div>
+    <div class="redline"></div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="sec-title">壹 · 会议概览</div>
+    <div class="card hl">
+      <p><b>这是一场高规格的数字货币内部研讨会</b>。核心议程：央行数字货币研究所所长穆长春详解<b>数字人民币计量框架 2.0 改革</b>（2026-01-01 正式切换），交通银行钱行长从商业银行视角谈落地痛点与未来主战场，易纲、黄益平、徐忠三位重量级嘉宾现场点评交锋。</p>
+    </div>
+    <div class="quote">一句话主线：数字人民币已从「央行数字货币（CBDC）」升级为「央行支持的数字货币」——不再是 M0 数字现金，而是商业银行表内的存款型法定数字货币。围绕这一范式跃迁，各方就批发/零售、账户/代币、跨境竞争、支付机构入二层等议题展开讨论。</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <b>目录</b>
+    <p>贰 · 穆长春：数字人民币 1.0→2.0 计量框架改革</p>
+    <p>叁 · 钱行长（交行）：商业银行的落地痛点与五大主战场</p>
+    <p>肆 · 易纲：关于发展重心的四个思考</p>
+    <p>伍 · 黄益平：三个亮点与五个追问</p>
+    <p>陆 · 徐忠：路径选择的制度逻辑与制度自信</p>
+    <p>柒 · 纪要说明</p>
+  </div>
+
+  <!-- ============ 穆长春 ============ -->
+  <div class="section">
+    <div class="sec-title">贰 · 数字人民币 1.0 → 2.0 计量框架改革</div>
+    <div class="sec-sub">穆长春（中国人民银行数字货币研究所所长）</div>
+
+    <details open>
+      <summary>
+        <span class="num">01</span>
+        <span class="who">穆长春<span class="role">央行数字货币研究所所长 · 主讲</span></span>
+        <span class="arrow">▶</span>
+      </summary>
+      <div class="body"><div class="inner">
+
+        <div class="verdict"><b>核心结论：</b>2026 年 1 月 1 日，数字人民币完成计量框架 2.0 切换——从「央行 100% 负债的数字现金」变为「商业银行表内存款型法定数字货币」，按法定存款准备金率缴存，宏观中性、不产生收缩效应。</div>
+
+        <p style="font-weight:700;margin-top:10px;">▎为什么要改：1.0 时代的两个问题</p>
+        <ul class="bullets">
+          <li><b>宏观层面——狭义银行效应：</b>百姓将银行存款兑换成数字人民币后，商业银行须 100% 缴存央行，失去存款派生与资产运用能力，资金从表内变表外、退出流通，对实体经济产生收缩影响。</li>
+          <li><b>微观层面——责权利不一致：</b>数字人民币托管在商业银行钱包，银行承担资金安全、系统连续性、反洗钱等全部成本，却无任何收入或利润，打击商业银行与用户的积极性。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎2.0 改革要点（2024-25 两年顶层设计，2026-01-01 平稳切换）</p>
+        <ul class="bullets">
+          <li><b>定位升级：</b>从「央行数字货币 CBDC」扩大为「央行支持的数字货币」——不再要求央行 100% 负债，凡在央行有储备、符合央行技术标准与业务规则即可归入。</li>
+          <li><b>债权债务关系变化：</b>用户钱包里的数字人民币余额是<b>商业银行的直接负债</b>（央行间接负债），纳入存款准备金制度框架，按法定存款准备金率缴存（非 100%）。</li>
+          <li><b>恢复派生能力：</b>商业银行可进行资产运用与存款派生，不再对实体经济产生收缩影响。</li>
+          <li><b>付息是副产品而非目的：</b>商业银行按活期存款利率向客户付息，央行按法定存准利率向商业银行付息；个人匿名钱包（反洗钱要求）不付息；非银支付机构仍按 100% 缴存、不付息。</li>
+          <li><b>宏观中性：</b>数字人民币存款与普通银行存款仅在技术形态上不同，债权债务、货币政策操作层面无任何区别，互相转化对宏观无影响，不存在替代/竞争关系。</li>
+        </ul>
+
+        <table>
+          <tr><th style="width:30%"></th><th>1.0 时代（数字现金）</th><th>2.0 时代（存款型法定数字货币）</th></tr>
+          <tr><td>货币层次</td><td>M0 数字现金</td><td>存款型（兼具 M0/M1/M2）</td></tr>
+          <tr><td>负债属性</td><td>央行直接负债</td><td>央行间接负债、商业银行直接负债</td></tr>
+          <tr><td>银行科目</td><td>表外科目</td><td>表内科目</td></tr>
+          <tr><td>准备金</td><td>100% 缴存</td><td>按法定存款准备金率缴存</td></tr>
+          <tr><td>付息</td><td>不付息</td><td>按活期存款利率付息（匿名钱包除外）</td></tr>
+          <tr><td>宏观影响</td><td>狭义银行收缩效应</td><td>中性</td></tr>
+        </table>
+        <div style="font-size:12.5px;color:#777;margin-top:-6px;">不变的：双层运营架构、央行「数字印钞机」印发币串（数字冠字号）、智能合约功能、混合技术架构（区块链+中心化并存）。</div>
+
+        <p style="font-weight:700;margin-top:14px;">▎澄清「一币两库三中心」：从未落地，请勿再传播</p>
+        <ul class="bullets">
+          <li>该说法源自数字人民币最初研究（EMV 小组）的架构建议之一，<b>从未正式实施</b>，但官方未系统性解说，导致长期误读。</li>
+          <li><b>「一币」不准确：</b>数字人民币是法定框架下的货币 + 完整支付体系（账户模式为基础，集零售、批发、跨境、区块链于一体），不是一枚「数字纸钞」或一个支付 APP。</li>
+          <li><b>「两库」不准确：</b>数字人民币按需发行——客户用银行存款兑换时才「生产」，兑多少生产多少，央行和商业银行均无需「发行库/银行库」库存。</li>
+          <li><b>「三中心」不准确且有害：</b>央行既不认证、也不存储用户信息、更不监控支付行为。用户身份识别由运营机构（商业银行）负责；央行端系统不存客户身份信息，仅掌握总量级聚合数据用于货币政策与宏观审慎监管。「有了数字人民币腐败就没了」的说法完全错误——即便登记追溯也杜绝不了（可换成黄金、纸钞、其他支付体系）。</li>
+          <li><b>关于区块链的误读：</b>数字人民币零售交易是中心化的，与传统电子支付相同；区块链（联盟链，非公链）仅用于对公、跨境及央行-商业银行对账场景，按市场需求提供，非强制。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎法定货币真义：核心是「不得拒收」，不是「央行兜底」</p>
+        <div class="card">咨询条法司后的准确理解：法定货币（legal tender）= 国家在法律意义上赋予<b>强制流通能力</b>的货币，用于偿还金钱债务时债权人<b>不得拒收</b>。因此 2.0 后数字人民币被纳入<b>存款保险框架</b>——若法定货币意味着央行兜底，就无需存款保险了。</div>
+
+        <p style="font-weight:700;margin-top:14px;">▎制度建设与运营机构扩围</p>
+        <ul class="bullets">
+          <li><b>管办分离：</b>央行成立数字人民币管理委员会（19 个司局 + 数研所），下设联合办公室（秘书处在数研所）。</li>
+          <li><b>两大运营中心：</b>北京——数字人民币运营管理中心（央行端系统运营）；上海——数字人民币国际运营中心（金融市场、离岸与跨境基础设施）。</li>
+          <li><b>机构扩围：</b>业务运营机构已覆盖全部 18 家全国性银行 + 头部城商行，共 30 家。早期微信（微众）、支付宝（蚂蚁）即以联合体形式加入二层运营。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎六大政策挑战与堵点</p>
+        <ul class="bullets">
+          <li><b>① 利率管理：</b>钱包只支持活期存款，对公客户有收益考核、嫌活期利率太低不愿开户。建议在存款利率定价自律框架下，允许运营机构适用协议存款/协定存款等现有产品利率。</li>
+          <li><b>② 支付管理：</b>银行专户管理规定未明确数字人民币钱包是否属专户（建议：凡能用银行账户的场景都能用钱包）；商户只有数币交易会被收单机构认定为「长期无交易」而限制终端（建议将数币交易纳入活跃认定）；境外来华人士只能开限额极低的四类匿名钱包，需监管明确身份核验接口可用。</li>
+          <li><b>③ 跨境业务：</b>需尽快明确境外本地钱包（离线钱包）开立方案，发挥币串可追溯优势为跨境监管提供新工具；NRA 钱包开立缺乏指令；银行对数字人民币适用跨境便利化政策存在误解，倾向于走最复杂流程甚至禁止，需制度规定与政策宣讲澄清。</li>
+          <li><b>④ 金融市场：</b>支付/后台功能已建成但缺制度规则，建议明确数字人民币基础设施可作为机构可选结算渠道，支持境内外金融基础设施有序接入。</li>
+          <li><b>⑤ 流动性风险：</b>货币桥、数币达 7×24 运营，夜间结算流动性不足，建议按同等 SWIFT 安排利用外汇交易中心夜盘服务补充。</li>
+          <li><b>⑥ 业务考核：</b>数字人民币业务未纳入金融机构考核体系，分行层面缺乏做业务的动力。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎将合规大型支付机构纳入数字人民币体系（易行长在政协内部会议提出）</p>
+        <ul class="bullets">
+          <li>双层运营架构的二层本应包含商业银行 + 大型支付平台 + 电信运营商，支付机构目前已经「掉队」。</li>
+          <li>数字人民币以账户体系为基础，支付机构账户体系天然是其组成部分；纳入不是创新新体系，而是对现有账户体系的规范化制度升级。</li>
+          <li>备付金集中存管已奠定基础；纳入二层后仍缴 100% 保证金防止挪用（因其无存款牌照）。</li>
+          <li>借网联先例实现统一标准、统一清算、统一监管；将支付机构纳入防火墙内，落实跨业监管与持牌合规，是 2.0 生态建设的必然要求（缺了最活跃的流量入口）。</li>
+        </ul>
+
+      </div></div>
+    </details>
+  </div>
+
+  <!-- ============ 钱行长 ============ -->
+  <div class="section">
+    <div class="sec-title">叁 · 商业银行视角：落地痛点与五大主战场</div>
+    <div class="sec-sub">钱行长（交通银行）</div>
+
+    <details>
+      <summary>
+        <span class="num">02</span>
+        <span class="who">钱行长<span class="role">交通银行 · 主讲</span></span>
+        <span class="arrow">▶</span>
+      </summary>
+      <div class="body"><div class="inner">
+
+        <div class="verdict"><b>核心结论：</b>数字人民币不能停留在零售支付领域（微信支付宝已占个人支付 90%），主战场应转向<b>跨境、跨链、智能合约、B/G 端、资本市场</b>；当务之急是<b>加快区域试点全面放开、账户钱包融合互通、下放智能合约权限、受理环境互联互通</b>。</div>
+
+        <p style="font-weight:700;margin-top:10px;">▎为何重要：强大的货币是金融强国的应有之义</p>
+        <ul class="bullets">
+          <li>总书记 2023 年中央金融工作会议提出金融强国目标，「6 个强大」中<b>强大的货币居首</b>——货币是金融体系基石、金融主权核心，贯穿其他五个强大。</li>
+          <li>人民币国际化进展：全球第二大贸易融资货币、第三大支付货币、SDR 权重第三（潘功胜行长陆家嘴论坛数据）。</li>
+          <li><b>美国的威胁：</b>特朗普二期美国数字货币三大特征——① 以合规稳定币延伸美元霸权（将全球稳定币需求转化为对美债的刚性购买力）；② 通过监管规则抢占下一代金融基础设施主导权（「链上美元化」）；③ 强化长臂管辖与金融制裁。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎试点成果（截至 2026 年 6 月）</p>
+        <div class="datastrip">
+          <div class="databox"><div class="n">2.5 亿</div><div class="l">个人钱包累计</div></div>
+          <div class="databox"><div class="n">2100 万+</div><div class="l">单位钱包</div></div>
+          <div class="databox"><div class="n">27 万亿</div><div class="l">累计交易金额（元）</div></div>
+          <div class="databox"><div class="n">≈1 万亿</div><div class="l">货币桥交易（折合人民币）</div></div>
+        </div>
+
+        <p style="font-weight:700;margin-top:14px;">▎七大痛点堵点</p>
+        <ul class="bullets">
+          <li><b>法律框架滞后：</b>人民币管理条例、商业银行法缺数字人民币条款；人民银行未出台业务管理办法（支付结算、收单管理、风险处置），落地执行难。</li>
+          <li><b>监管需从「兼容」转向「鼓励」：</b>2.0 突破 M0 限制允许存、汇，但贷、投领域政策未明确；账户体系运行多年，若政策只是「账户兼容钱包」而非「账户钱包平权」，切换成本将压制使用主动性。</li>
+          <li><b>区域试点造成断点：</b>仅 17 省 26 地区试点——上海能用、南昌不能用，法偿性说不通，对公产业链支付链路被打断。<b>区域试点全面放开比运营机构扩容更急迫、更重要。</b></li>
+          <li><b>账户与钱包两套体系割裂：</b>多数业务仅在最后支付环节兼容数币，未形成端到端闭环；客户在两套体系反复横跳，数据断点埋下风险管理与数据治理隐患。</li>
+          <li><b>智能合约「盆景变风景」难：</b>单个场景跑通一单没问题，但需逐个审批、无法量产上规模；希望放权运营机构，以参数化、组件化、模块化方式快速适配场景。</li>
+          <li><b>受理环境互联互通不足：</b>月活商户约 100 万户，占全国联网商户不足 3%；再大规模布设数币收单终端成本太高，应推动与银联、网联、第三方支付收单网络互联互通，打造含账户+钱包的「聚合支付」。</li>
+          <li><b>出海瓶颈与激励缺失：</b>货币桥、数币达有突破，但金额上量后的流动性管理、海外钱包开立、境内外一体化头寸管理未解决；收费政策不明朗、缺少可持续商业模式，运营机构缺乏商业预期。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎未来五大主战场</p>
+        <ul class="bullets">
+          <li><b>① 跨境：</b>依托货币桥与跨境数字支付平台，优先发展跨境应用；倾斜支持一带一路沿线接入；与外汇交易中心深度协同，支持基于数币的资金拆借与衍生交易，推广海外钱包，双边协定框架下推进海外机构直参。</li>
+          <li><b>② 跨链：</b>统筹央行区块链基础设施与国家区块链骨干网络建设，链上结算标准化、组件化；条件成熟时与境外区块链网络建立安全可控跨链对接，以数据透明解决信任、流程穿透解决效率、上链生态解决协作。</li>
+          <li><b>③ 智能合约：</b>加速放权与量产，研发数字人民币「智能体」支付新模式；在跨境领域扩展国际收支申报、反洗钱、汇率处理、保值对冲等应用。</li>
+          <li><b>④ B/G 端：</b>C 端难（微信支付宝占 90%），由 B/G 端发展后向 C 端延伸——B 端快速结算清算、服务央企、农民工工资代发、普惠贷款已见成效；G 端可追溯可穿透，提升财政资金效率与透明度（社保、医保、养老、贷款计息端到端应用）。</li>
+          <li><b>⑤ 资本市场/要素市场/大宗商品：</b>发挥高效监管与混合通用货币特点，推动自动化撮合、自动化交易、自动化监管；在证券资金监管、外汇交易、债券发行托管、场外非标等领域试点后全流程复制推广。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎四条建议</p>
+        <ul class="bullets">
+          <li>以更高政治觉悟推动数字人民币作为强大货币重要一环，配套战略政策与倾斜性场景创新，与货币桥、外汇交易中心、SWIFT 形成体系化并存设计。</li>
+          <li>衔接全球 Web3.0 趋势，两大国际金融中心差异化探索：上海围绕航运贸易链结算数字化；香港在风险可控下衔接法定稳定币、代币化存款。</li>
+          <li>加强标准化研究，以中国式创新参与全球规则制定与话语权竞争，为全球数字货币发展创造范本。</li>
+          <li>坚持问题导向：加快区域试点全方位放开、研究账户钱包融合互通（聚合支付）、下放智能合约研发应用权限、推动基础设施互联互通。</li>
+        </ul>
+
+      </div></div>
+    </details>
+  </div>
+
+  <!-- ============ 易纲 ============ -->
+  <div class="section">
+    <div class="sec-title">肆 · 关于发展重心的四个思考</div>
+    <div class="sec-sub">易纲（原中国人民银行行长）</div>
+
+    <details>
+      <summary>
+        <span class="num">03</span>
+        <span class="who">易纲<span class="role">原人民银行行长 · 点评</span></span>
+        <span class="arrow">▶</span>
+      </summary>
+      <div class="body"><div class="inner">
+
+        <div class="verdict"><b>核心结论：</b>数字人民币四个方向上不应均衡使力——央行应<b>聚焦批发型 CBDC、商业银行存款代币化、ToG/ToB/跨境与支付清算</b>，把<b>零售 ToC 端交给市场</b>（让微信、支付宝跑数字人民币，而不是与它们比钱包份额）。</div>
+
+        <p style="font-weight:700;margin-top:10px;">▎两件事带来的启发</p>
+        <ul class="bullets">
+          <li><b>BIS Agora 项目：</b>纽联储、欧央行、日、加等七八家央行加入，即将运行。BIS 最早孵化的是我们的货币桥（以人民币为主），但在大国压力下于 2024 年秋撤出，转而集中搞 Agora。</li>
+          <li><b>韩国「汉江计划」：</b>大规模启动商业银行存款代币化在零售环节的试点。BIS 数字货币核心人物申铉松（韩国人）已回国任韩央行行长。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎全球数字货币竞争三条路线</p>
+        <table>
+          <tr><th>路线</th><th>代表</th><th>本质</th></tr>
+          <tr><td>美元稳定币</td><td>美国（USDT/USDC，GENIUS 法案）</td><td>不搞 CBDC，延伸美元霸权、绑定美债</td></tr>
+          <tr><td>存款代币化</td><td>韩国汉江计划、香港汇丰等</td><td>商业银行存款 tokenized deposit</td></tr>
+          <tr><td>央行主导 CBDC</td><td>中国数字人民币</td><td>主权信用数字化载体</td></tr>
+        </table>
+
+        <p style="font-weight:700;margin-top:14px;">▎四个思考</p>
+        <ul class="bullets">
+          <li><b>① 更集中研究批发型 CBDC：</b>批发型连接准备金与支付清算系统。数字人民币背后是一套<b>新的支付清算系统</b>（两个机构：一个负责国内运营/清算，一个负责跨境），批发领域改造空间很大——中国大额小额、银联网联、RTGS 本就不落后，但数币清算系统是新增量。</li>
+          <li><b>② 商业银行存款代币化大有文章：</b>2.0 版数字人民币已是商业银行存款/负债（钱包余额约 300 多亿），理论上与实践上等于不等于「存款代币化」，值得深入研究——这是受韩国启发、可与国际前沿对标的方向。但也要思考：整个金融体系是否都要代币化？账户型一点也不落后。</li>
+          <li><b>③ 零售 ToC 端交给市场：</b>数字人民币是<b>基础设施</b>，应让微信、支付宝等作为一线服务入口——让它们跑的钱是数字人民币，而不是另起炉灶跟它们比钱包市场份额（此路不通）。</li>
+          <li><b>④ 央行聚焦 ToG、ToB、跨境、金融市场与支付清算：</b>发力重点由此清晰——政府端、企业端、跨境、金融市场、支付清算系统是央行主战场。</li>
+        </ul>
+        <div class="quote">愿景：让老外一来中国就感叹「支付系统基础设施怎么这么先进」——像高铁、机场、新农村公路一样成为国家名片。</div>
+
+      </div></div>
+    </details>
+  </div>
+
+  <!-- ============ 黄益平 ============ -->
+  <div class="section">
+    <div class="sec-title">伍 · 三个亮点与五个追问</div>
+    <div class="sec-sub">黄益平（北京大学国家发展研究院）</div>
+
+    <details>
+      <summary>
+        <span class="num">04</span>
+        <span class="who">黄益平<span class="role">北大国家发展研究院 · 点评</span></span>
+        <span class="arrow">▶</span>
+      </summary>
+      <div class="body"><div class="inner">
+
+        <div class="verdict"><b>核心结论：</b>1.0→2.0 是「范式跃迁」，全球开创性；但需回答终极问题——数字人民币要解决实体经济<b>最关键的未被满足的需求</b>是什么？是「一统天下」还是像瑞典 e-krona 那样作为保障公平竞争、消费者保护的<b>公共基础设施（可竞争性）</b>？</div>
+
+        <p style="font-weight:700;margin-top:10px;">▎三个亮点</p>
+        <ul class="bullets">
+          <li><b>范式跃迁：</b>从数字现金（央行直接负债、表外、100% 准备金）到存款型法定数字货币（间接负债、表内、法定存准率）——货币银行学教材未来要专章讨论。</li>
+          <li><b>分层准备金设计（一币多制）：</b>结算钱包视同准备金管理并计付利息；商业银行类机构按活期利率付息并纳入准备金制度、维持货币政策锚；非银支付机构按全额保证金、不付息——非常有创新性。</li>
+          <li><b>合规支付机构纳入体系：</b>把支付宝、微信支付等从「体系外竞争」变为「体系内竞争」，支付体系治理进入新阶段。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎五个追问（向穆所、各位请教）</p>
+        <ul class="bullets">
+          <li><b>① 银行激励够不够？</b>表内化理论上顺理成章，但大、小银行情况不同：有新增客户/流量/降现金运维成本的正向激励，也有负债成本、存贷比、流动性管理负担。政府推动之外，银行自身激励结构是否足够？</li>
+          <li><b>② 活期利率能否发挥调节作用？</b>从不付息到付息是进步，但活期利率是外部给定的、并非为数字人民币设定——如何在币值属性、用户激励、金融体系稳定之间求均衡？利率太高/太低各有什么机制后果？</li>
+          <li><b>③ 可控匿名与合规监管的权衡：</b>个人匿名钱包不付息（延续现金隐私）、小额可控匿名+大额可追溯，但如何在限额监测与异常交易识别之间取得平衡？国际上也未找到完美方案。</li>
+          <li><b>④ 支付机构纳入的具体问题：</b>合规准入标准谁来定？数据治理如何平衡公共监管需要、机构商业机密与用户隐私？会加剧还是协调支付机构与商业银行的竞争？跨业监管如何落实？</li>
+          <li><b>⑤ 法律与国际化双重滞后：</b>人民银行法需修订，但业务（视同准备金、存款型法定数字货币）已经跑在法律前面。</li>
+        </ul>
+        <div class="card hl"><p><b>瑞典央行启示（contestability）：</b>瑞典已是无现金社会，仍力推央行数字货币——目的不是替代现有系统，而是保持「可竞争性」：官方有一个系统存在本身就是重要的公共机制，可防范垄断、欺诈，保护消费者。我们做数字人民币，目标是「一统天下」还是「作为公共基础设施保障公平竞争」？这个问题值得想清楚。</p></div>
+
+      </div></div>
+    </details>
+  </div>
+
+  <!-- ============ 徐忠 ============ -->
+  <div class="section">
+    <div class="sec-title">陆 · 路径选择的制度逻辑与制度自信</div>
+    <div class="sec-sub">徐忠（原中国人民银行研究局局长）</div>
+
+    <details>
+      <summary>
+        <span class="num">05</span>
+        <span class="who">徐忠<span class="role">点评</span></span>
+        <span class="arrow">▶</span>
+      </summary>
+      <div class="body"><div class="inner">
+
+        <div class="verdict"><b>核心结论：</b>中国选账户系、美国选稳定币，都是<b>制度环境决定</b>的必然，不是技术优劣问题；数字人民币是「支付体系数字化、现代化的渐进过程」。下一步框架已定，央行负责制度规则与顶层设计、保持少量零售，主要靠金融机构、电信、平台围绕场景创新竞争——要有<b>制度自信，不被别国牵着鼻子走</b>。</div>
+
+        <p style="font-weight:700;margin-top:10px;">▎为什么路径不同</p>
+        <ul class="bullets">
+          <li><b>中国必须选账户系：</b>资本项目尚未开放，若搞稳定币，资本外逃防线将被击破——技术路线必须与整体制度衔接。</li>
+          <li><b>美国不搞 CBDC：</b>小政府理念（防政府权力过大）+ 稳定币有利于美元霸权、推动全球买美债。</li>
+          <li><b>欧洲双轨实为防御：</b>数字欧元 + 强监管私人稳定币（MiCA），根本动因是阻止美元稳定币渗透、维护欧元主权——并非真有动力推 CBDC。</li>
+        </ul>
+
+        <p style="font-weight:700;margin-top:14px;">▎几点判断</p>
+        <ul class="bullets">
+          <li>央行数字货币本质是<b>支付体系数字化、现代化的渐进过程</b>（周小川行长观点）；央行对支付体系绝不能失控——货政司、支付司是人民银行的两个「硬实力」司局。</li>
+          <li><b>不迷信区块链、智能合约、去中心化：</b>科技是工具，服务系统建设；数字人民币对人民币国际化的作用不能过度强调——资本项目未开放下，那是个系统工程、生态，不是单一技术能解决的。</li>
+          <li><b>已有成绩值得肯定：</b>双层运营体系、账户为基础（同时未排除代币基础）、断直连、安全可靠的清算体系、平台机构全额备付金、二维码银联互通互换；2.0 本质是价格与激励机制的细调。</li>
+          <li><b>竞争格局：</b>商业银行不会家家成功——就像美国债券市场托管机构最终也就两三家；2016 年上海票据交易所数字票据交易平台的批发型数字货币模式，可在离岸等场景复制。</li>
+        </ul>
+
+      </div></div>
+    </details>
+  </div>
+
+  <!-- ============ 说明 ============ -->
+  <div class="section">
+    <div class="sec-title">柒 · 纪要说明</div>
+    <div class="card">
+      <p>· 本纪要基于飞书妙记官方转录整理，为研讨会观点实录，不代表纪要整理方立场。</p>
+      <p>· 嘉宾职务以会议语境为准（如「钱行长」为交通银行代表）；发言顺序：穆长春主讲 → 钱行长主讲 → 易纲、黄益平、徐忠点评。</p>
+      <p>· 完整议程另含主持人串场与茶歇环节，本纪要仅提炼实质性讨论内容。</p>
+    </div>
+    <div class="footer">
+      <div class="redline"></div>
+      整理时间：2026-09-02 ｜ 来源：飞书妙记转录（时长 1h54m45s）<br>
+      本页面为会议纪要精简版，供微信阅读分享。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

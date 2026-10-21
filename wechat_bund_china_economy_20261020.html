@@ -15,7 +15,7 @@ body{margin:0;padding:0;background:#fff;color:#1a1a1a;
 .wrap{max-width:680px;margin:0 auto;padding:0 18px 60px;}
 
 /* ---------- Hero ---------- */
-.hero{background:#1a1a1a;color:#fff;margin:0 -18px 30px;padding:44px 24px 34px;}
+.hero{background:#1a1a1a;color:#fff;margin:0 0 30px;padding:44px 22px 34px;}
 .hero .kicker{color:#999;font-size:12px;letter-spacing:2px;margin-bottom:16px;}
 .hero h1{font-size:26px;line-height:1.4;font-weight:700;margin:0 0 18px;
          padding-bottom:12px;border-bottom:3px solid #b30000;display:inline-block;}
@@ -46,11 +46,11 @@ ul.bullets ul li{position:relative;padding-left:14px;margin:6px 0;font-size:14px
 ul.bullets ul li:before{content:"–";position:absolute;left:0;color:#aaa;}
 
 /* ---------- 表格 ---------- */
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;}
-th{background:#1a1a1a;color:#fff;padding:10px 9px;text-align:left;font-weight:600;font-size:13px;line-height:1.5;}
-td{border-bottom:1px solid #e6e6e6;padding:10px 9px;vertical-align:top;line-height:1.7;}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;table-layout:fixed;}
+th{background:#1a1a1a;color:#fff;padding:10px 9px;text-align:left;font-weight:600;font-size:13px;line-height:1.5;word-break:break-word;}
+td{border-bottom:1px solid #e6e6e6;padding:10px 9px;vertical-align:top;line-height:1.7;word-break:break-word;overflow-wrap:anywhere;}
 tr:nth-child(even) td{background:#fafafa;}
-td.k{color:#b30000;font-weight:700;white-space:nowrap;}
+td.k{color:#b30000;font-weight:700;}
 
 /* ---------- 数据卡 ---------- */
 .grid{display:flex;flex-wrap:wrap;margin:8px -5px;}
